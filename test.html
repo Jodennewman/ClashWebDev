@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Path Test</title>
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/jodens-stellar-site.webflow.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .test-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+    .test-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    .test-image {
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+    .image1 {
+      background-image: url('/public/assets/main/DARKBLUE2.webp');
+    }
+    .image2 {
+      background-image: url('/public/assets/main/Lighterblue.webp');
+    }
+    .image3 {
+      background-image: url('/public/assets/main/red-purple.webp');
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1>CSS Path Test</h1>
+    <p>This page tests if the CSS paths are working correctly.</p>
+    
+    <div class="test-item">
+      <h2>Test Image 1 (DARKBLUE2.webp)</h2>
+      <div class="test-image image1"></div>
+    </div>
+    
+    <div class="test-item">
+      <h2>Test Image 2 (Lighterblue.webp)</h2>
+      <div class="test-image image2"></div>
+    </div>
+    
+    <div class="test-item">
+      <h2>Test Image 3 (red-purple.webp)</h2>
+      <div class="test-image image3"></div>
+    </div>
+    
+    <div class="test-item">
+      <h2>CSS Classes from jodens-stellar-site.webflow.css</h2>
+      <div class="eyeball" style="display: inline-block; margin: 10px;"></div>
+      <div class="decorative-element" style="display: inline-block; margin: 10px;"></div>
+    </div>
+  </div>
+</body>
+</html> 

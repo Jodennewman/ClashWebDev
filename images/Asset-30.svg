@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-ee737cf2-2901-44ea-8f36-0ed6d57c144f" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="425.47" height="120.18" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 425.47 120.18">
+  <defs>
+    <style>
+      .uuid-771b18f4-3b13-4487-bee0-0ea54b7ade13 {
+        letter-spacing: 0em;
+      }
+
+      .uuid-a72857f0-da85-481c-b508-0b89e9880997 {
+        fill: url(#uuid-59435110-8be2-44e0-9700-d589bae5418e);
+      }
+
+      .uuid-23a89882-dfc3-4d36-bd4c-0d9fea630112 {
+        fill: #fff;
+        font-family: NHaasGroteskDSPro-65Md, 'Neue Haas Grotesk Display Pro';
+        font-size: 50.71px;
+        font-weight: 500;
+      }
+
+      .uuid-1f234fac-c4b2-4962-b9f0-74ad1008e43d {
+        letter-spacing: -.11em;
+      }
+
+      .uuid-660dadfc-387c-431f-88eb-f30a64a60628 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <radialGradient id="uuid-59435110-8be2-44e0-9700-d589bae5418e" cx="288.18" cy="12.09" fx="288.18" fy="12.09" r="320.64" gradientTransform="translate(0 7.2) scale(1 .4)" gradientUnits="userSpaceOnUse">
+      <stop offset=".02" stop-color="#dec65d"/>
+      <stop offset=".17" stop-color="#ddc358"/>
+      <stop offset=".33" stop-color="#dbbc4c"/>
+      <stop offset=".5" stop-color="#d9b138"/>
+      <stop offset=".63" stop-color="#d6a421"/>
+      <stop offset=".76" stop-color="#c99217"/>
+      <stop offset=".99" stop-color="#ad6b00"/>
+    </radialGradient>
+  </defs>
+  <g id="uuid-af65c3a0-6936-4afc-96e1-370f4b884b53" data-name="Layer 1">
+    <g>
+      <rect class="uuid-a72857f0-da85-481c-b508-0b89e9880997" x="0" y="0" width="425.47" height="120.18" rx="60.09" ry="60.09"/>
+      <text class="uuid-23a89882-dfc3-4d36-bd4c-0d9fea630112" transform="translate(80.2 76.05)"><tspan x="0" y="0">G</tspan><tspan class="uuid-660dadfc-387c-431f-88eb-f30a64a60628" x="37.22" y="0">e</tspan><tspan class="uuid-771b18f4-3b13-4487-bee0-0ea54b7ade13" x="64.3" y="0">t in </tspan><tspan class="uuid-1f234fac-c4b2-4962-b9f0-74ad1008e43d" x="137.38" y="0">T</tspan><tspan class="uuid-771b18f4-3b13-4487-bee0-0ea54b7ade13" x="162.54" y="0">ouch</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+<svg id="eyeballSVG" data-name="Layer 1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 291.65 291.65" width="5rem" height="5rem">
+
+  <defs>
+    <!-- Updated style with a more unique class name -->
+    <style>
+      .eyeBallBlueIris {
+        fill: url(#eyeballGradient);
+      }
+    </style>
+
+    <radialGradient id="eyeballGradient" cx="147.25" cy="145.31"
+                    fx="147.25" fy="145.31" r="238"
+                    gradientUnits="userSpaceOnUse">
+
+      <!-- The repeated stops from your original code.
+           The multiple offset="0" stops are unusual, but won't necessarily break things.
+           The final gradient will end up going from black (#000) at offset=0
+           toward #ababab at offset=1.
+           You can tidy these if you want. -->
+
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".16" stop-color="#000101"/>
+      <stop offset=".2" stop-color="#020506"/>
+      <stop offset=".2" stop-color="#020608"/>
+      <stop offset=".2" stop-color="#050c0f"/>
+      <stop offset=".2" stop-color="#09171b"/>
+      <stop offset=".2" stop-color="#10262d"/>
+      <stop offset=".2" stop-color="#183a44"/>
+      <stop offset=".2" stop-color="#225260"/>
+      <stop offset=".21" stop-color="#2f6f82"/>
+      <stop offset=".21" stop-color="#3c8fa8"/>
+      <stop offset=".21" stop-color="#45a3bf"/>
+      <stop offset=".34" stop-color="#409ccf"/>
+      <stop offset=".39" stop-color="#40c3be"/>
+      <stop offset=".4" stop-color="#42c3be"/>
+      <stop offset=".4" stop-color="#4bc6c1"/>
+      <stop offset=".4" stop-color="#59cbc6"/>
+      <stop offset=".4" stop-color="#6ed1cd"/>
+      <stop offset=".4" stop-color="#88d9d6"/>
+      <stop offset=".4" stop-color="#a9e4e1"/>
+      <stop offset=".4" stop-color="#d0f0ef"/>
+      <stop offset=".4" stop-color="#fcfefd"/>
+      <stop offset=".4" stop-color="#fff"/>
+      <stop offset=".46" stop-color="#fff"/>
+      <stop offset=".7" stop-color="#dcdcdc"/>
+      <stop offset="1" stop-color="#ababab"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Note the circle uses the new class name. -->
+  <circle id="eyeballCircle" class="eyeBallBlueIris" cx="145.83" cy="145.83" r="145.83"/>
+</svg>
