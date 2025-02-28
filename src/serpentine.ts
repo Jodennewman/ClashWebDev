@@ -13,303 +13,145 @@ let serpTL = gsap.timeline();
 export function initSerpentineAnimation(): void {
     console.log("Initializing serpentine animation");
     
-    // Get the serpentine path element
+    // Get the serpentine path element and log more details
     const serpentinePath = document.getElementById('serpentinePath');
+    const animationPath = document.getElementById('serpentineAnimationPath');
+    const section = document.querySelector('.serpentine-section');
     
-    if (!serpentinePath) {
-        console.error("Serpentine path element not found");
+    // Log detailed element information
+    console.log("Section details:", {
+        found: !!section,
+        height: section?.getBoundingClientRect().height,
+        inView: section ? isElementInViewport(section) : false,
+        classes: section?.classList.toString()
+    });
+    
+    console.log("Path details:", {
+        serpentinePath: {
+            found: !!serpentinePath,
+            id: serpentinePath?.id,
+            visible: serpentinePath ? getComputedStyle(serpentinePath).display : null
+        },
+        animationPath: {
+            found: !!animationPath,
+            id: animationPath?.id,
+            visible: animationPath ? getComputedStyle(animationPath).display : null
+        }
+    });
+
+    if (!serpentinePath || !animationPath || !section) {
+        console.error("Required elements not found:", {
+            serpentinePath: !!serpentinePath,
+            animationPath: !!animationPath,
+            section: !!section
+        });
         return;
     }
     
-    console.log("Found serpentine path element:", serpentinePath);
-    
-    // Make sure the path is visible before animation
-    gsap.set(serpentinePath, { 
-        autoAlpha: 0, // Start invisible
-        scale: 0.95
+    // Clear any existing ScrollTrigger instances for this section
+    ScrollTrigger.getAll().forEach(st => {
+        if (st.vars.id === "serpentinePathTrigger") {
+            console.log("Killing existing ScrollTrigger:", st.vars.id);
+            st.kill();
+        }
     });
     
-    // Create the animation for the path with a longer duration and more pronounced effect
-    const serpentineTimeline = gsap.timeline({
+    // Make sure the path is visible immediately
+    gsap.set([serpentinePath, animationPath], { 
+        autoAlpha: 0,
+        scale: 0.95,
+        y: 30
+    });
+    
+    // Create the main timeline with more detailed ScrollTrigger config
+    const mainTimeline = gsap.timeline({
         scrollTrigger: {
-            trigger: "#section-serpentine",
-            start: "top 80%", // Start earlier
-            end: "bottom 20%", // End later
+            trigger: section,
+            start: "top 80%",
+            end: "bottom 20%",
             scrub: 1,
-            markers: true, // Add markers for debugging
+            markers: true,
             id: "serpentinePathTrigger",
+            toggleActions: "play reverse play reverse",
+            scroller: "#smooth-content",
             onEnter: () => {
                 console.log("Entered serpentine section");
-                // Fade in and add a glow effect when entering
-                gsap.to(serpentinePath, {
-                    autoAlpha: 1,
-                    scale: 1,
-                    filter: "drop-shadow(0 0 25px rgba(106, 17, 203, 0.8))",
-                    duration: 1.5,
-                    ease: "power2.out"
-                });
-                
-                // Start the orange star animation when entering the section
-                animateOrangeStar();
+                logTriggerState("onEnter");
             },
-            onLeave: () => console.log("Left serpentine section"),
-            onEnterBack: () => console.log("Entered back serpentine section"),
-            onLeaveBack: () => console.log("Left back serpentine section")
-        }
-    });
-    
-    console.log("Serpentine animation timeline created:", serpentineTimeline);
-    
-    // Animate eyeballs along the path
-    const eyeballs = document.querySelectorAll('.eyeball');
-    
-    eyeballs.forEach((eyeball, index) => {
-        const delay = index * 0.08; // Slightly faster stagger
-        gsap.from(eyeball, {
-            y: 70, // Increased from 50
-            opacity: 0,
-            duration: 0.8,
-            delay,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-                trigger: "#section-serpentine",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
-        
-        // Add more varied floating animation
-        gsap.to(eyeball, {
-            y: `random(-20, 20)`, // Increased range
-            x: `random(-15, 15)`, // Increased range
-            rotation: `random(-15, 15)`, // Increased range
-            duration: `random(3, 7)`, // Longer duration
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true,
-            delay: `random(0, 3)` // More varied delay
-        });
-    });
-    
-    // Animate text elements
-    const textElements = document.querySelectorAll('.serpentine-text');
-    
-    // Create a timeline for text animations
-    const textTL = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#section-serpentine",
-            start: "top 60%",
-            end: "bottom 20%",
-            scrub: 1.5,
-            markers: false
-        }
-    });
-    
-    // Animate each text element with a staggered effect
-    textElements.forEach((text, index) => {
-        const yOffset = index === 1 ? "-=30" : "+=30"; // Middle text moves in opposite direction
-        
-        textTL.fromTo(text, 
-            { 
-                opacity: 0, 
-                y: yOffset,
-                scale: 0.9
+            onLeave: () => {
+                console.log("Left serpentine section");
+                logTriggerState("onLeave");
             },
-            { 
-                opacity: 1, 
-                y: 0,
-                scale: 1,
-                duration: 1,
-                ease: "power2.out"
-            },
-            index * 0.3 // Stagger the animations
-        );
-        
-        // Add a subtle floating animation after the text appears
-        gsap.to(text, {
-            y: "random(-10, 10)",
-            duration: "random(3, 5)",
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true,
-            delay: 1 + (index * 0.5)
-        });
-    });
-    
-    // Rotating decorative elements with different speeds and directions
-    gsap.to(".blue-ball", {
-        rotation: 360,
-        duration: 20,
-        ease: "none",
-        repeat: -1
-    });
-    
-    gsap.to(".purple-cross", {
-        rotation: -360,
-        duration: 25,
-        ease: "none",
-        repeat: -1
-    });
-    
-    gsap.to(".teal-star", {
-        rotation: 360,
-        duration: 30,
-        ease: "none",
-        repeat: -1
-    });
-    
-    // Special animations for eyeballs at section crossovers
-    const topEyeballs = document.querySelectorAll('.eyeball-row:first-child .eyeball');
-    
-    // Top eyeballs animation (section entrance)
-    topEyeballs.forEach((eyeball) => {
-        // Random rotation
-        gsap.to(eyeball, {
-            rotation: Math.random() > 0.5 ? 20 : -20, // Increased rotation
-            duration: 2 + Math.random() * 3,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
-        
-        // Random scale pulsing
-        gsap.to(eyeball, {
-            scale: 0.85 + Math.random() * 0.4, // More varied scale
-            duration: 1 + Math.random() * 2,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            delay: Math.random()
-        });
-        
-        // Add a special animation when scrolling into view
-        ScrollTrigger.create({
-            trigger: "#section-serpentine",
-            start: "top 90%",
-            end: "top 10%",
-            onEnter: () => {
-                gsap.to(eyeball, {
-                    y: -40, // Increased from -30
-                    scale: 1.3, // Increased from 1.2
-                    duration: 0.5,
-                    ease: "back.out(1.7)",
-                    overwrite: true
-                });
-                
-                // Add a glow effect
-                const eyeballImg = eyeball.querySelector('.eyeball-img') as HTMLElement;
-                if (eyeballImg) {
-                    gsap.to(eyeballImg, {
-                        filter: "drop-shadow(0 0 25px rgba(255, 255, 255, 0.9))", // Increased glow
-                        duration: 0.5
-                    });
-                }
+            onEnterBack: () => {
+                console.log("Entered back serpentine section");
+                logTriggerState("onEnterBack");
             },
             onLeaveBack: () => {
-                gsap.to(eyeball, {
-                    y: 0,
-                    scale: 1,
-                    duration: 0.5,
-                    ease: "back.in(1.7)",
-                    overwrite: true
-                });
-                
-                // Remove glow effect
-                const eyeballImg = eyeball.querySelector('.eyeball-img') as HTMLElement;
-                if (eyeballImg) {
-                    gsap.to(eyeballImg, {
-                        filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.7))",
-                        duration: 0.5
-                    });
-                }
+                console.log("Left back serpentine section");
+                logTriggerState("onLeaveBack");
+            },
+            onUpdate: (self) => {
+                console.log("Progress:", self.progress.toFixed(3));
+                logTriggerState("onUpdate");
+            },
+            onToggle: (self) => {
+                console.log("Active:", self.isActive);
+                logTriggerState("onToggle");
             }
-        });
+        }
     });
     
-    // Animate description with a fade-in effect
-    const description = document.querySelector('.serpentine-description');
-    if (description) {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: "#section-serpentine",
-                start: "top 60%",
-                end: "center 40%",
-                scrub: 1
-            }
-        }).fromTo(description,
-            { y: 30, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 0.8 }
+    // Add animations to the timeline
+    mainTimeline
+        .to([serpentinePath, animationPath], {
+            autoAlpha: 1,
+            scale: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out"
+        })
+        .from(".serpentine-text", {
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power2.out"
+        }, "-=0.5");
+    
+    // Force a refresh of ScrollTrigger and log the result
+    console.log("Before ScrollTrigger refresh");
+    ScrollTrigger.refresh(true);
+    console.log("After ScrollTrigger refresh");
+    
+    // Log all ScrollTrigger instances for debugging
+    console.log("Active ScrollTrigger instances:", ScrollTrigger.getAll());
+    
+    // Helper function to check if element is in viewport
+    function isElementInViewport(el: Element) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
-    } else {
-        console.error("Serpentine description not found");
     }
     
-    // Animate CTA button with a bounce effect
-    const ctaButton = document.querySelector('.serpentine-cta');
-    if (ctaButton) {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: "#section-serpentine",
-                start: "top 50%",
-                end: "center 30%",
-                scrub: 1
-            }
-        }).fromTo(ctaButton,
-            { y: 20, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 0.5, ease: "back.out(1.7)" }
-        );
-    } else {
-        console.error("Serpentine CTA button not found");
+    // Helper function to log trigger state
+    function logTriggerState(event: string) {
+        const st = ScrollTrigger.getById("serpentinePathTrigger");
+        if (st) {
+            console.log(`ScrollTrigger state (${event}):`, {
+                progress: st.progress,
+                direction: st.direction,
+                isActive: st.isActive,
+                start: st.start,
+                end: st.end,
+                trigger: st.trigger,
+                scroller: st.scroller
+            });
+        }
     }
-    
-    // Animate section title with a slide-in effect
-    const sectionTitle = document.querySelector('.section-title');
-    if (sectionTitle) {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: "#section-serpentine",
-                start: "top 75%",
-                end: "center 50%",
-                scrub: 1
-            }
-        }).fromTo(sectionTitle,
-            { y: -30, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 0.8 }
-        );
-    } else {
-        console.error("Section title not found");
-    }
-    
-    // Animate decorative elements with a pop-in effect
-    const decorativeElements = document.querySelectorAll('.decorative-element');
-    if (decorativeElements.length > 0) {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: "#section-serpentine",
-                start: "top 70%",
-                end: "center 30%",
-                scrub: 1
-            }
-        }).fromTo(decorativeElements,
-            { scale: 0, autoAlpha: 0, rotation: -45 },
-            { 
-                scale: 1, 
-                autoAlpha: 1, 
-                rotation: 0,
-                stagger: 0.15, 
-                duration: 0.8,
-                ease: "back.out(1.7)"
-            }
-        );
-    } else {
-        console.error("Decorative elements not found");
-    }
-    
-    // Add console logs to help debug
-    console.log("Serpentine animation initialized");
-    document.querySelectorAll('.eyeball').forEach((eyeball, index) => {
-        console.log(`Eyeball ${index + 1} found:`, eyeball);
-    });
 }
 
 // Handle the split screen scrolling effect
@@ -462,7 +304,7 @@ export function initRotatingStar(): void {
     console.log("Initializing rotating star");
     
     // Look for the element with class 'rotating-star' instead of ID 'rotatingStar'
-    const rotatingStar = document.querySelector('.rotating-star');
+    const rotatingStar = document.querySelector('.orange-star');
     
     if (!rotatingStar) {
         console.error("Rotating star element not found");
@@ -483,7 +325,7 @@ export function initRotatingStar(): void {
 // Original motion path animations
 serpTL.to("#blueBall", {
     motionPath: {
-        path: [{x: 0, y:0 }, {x: "-=70vw", y:"=+10vh"}, { x:"-=5vw", y:"=+10vh"}],
+        path: "#serpentineAnimationPath",
         autoRotate: true,
     },
     ease: "none",
@@ -491,7 +333,7 @@ serpTL.to("#blueBall", {
 }, 0)
 .to("#purpleCross", {
     motionPath: {
-        path: [{x: 0, y:0 }, {x: "-=70vw", y:"+=10vh"}, { x:"-=5vw", y:"+=10vh"}],
+        path: "#serpentineAnimationPath",
         curviness: 2,
         autoRotate: true,
     },
@@ -537,7 +379,7 @@ function animateOrangeStar(): void {
     }
     
     // Get the path for the motion
-    const path = document.getElementById('serpentinePath');
+    const path = document.getElementById('serpentineAnimationPath');
     if (!path) {
         console.error("Path element not found for motion path animation");
         return;

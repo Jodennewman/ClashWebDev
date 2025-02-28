@@ -8,6 +8,7 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/jodens-stellar-site.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/whoAreYou.css" rel="stylesheet" type="text/css">
   <!-- GSAP and other libraries -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@webflow/webflow-ui@1.0.0/dist/webflow-ui.js"></script>
@@ -461,7 +462,7 @@ window.addEventListener("load", function() {
         <div id="app" style="grid-area: 1/1/7/8">
           <div id="pixi-container"></div>
       </div>
-      <h2 id="billionEyesText" class="boldWhite" style="line-height: 0.9; filter:drop-shadow(-3px 4px 5px #25130b72); font-size: clamp(2.5rem, 3vw, 4rem);text-align: left; grid-area: 1/2/3/4; align-self: center; justify-self: center">Over<br><span style="font-weight:700; font-size: clamp(3rem, 6vw, 5rem)">1.5 Billion </span> <br><span style="text-align: right; margin-left: 69%; margin-top:-2rem">Eyes. </span></h2>
+      <h2 id="billionEyesText" class="boldWhite" style="line-height: 0.9; filter:drop-shadow(-3px 4px 5px #25130b72); margin-top: 1rem; font-size: clamp(2.5rem, 3vw, 4rem);text-align: left; grid-area: 2/2/4/4; align-self: center; justify-self: center">Over<br><span style="font-weight:700; font-size: clamp(3rem, 6vw, 5rem)">1.5 Billion </span> <br><span style="text-align: right; margin-left: 69%; margin-top:-2rem">Eyes. </span></h2>
      <pre id="dateSince" class="BigSVGText shrinker" style="filter:drop-shadow(-3px 4px 5px #25130b72); grid-area: 4/2/6/4; margin-right: -8vw; margin-top: -5vh; position: relative; align-self: center; align-content: left; justify-content: center; justify-self: center; overflow: visible; text-align: left; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600;"></pre>
         
                 </div>
@@ -706,22 +707,51 @@ window.addEventListener("load", function() {
         <div class="serpentine-container">
           <div class="serpentine-background"></div>
           <div class="serpentine-path-wrapper">
-            <img src="/assets/main/Serpentine-line.svg" id="serpentinePath" alt="Serpentine Path">
+            <svg id="serpentinePath" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1314.76 1433.61">
+              <defs>
+                <linearGradient id="serpentineGradient" x1="577.47" y1="-43.49" x2="737.29" y2="1477.1" gradientUnits="userSpaceOnUse">
+                  <stop offset=".03" stop-color="#ffa152"/>
+                  <stop offset=".05" stop-color="#d48e55"/>
+                  <stop offset=".06" stop-color="#ab7d59"/>
+                  <stop offset=".08" stop-color="#876e5d"/>
+                  <stop offset=".1" stop-color="#69625f"/>
+                  <stop offset=".12" stop-color="#515762"/>
+                  <stop offset=".14" stop-color="#3e4f63"/>
+                  <stop offset=".17" stop-color="#304a65"/>
+                  <stop offset=".2" stop-color="#294665"/>
+                  <stop offset=".27" stop-color="#274666"/>
+                  <stop offset=".41" stop-color="#a05ba6"/>
+                  <stop offset=".51" stop-color="#ba679d"/>
+                  <stop offset=".6" stop-color="#d67594"/>
+                  <stop offset=".62" stop-color="#d07693"/>
+                  <stop offset=".65" stop-color="#c07993"/>
+                  <stop offset=".68" stop-color="#a57e93"/>
+                  <stop offset=".71" stop-color="#818692"/>
+                  <stop offset=".75" stop-color="#519091"/>
+                  <stop offset=".78" stop-color="#189c90"/>
+                  <stop offset=".8" stop-color="#02a190"/>
+                  <stop offset="1" stop-color="#007571"/>
+                </linearGradient>
+              </defs>
+              <path id="serpentineAnimationPath" 
+                    d="M170.93,55c-64.02,0-115.93,74.04-115.93,165.37s51.9,165.37,115.93,165.37h972.94-.03c64.02,0,115.93,74.04,115.93,165.37s-51.9,165.37-115.93,165.37l-972.91.63c-64.02,0-115.93,74.04-115.93,165.37s51.9,165.37,115.93,165.37h972.94-.03c64.02,0,115.93,74.04,115.93,165.37s-51.74,165.37-115.93,165.37c-453.09,0-972.91-379.55-972.91,0" 
+                    style="fill:none; stroke:url(#serpentineGradient); stroke-miterlimit:10; stroke-width:110px;"/>
+            </svg>
           </div>
           
           <div class="eyeball-row top-eyeballs">
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite1.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite2.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite3.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite4.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite5.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite6.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite1.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite2.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite3.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite4.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite5.svg" alt="Eye"></div>
-            <div class="eyeball"><img class="eyeball-img" src="/assets/main/eyeballSprite6.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite1.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite2.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite3.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite4.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite5.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite6.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite1.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite2.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite3.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite4.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite5.svg" alt="Eye"></div>
+            <div class="eyeball"><img class="eyeball-img" src="public/assets/main/eyeballSprite6.svg" alt="Eye"></div>
           </div>
           
           <div class="serpentine-text-container">
@@ -833,7 +863,7 @@ window.addEventListener("load", function() {
           <h2 id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a676-dd823d93" class="heading-3">We're a small team of creatives who love making videos.</h2>
           <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a678-dd823d93" class="div-block-6">
             <h3 id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a679-dd823d93" class="italicsthin">Who are we?</h3>
-            <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a67b-dd823d93" class="scrollerbutton w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75">
+            <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a67b-dd823d93" class="scrollerbutton w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;">
                 <defs>
                   <style>
       .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
@@ -846,7 +876,7 @@ window.addEventListener("load", function() {
         fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
       }
     </style>
-                  <radialgradient id="uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
+    <radialGradient id= "uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
                     <stop offset=".02" stop-color="#eda751"></stop>
                     <stop offset=".16" stop-color="#eba051"></stop>
                     <stop offset=".36" stop-color="#e88f54"></stop>
@@ -855,7 +885,6 @@ window.addEventListener("load", function() {
                     <stop offset=".75" stop-color="#da7d6b"></stop>
                     <stop offset=".97" stop-color="#caa497"></stop>
                     <stop offset=".98" stop-color="#caa699"></stop>
-                  </radialgradient>
                   <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
                   <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
                     <stop offset=".02" stop-color="#eda751"></stop>
@@ -867,7 +896,6 @@ window.addEventListener("load", function() {
                     <stop offset=".97" stop-color="#caa497"></stop>
                     <stop offset=".98" stop-color="#caa699"></stop>
                   </lineargradient>
-                </radialgradient></defs>
                 <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
                   <circle cx="79.88" cy="79.88" r="79.88"></circle>
                   <g>
@@ -878,11 +906,10 @@ window.addEventListener("load", function() {
                     </g>
                   </g>
                 </g>
-              </svg></div>
+            </radialgradient></svg></div>
           </div>
           <h1 id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a67c-dd823d93" class="heading-2"><span class="text-span-2">We know what people want,</span><br><span class="text-span-3">we know how to make it,</span><br><span class="text-span-4">and we make it well.</span></h1>
           <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a685-dd823d93" class="code-embed-11 w-embed">
-            <?xml version="1.0" encoding="UTF-8"?>
             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 736.2 178.71">
               <defs>
                 <style>
@@ -1042,176 +1069,153 @@ window.addEventListener("load", function() {
           </div>
         </section>
         <section id="OurStorySection" class="w-layout-blockcontainer ourstorywrapper hpanels2 w-node-_8a8b271a-0a8e-ea2a-04da-bbb6c6875178-dd823d93 w-container">
+          <div class="our-story-header">
+            <h2 class="our-story-title">Our Story</h2>
+            <p class="our-story-subtitle">(swipe or hover)</p>
+          </div>
+          
           <h3 id="w-node-f09e8939-ed92-4b85-632d-e939278c041e-dd823d93" class="italicsthin-2 ccyears">2023</h3>
           <h3 id="w-node-_681849a8-5119-3dd6-b3fa-53d5f83cc966-dd823d93" class="italicsthin-2 ccyears">2024</h3>
           <h3 id="w-node-_7107a794-34d2-ca3f-07b4-804196d6b304-dd823d93" class="italicsthin-2 ccyears">2025</h3>
           <h3 id="w-node-_34093107-c82e-6d48-eecb-700e065b7516-dd823d93" class="italicsthin-2 ccyears">Genesis*</h3>
+          
           <div id="w-node-_03f4fda2-79d4-ac1d-2f00-86af51aab05b-dd823d93" class="div-block-7"></div>
-          <div id="w-node-_97367bd7-8440-6c86-515e-1f9fd432ddcd-dd823d93" class="scrollerbutton _2023 w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;">
-  <defs>
-    <style>
-      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
-        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
-      }
-      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
-        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
-      }
-      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
-        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
-      }
-    </style>
-    <radialGradient id= "uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
-              <stop offset=".02" stop-color="#eda751"></stop>
-              <stop offset=".16" stop-color="#eba051"></stop>
-              <stop offset=".36" stop-color="#e88f54"></stop>
-              <stop offset=".59" stop-color="#e27359"></stop>
-              <stop offset=".63" stop-color="#e16e5a"></stop>
-              <stop offset=".75" stop-color="#da7d6b"></stop>
-              <stop offset=".97" stop-color="#caa497"></stop>
-              <stop offset=".98" stop-color="#caa699"></stop>
-              <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
-              <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
-                <stop offset=".02" stop-color="#eda751"></stop>
-                <stop offset=".16" stop-color="#eba051"></stop>
-                <stop offset=".36" stop-color="#e88f54"></stop>
-                <stop offset=".59" stop-color="#e27359"></stop>
-                <stop offset=".63" stop-color="#e16e5a"></stop>
-                <stop offset=".75" stop-color="#da7d6b"></stop>
-                <stop offset=".97" stop-color="#caa497"></stop>
-                <stop offset=".98" stop-color="#caa699"></stop>
-              </lineargradient>
-              <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
-                <circle cx="79.88" cy="79.88" r="79.88"></circle>
-                <g>
-                  <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
-                  <g>
-                    <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
-                    <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
-                  </g>
-                </g>
-              </g>
-            </radialgradient></svg></div>
-          <div id="w-node-_1ff421cd-adff-9178-2de2-adf0e66b1ff0-dd823d93" class="scrollerbutton w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;">
-  <defs>
-    <style>
-      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
-        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
-      }
-      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
-        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
-      }
-      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
-        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
-      }
-    </style>
-    <radialGradient id=" uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
-              <stop offset=".02" stop-color="#eda751"></stop>
-              <stop offset=".16" stop-color="#eba051"></stop>
-              <stop offset=".36" stop-color="#e88f54"></stop>
-              <stop offset=".59" stop-color="#e27359"></stop>
-              <stop offset=".63" stop-color="#e16e5a"></stop>
-              <stop offset=".75" stop-color="#da7d6b"></stop>
-              <stop offset=".97" stop-color="#caa497"></stop>
-              <stop offset=".98" stop-color="#caa699"></stop>
-              <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
-              <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
-                <stop offset=".02" stop-color="#eda751"></stop>
-                <stop offset=".16" stop-color="#eba051"></stop>
-                <stop offset=".36" stop-color="#e88f54"></stop>
-                <stop offset=".59" stop-color="#e27359"></stop>
-                <stop offset=".63" stop-color="#e16e5a"></stop>
-                <stop offset=".75" stop-color="#da7d6b"></stop>
-                <stop offset=".97" stop-color="#caa497"></stop>
-                <stop offset=".98" stop-color="#caa699"></stop>
-              </lineargradient>
-              <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
-                <circle cx="79.88" cy="79.88" r="79.88"></circle>
-                <g>
-                  <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
-                  <g>
-                    <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
-                    <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
-                  </g>
-                </g>
-              </g>
-            </radialgradient></svg></div><img src="images/Asset-481x.svg" loading="lazy" width="71.5" id="w-node-f6261287-94ac-5cec-5afb-380415eb69cf-dd823d93" alt="" class="scrollerbutton">
-          <div id="w-node-_60296f74-3b71-67c1-f076-13345733ed0f-dd823d93" class="scrollerbutton _2024 w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row">
-  <defs>
-    <style>
-      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
-        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
-      }
-      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
-        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
-      }
-      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
-        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
-      }
-    </style>
-    <radialGradient id=" uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
-              <stop offset=".02" stop-color="#eda751"></stop>
-              <stop offset=".16" stop-color="#eba051"></stop>
-              <stop offset=".36" stop-color="#e88f54"></stop>
-              <stop offset=".59" stop-color="#e27359"></stop>
-              <stop offset=".63" stop-color="#e16e5a"></stop>
-              <stop offset=".75" stop-color="#da7d6b"></stop>
-              <stop offset=".97" stop-color="#caa497"></stop>
-              <stop offset=".98" stop-color="#caa699"></stop>
-              <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
-              <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
-                <stop offset=".02" stop-color="#eda751"></stop>
-                <stop offset=".16" stop-color="#eba051"></stop>
-                <stop offset=".36" stop-color="#e88f54"></stop>
-                <stop offset=".59" stop-color="#e27359"></stop>
-                <stop offset=".63" stop-color="#e16e5a"></stop>
-                <stop offset=".75" stop-color="#da7d6b"></stop>
-                <stop offset=".97" stop-color="#caa497"></stop>
-                <stop offset=".98" stop-color="#caa699"></stop>
-              </lineargradient>
-              <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
-                <circle cx="79.88" cy="79.88" r="79.88"></circle>
-                <g>
-                  <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
-                  <g>
-                    <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
-                    <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
-                  </g>
-                </g>
-              </g>
-            </radialgradient></svg></div>
-          <div id="2023-Div-Block" class="ourstorydivblock _2025 w-node-_0407a6ed-3643-1c54-b889-193e014da668-dd823d93">some text</div>
-          <div id="w-node-_1ea0c1ca-0f98-85c3-946b-e94c579d06fe-dd823d93" class="ourstorydivblock _2023"></div>
-          <div id="2023-Div-Block" class="ourstorydivblock _2025 w-node-_80515a00-4611-7293-4d4e-a6bf2099f738-dd823d93">some text</div>
-          <div id="w-node-fcc8f788-1923-8c65-80f0-3de44fb1adc7-dd823d93" class="ourstorydivblock genesis"></div>
+          <div class="timeline-marker"></div>
+
+          <div class="story-cards-container">
+            <!-- Genesis Card -->
+            <div class="story-card" id="card-genesis">
+              <div class="card-inner">
+                <div class="card-front">
+                  <h4 class="card-title">Genesis*</h4>
+                  <div class="card-eyeball">
+                    <img src="public/assets/main/eyeballSprite6.webp" alt="Eyeball" class="eyeball-img">
+                  </div>
+                  <p class="card-description">Where it all began. Our founders recognized a gap in the market for authentic, engaging content that resonates across platforms.</p>
+                  <div class="card-stat-bubble">
+                    <span class="stat-number">750M</span>
+                    <span class="stat-label">views</span>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <h4 class="card-title">The Beginning</h4>
+                  <p class="card-description">From humble beginnings to meteoric rise, we started with a simple principle: create content that matters.</p>
+                  <p class="card-quote">"We're not just creating content, we're creating connections."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2023 Card -->
+            <div class="story-card" id="card-2023">
+              <div class="card-inner">
+                <div class="card-front">
+                  <h4 class="card-title">Building Momentum</h4>
+                  <div class="card-eyeball">
+                    <img src="public/assets/main/eyeballSprite3.webp" alt="Eyeball" class="eyeball-img">
+                  </div>
+                  <p class="card-description">Explosive growth as our methods prove effective across multiple platforms and demographics.</p>
+                  <div class="card-stat-bubble">
+                    <span class="stat-number">86M</span>
+                    <span class="stat-label">interactions</span>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <h4 class="card-title">2023 Milestones</h4>
+                  <p class="card-description">Our growth skyrocketed as we expanded our client base and delivered record-breaking campaigns.</p>
+                  <p class="card-quote">"The numbers don't lie - engagement is everything."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2024 Card -->
+            <div class="story-card" id="card-2024">
+              <div class="card-inner">
+                <div class="card-front">
+                  <h4 class="card-title">Expanding Horizons</h4>
+                  <div class="card-eyeball">
+                    <img src="public/assets/main/eyeballSprite2.webp" alt="Eyeball" class="eyeball-img">
+                  </div>
+                  <p class="card-description">Setting trends, not following them. Our approach to content creation has become the industry standard.</p>
+                  <div class="card-stat-bubble">
+                    <span class="stat-number">4.5M</span>
+                    <span class="stat-label">followers</span>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <h4 class="card-title">Innovation Leader</h4>
+                  <p class="card-description">We've pioneered new approaches to content strategy, combining data-driven insights with creative excellence.</p>
+                  <p class="card-quote">"Innovation is in our DNA - we're always one step ahead."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2025 Card -->
+            <div class="story-card" id="card-2025">
+              <div class="card-inner">
+                <div class="card-front">
+                  <h4 class="card-title">The Future</h4>
+                  <div class="card-eyeball">
+                    <img src="public/assets/main/eyeballSprite5.webp" alt="Eyeball" class="eyeball-img">
+                  </div>
+                  <p class="card-description">Understanding audiences like no one else. Our roadmap for the future is focused on creating influential content at scale.</p>
+                  <div class="card-stat-bubble">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">potential</span>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <h4 class="card-title">Vision 2025</h4>
+                  <p class="card-description">We're building the future of content creation, with ambitious plans to revolutionize how brands connect with their audiences.</p>
+                  <p class="card-quote">"The best is yet to come - we're just getting started."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation buttons -->
+          <div class="story-nav-buttons">
+            <button class="nav-button prev-button">
+              <span class="nav-arrow">←</span>
+            </button>
+            <button class="nav-button next-button">
+              <span class="nav-arrow">→</span>
+            </button>
+          </div>
+
+          <div id="w-node-_97367bd7-8440-6c86-515e-1f9fd432ddcd-dd823d93" class="scrollerbutton _2023 w-embed">
+            <svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;"></svg>
+          </div>
+          <div id="w-node-_1ff421cd-adff-9178-2de2-adf0e66b1ff0-dd823d93" class="scrollerbutton w-embed">
+            <svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;"></svg>
+          </div>
+          <img src="images/Asset-481x.svg" loading="lazy" width="71.5" id="w-node-f6261287-94ac-5cec-5afb-380415eb69cf-dd823d93" alt="" class="scrollerbutton">
+          <div id="w-node-_60296f74-3b71-67c1-f076-13345733ed0f-dd823d93" class="scrollerbutton _2024 w-embed">
+            <svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;"></svg>
+          </div>
         </section>
         <section id="whoAreYou-section" class="w-layout-blockcontainer whoareyou-section hpanels2 w-node-_6055fd85-a6b2-510a-b0bc-f5604ac1f106-dd823d93 w-container">
-          <div id="w-node-f264e4ba-a2b3-0246-5432-3942e129a358-dd823d93" class="pickyourselfbox leftgreencreative w-embed"><svg id="chooseYourself1" data-name="youngCreative" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 589.36 494.12" style="width:100%; height: auto">
-              <defs>
-                <style>
-      .pickBoxStyle1 {
-        fill: url(#pickBox1);
-      }
-    </style>
-                <lineargradient id="pickBox1" x1="97.91" y1="144.38" x2="598.03" y2="405.36" gradientunits="userSpaceOnUse">
-                  <stop offset=".02" stop-color="#b7d494"></stop>
-                  <stop offset=".14" stop-color="#b0cf90"></stop>
-                  <stop offset=".31" stop-color="#9fc187"></stop>
-                  <stop offset=".5" stop-color="#83aa77"></stop>
-                  <stop offset=".63" stop-color="#6d996b"></stop>
-                  <stop offset=".77" stop-color="#648765"></stop>
-                  <stop offset=".99" stop-color="#53665c"></stop>
-                </lineargradient>
-              </defs>
-              <g id="pickBox1" data-name="Layer 1">
-                <rect class="pickBoxStyle1" width="589.36" height="494.12" rx="105.88" ry="105.88"></rect>
-              </g>
-            </svg></div>
-          <div id="w-node-_9a8053ce-5d2a-c047-7fee-5afececa85c5-dd823d93" class="text-block-2">That&#x27;s us...</div>
-          <div id="leftGreenCreativeBlock" class="pickyourselfdivbox leftgreencreative w-node-_13e7a06e-abd8-11aa-ece0-12dd078c306e-dd823d93"></div>
           <h2 id="w-node-_40018e40-4092-2bc2-42f0-f9cf3bb39b6d-dd823d93" class="heading-7">So who are you?</h2>
-          <div id="middleBlueBuilderBlock" class="pickyourselfdivbox middlebluebuilder w-node-_1503b3f8-63a4-c95d-e178-f2cc12397cb4-dd823d93"></div>
-          <div id="rightPinkExecBlock" class="pickyourselfdivbox rightpinkexec w-node-_91b12cdf-d3ff-9312-4f15-d4aa47a415db-dd823d93"></div>
+          <div id="w-node-_9a8053ce-5d2a-c047-7fee-5afececa85c5-dd823d93" class="text-block-2">Let us know what you're looking for...</div>
+          
+          <!-- Creative Box (Left) -->
+          <div id="leftGreenCreativeBlock" class="pickyourselfdivbox leftgreencreative w-node-_13e7a06e-abd8-11aa-ece0-12dd078c306e-dd823d93">
+            <!-- Content will be dynamically added by the whoAreYou.ts -->
+          </div>
+          
+          <!-- Builder Box (Middle) -->
+          <div id="middleBlueBuilderBlock" class="pickyourselfdivbox middlebluebuilder w-node-_1503b3f8-63a4-c95d-e178-f2cc12397cb4-dd823d93">
+            <!-- Content will be dynamically added by the whoAreYou.ts -->
+          </div>
+          
+          <!-- Executive Box (Right) -->
+          <div id="rightPinkExecBlock" class="pickyourselfdivbox rightpinkexec w-node-_91b12cdf-d3ff-9312-4f15-d4aa47a415db-dd823d93">
+            <!-- Content will be dynamically added by the whoAreYou.ts -->
+          </div>
+          
           <div id="w-node-c27fc106-9561-8e01-9494-fd3339b4fb92-dd823d93" class="div-block-7"></div>
+          
+          <!-- Direct initialization for Who Are You section -->
+
         </section>
       </section>
     </div>
@@ -1228,7 +1232,7 @@ window.addEventListener("load", function() {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
   
   <!-- Use TypeScript module instead of JavaScript file -->
-  <script type="module" src="dist/main.js"></script>
+  <script type="module" src="src/main.ts"></script>
   
   <script>
   // Wait until the page (fonts & images) finishes loading
@@ -1641,7 +1645,6 @@ scrollTrigger: {
     gsap.to(".caseStudyButton", { x: 0, y: 0, scale:1, duration: 0.5 });
   });
   </script>
-<script type="module" src="/src/serpentine.ts"></script>
   <script type="module">
 // Import GSAP directly
 import { gsap } from '/node_modules/gsap/index.js';

@@ -1,16 +1,9 @@
 import { Application, Assets, Circle, Container, DisplacementFilter, Graphics, Sprite } from 'pixi.js';
 import gsap from 'gsap';
 import { PixiPlugin } from 'gsap/PixiPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { progress } from 'motion'; // if you need it
-import mm from "./utils/gsapMatchMedia";
-import { Physics2DPlugin } from 'gsap/Physics2DPlugin';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { EasePack } from 'gsap/EasePack';
-import { MotionPathHelper } from 'gsap/MotionPathHelper';
+import { mm } from "./utils/gsapMatchMedia";
 
-// IMPORTANT: Do not register plugins here. All plugins should be registered in main.ts
-// gsap.registerPlugin(PixiPlugin, ScrollTrigger, Physics2DPlugin, MotionPathPlugin, EasePack, MotionPathHelper);
 
 (async () =>
 {
@@ -28,6 +21,8 @@ import { MotionPathHelper } from 'gsap/MotionPathHelper';
     });
 
     
+
+    gsap.registerPlugin(PixiPlugin, ScrollTrigger, Physics2DPlugin, MotionPathPlugin, EasePack, MotionPathHelper);
 
     // Attach the Pixi canvas
     document.getElementById("pixi-container-hero")?.appendChild(app.canvas);
@@ -115,7 +110,7 @@ import { MotionPathHelper } from 'gsap/MotionPathHelper';
         eyeballSprite.anchor.set(0.5);
         eyeballSprite.scale.set(0.2);
 
-        // 2) Each eyeball's own displacement
+        // 2) Each eyeball’s own displacement
         const eyeDispSprite = Sprite.from('/assets/main/PipeDispMap.webp');
         eyeDispSprite.texture.source.addressMode = 'clamp-to-edge';
         eyeDispSprite.anchor.set(-0.05);
@@ -156,13 +151,12 @@ import { MotionPathHelper } from 'gsap/MotionPathHelper';
                 delay: delayAmount,
                 ease: "slow(0.7, 0.55)"
             })
-            let tween2 = gsap.to(eContainer.children[0], {
+            let tween2 = gsap.to(eContainer.children, {
                 rotation: (Math.random()-0.5) > 0 ? 7 : -7,
                 duration: 1.2,
                 delay: delayAmount,
                 ease: "power3.out",
-                position: "<"
-            });
+            }, "<");
             let tweenScale = gsap.to( eContainer.scale, {
                 x: 1,
                 y: 1,
@@ -186,7 +180,7 @@ import { MotionPathHelper } from 'gsap/MotionPathHelper';
         }
     }
 
-    // The "main eyeball" that we might keep center
+    // The “main eyeball” that we might keep center
     let mainEyeContainer: Container | null = null;
 
     function spawnMainEyeball(startX: number, startY: number)
@@ -312,18 +306,17 @@ import { MotionPathHelper } from 'gsap/MotionPathHelper';
         x: pipeContainer.x + window.innerWidth*0.12,
         duration: 1.2,
         ease: "power3.Out"
-    }, 1.3)
-    .to("#titleWrapper", {
+      }, 1.3    )
+      .to("#titleWrapper", {
         y: "-=800",
         x: window.innerWidth*0.12,
         duration: 1.2,
         ease: "power3.Out"
-    }, "<")
-    .to(".hero-bg", {
+      }, "<").to(".hero-bg", {
         opacity: 0,
-        duration: 1,
+        duration: 1.2,
         ease: "power2.in"
-    }, "<")
+      }, "<")
     .to(".design-grid", {
         y: "-=800",
         x: "+=100",
@@ -364,19 +357,12 @@ import { MotionPathHelper } from 'gsap/MotionPathHelper';
             });
         }
     }
+      
 
-    // Add this to your existing eyeball fall animation
-    function startEyeballFall() {
-        // Your existing eyeball animation code...
-        
-        // Add this line where you start the fall animation
-        animateDesignGrid("away");
-    }
-
-    // Optional: Add this to your reset function if you have one
-    function resetAnimations() {
-        // Your existing reset code...
-        
-        animateDesignGrid("reset");
-    }
+      mainTL.to("#app1", {
+        scale: 0.1,
+        duration: 2.4,
+        ease: "expo.in"
+      }, ">-0.3");
+      
 })();

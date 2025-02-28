@@ -1,9 +1,7 @@
 import { Application, Graphics, Sprite, Assets, TextStyle, BitmapText, Container } from "pixi.js";
 import Matter from "matter-js";
 import hsl from "hsl-to-hex";
-import mm from "./utils/gsapMatchMedia";
 import { SplitText } from "gsap/all";
-import gsap from "gsap";
 
 (async () => {
     // 1️⃣ Initialize PixiJS Application
@@ -18,6 +16,11 @@ import gsap from "gsap";
 
     document.getElementById("pixi-container")?.appendChild(app.canvas);
 
+    /*const heroSection2 = document.querySelector('#heroSection2') as HTMLElement;
+    if (heroSection2) {
+        gsap.set(heroSection2, { opacity: 0 }); // Set initial state
+    }*/
+
     // 🎨 **Create a Container for the Entire Scene**
     const sceneContainer = new Container();
 
@@ -29,12 +32,6 @@ import gsap from "gsap";
 
     sceneContainer.scale.set(1);
     app.stage.addChild(sceneContainer);
-
-    // Near the start of your Hero2.ts file, after the GSAP setup
-    const heroSection2 = document.querySelector('#heroSection2') as HTMLElement;
-    if (heroSection2) {
-        gsap.set(heroSection2, { opacity: 0 }); // Set initial state
-    }
 
 
     // 2️⃣ Load Eyeball Textures
@@ -105,56 +102,8 @@ import gsap from "gsap";
         Matter.World.add(world, bucketSegments);
     }
 
-    // Add interface for eyeball objects
-    interface Eyeball {
-        sprite: Sprite;
-        body: Matter.Body;
-        originalRadius: number;
-    }
-
-    // Update the eyeballs array type
-    const eyeballs: Eyeball[] = [];
-
-    // Fix the spawnInterval type
-    let spawnInterval: NodeJS.Timeout | undefined;
-
-    // Add types for the time formatting functions
-    interface TimeObject {
-        years: number;
-        months: number;
-        days: number;
-        hours: number;
-        minutes: number;
-        seconds: number;
-    }
-
-    function formatTimeSince(timeObj: TimeObject): string {
-        const { years, months, days, hours, minutes, seconds } = timeObj;
-        const yearLabel   = pluralize(years,   "Year",   "Years");
-        const monthLabel  = pluralize(months,  "Month",  "Months");
-        const dayLabel    = pluralize(days,    "Day",    "Days");
-        const hoursLabel    = pluralize(hours,    "Hour",    "Hours");
-        const minutesLabel    = pluralize(days,    "Minute",    "Minutes");
-        const secondsLabel    = pluralize(days,    "Second",    "Seconds");
-        return `<span style=color:#ffce91;>In only:</span>
-       ${years} ${yearLabel},
-          ${months} ${monthLabel}, 
-             ${days} ${dayLabel},
-                <p style="opacity: 75%; position: absolute; display: inline-block; line-height: 1; font-size: clamp(2rem, 4.3vw, 3.2rem); font-weight: 500;">${hours} ${hoursLabel}, </p>
-                    <p style="opacity: 60%; position: absolute; display: inline-block; font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-top: -0.8rem; font-weight: 400;">${minutes} ${minutesLabel}, </p>
-                       <p style="opacity: 42%; position: absolute; display: inline-block; font-size: clamp(1.5rem, 3vw, 2rem); margin-top: -2.1rem; font-weight: 300;">${seconds} ${secondsLabel}.  </p>
-                                            `;
-    }
-
-    function pluralize(value: number, singular: string, plural: string): string {
-        return (value === 1 ? singular : plural);
-    }
-
-    // Fix the TextSplitter selector
-    const billionEyesText = document.querySelector("#billionEyesText");
-    if (billionEyesText) {
-        let billionEyesAnimation = TextSplitter(billionEyesText as HTMLElement, true, true, "elastic.out(1,0.6)", 2, 0.05, 0).tl;
-    }
+    // 5️⃣ Create Eyeballs (Physics + Pixi Graphics)
+    const eyeballs: { sprite: Sprite; body: Matter.Body }[] = [];
 
     function createEyeball(): void {
       if (eyeballs.length >= MAX_EYEBALLS) return; // 🛑 Prevent spawning if full
@@ -209,6 +158,8 @@ import gsap from "gsap";
         });
     });
 
+    let spawnInterval: number | null = null;
+
     setInterval(() => { createEyeball(); }, 40);
 
     const bowlTL = gsap.timeline({
@@ -217,7 +168,7 @@ import gsap from "gsap";
         start: "top top",
         pin: true,
         scrub: 1,
-        end: "+=2000",
+        end: "+=3000",
         onEnter: () => {
           engine.gravity.y = 1; // 🟢 Restore normal gravity
           setTimeout(() => {
@@ -235,7 +186,7 @@ import gsap from "gsap";
           }, 600); // Adjust timing as needed
           if (spawnInterval) {
               clearInterval(spawnInterval);
-              spawnInterval = undefined;
+              spawnInterval = null;
           }
       },
       onEnterBack: () => {
@@ -270,8 +221,7 @@ import gsap from "gsap";
         opacity: 0,
         duration: duration,
         ease: ease,
-        stagger: stagger,
-        onToggle: "play none none restart"
+        stagger: stagger
       });
 
       let wordsTween = gsap.from(words || null, {
@@ -288,6 +238,31 @@ import gsap from "gsap";
       return { tl, split };
     }
 
+      let billionEyesAnimation = TextSplitter("#billionEyesText", true, true, "elastic.out(1,0.6)", 1.2, 0.05, 0).tl;
+    
+      ScrollTrigger.create( {
+      trigger: "#billionEyesText",
+      start: "middle 80%",
+      pin:false,
+      scrub: false,
+      toggleActions: "play none none reverse",
+      animation: billionEyesAnimation
+    }); 
+
+   /*  gsap.from("#billionEyesText", {
+      yPercent: 130,
+      opacity:0,
+      duration: 1.5,
+      ease: "elastic.out(1,0.6)",
+      scrollTrigger: {
+        trigger: "#billionEyesText",
+        start: "middle 60%",
+        pin: false,
+        scrub: false,
+        toggleActions: "play none none reverse"
+      }
+    }); */
+
     function clearEyeballs(): void {
       eyeballs.forEach(({ body, sprite }) => {
           Matter.World.remove(world, body); // Remove from Matter.js physics world
@@ -295,7 +270,6 @@ import gsap from "gsap";
       });
       eyeballs.length = 0; // Reset the array
   }
-
   function getTimeSince(startDate: any) {
     const now = new Date();
 
@@ -353,6 +327,28 @@ function updateTimeSince(startDate: Date) {
   setInterval(updateCounter, 1000); // ✅ Update every second
 }
 
+  function formatTimeSince(timeObj) {
+    const { years, months, days, hours, minutes, seconds } = timeObj;
+    const yearLabel   = pluralize(years,   "Year",   "Years");
+    const monthLabel  = pluralize(months,  "Month",  "Months");
+    const dayLabel    = pluralize(days,    "Day",    "Days");
+    const hoursLabel    = pluralize(hours,    "Hour",    "Hours");
+    const minutesLabel    = pluralize(days,    "Minute",    "Minutes");
+    const secondsLabel    = pluralize(days,    "Second",    "Seconds");
+    return `<span style=color:#ffce91;>In only:</span>
+   ${years} ${yearLabel},
+      ${months} ${monthLabel}, 
+         ${days} ${dayLabel},
+            <p style="opacity: 75%; position: absolute; display: inline-block; line-height: 1; font-size: clamp(2rem, 4.3vw, 3.2rem); font-weight: 500;">${hours} ${hoursLabel}, </p>
+                <p style="opacity: 60%; position: absolute; display: inline-block; font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-top: -0.8rem; font-weight: 400;">${minutes} ${minutesLabel}, </p>
+                   <p style="opacity: 42%; position: absolute; display: inline-block; font-size: clamp(1.5rem, 3vw, 2rem); margin-top: -2.1rem; font-weight: 300;">${seconds} ${secondsLabel}.  </p>
+                                        `;
+    }
+
+    function pluralize(value, singular, plural) {
+      return (value === 1 ? singular : plural);
+  }
+
     // 1) Choose your start date
     const myStartDate = new Date("2023-03-04"); // e.g. January 1, 2020
     updateTimeSince(myStartDate);
@@ -363,8 +359,8 @@ function updateTimeSince(startDate: Date) {
 
     // 4) Place it in the container
     bowlTL.from(sceneContainer.scale, {
-      x: 20,
-      y: 20,
+      x:20,
+      y:20,
       duration: 0.8,
       ease: "power4.out",
     }, 0)
@@ -373,50 +369,34 @@ function updateTimeSince(startDate: Date) {
       duration: 0.2,
       ease: "expo.in",
     }, 0)
+ /*   .to("#heroSection2", {
+      opacity: 1,
+      duration: 0.2,
+      ease: "expo.out"
+  },  0) */
     .from(sceneContainer.position, {
       y: 1400,
       duration: 1.2,
       ease: "expo.out",
-    }, 0)
-    .to("#heroSection2", {
-        opacity: 1,
-        duration: 0.2,
-        ease: "power1.in"
-    }, 0.1)
-    .fromTo(engine.gravity, {
-        y: -40
-    }, {
-        y: 1,
-        duration: 0.4,
-        ease: "power4.out"
     }, 0);
 
+
+
+    bowlTL.fromTo(engine.gravity, {y:-40  }, { y: 1, duration: 0.4, ease: "power4.out" }, 0);
+
     const container = document.getElementById("dateSince");
+    bowlTL.from(container, {
+      opacity: 0,
+      y: "+=200",
+      duration: 1.2,
+      ease: "power3.inOut",
+    }, 0.5);
 
     if (container) {
       console.log("Updating dateSince container:", formatTimeSince(elapsed));
   
       container.innerHTML = formatTimeSince(elapsed);
   
-      setTimeout(() => {
-          console.log("InnerHTML updated. Applying TextSplitter...");
-  
-          // ✅ Apply `TextSplitter()` to the newly added content
-          const { tl } = TextSplitter(container, false, true, "elastic.out(1,0.6)", 1.2, 0.05, ">");
-  
-          console.log("TextSplitter applied. Adding to bowlTL...");
-  
-          // ✅ Add to ScrollTrigger timeline AFTER ensuring it exists
-          if (bowlTL) {
-              bowlTL.add(tl, 0.5);
-              console.log("✅ TextSplitter animation added to ScrollTrigger timeline");
-  
-              // ✅ Force ScrollTrigger to refresh since new elements were added dynamically
-              ScrollTrigger.refresh();
-          } else {
-              console.error("❌ bowlTL is undefined, cannot add animation.");
-          }
-      }, 50);
   }
       // animating the date since text
 

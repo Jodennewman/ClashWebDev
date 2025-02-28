@@ -1,0 +1,1953 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Feb 05 2025 11:13:34 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="6793c1488129e8f2dd823d93" data-wf-site="6793c1488129e8f2dd823cc9">
+<head>
+  <meta charset="utf-8">
+  <title>Business - Webflow HTML website template</title>
+  <meta content="Business - Webflow HTML website template" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/jodens-stellar-site.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="public/LogoFavicon3232.png" rel="shortcut icon" type="image/x-icon">
+  <link href="public/assets/main/LogoWithGlow.png" rel="apple-touch-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#ffbf1a">
+  <meta name="msapplication-navbutton-color" content="#ffbf1a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#ffbf1a">
+  <script src="https://cdn.jsdelivr.net/gh/Jodennewman/nnbcghcu@refs/heads/main/bonkbonk.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Jodennewman/nnbcghcu@refs/heads/main/bsop.js"></script>
+  <script type="module" src="./node_modules/gsap/all.js"></script>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css">
+  <title>PixiJS - Template</title>
+  <style>
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+}
+   .boldWhite {
+        fill: #fff;
+        filter: url(#drop-shadow-1);
+        font-family: 'Neue Haas Grotesk Display Pro';
+        font-size: 10rem;
+        font-weight: 600;
+        top: 50%;
+        position: relative;
+      }
+/*
+  html { font-size: calc(0.625rem + 0.41666666666666663vw); }
+  @media screen and (max-width:1920px) { html { font-size: calc(0.625rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: calc(0.625rem + 0.41666666666666663vw); } }
+  @media screen and (max-width:960px) { html { font-size: calc(0.7505197505197505rem + 0.4158004158004158vw); } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } }
+*/
+html {
+  height: -webkit-fill-available;
+}
+</style>
+  <style>
+.svg-embed svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.heading.leadingagency {
+  display: inline-block;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-size: clamp(2rem, 4.7vw, 5rem);
+  line-height: 1.1;
+  font-weight: 600;
+  /* GSAP variables (optional) */
+  --rotation: 0deg;
+  --scale1: 1;
+}
+.heading.leadingagency::after {
+  content: "";
+  display: inline-block;
+  background: url("https://cdn.prod.website-files.com/6793c1488129e8f2dd823cc9/67947136a5d4e9499eb68590_Asset%2014.svg") no-repeat center / contain;
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: baseline;  /* or 'middle' */
+  margin-left: 0.05em;
+  transform: rotate(var(--rotation)) scale(var(--scale1));
+  transform-origin: center;
+}
+.asterisk-span::after {
+  content: url("https://cdn.prod.website-files.com/6793c1488129e8f2dd823cc9/67947136a5d4e9499eb68590_Asset%2014.svg");
+  display: inline-block; /* or inline */
+  margin-left: 0.25em; /* spacing between text and asterisk */
+  vertical-align: middle; /* adjust as needed */
+  z-index: 5;
+}
+</style>
+  <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
+  <style>
+  .ourStoryDivBlock {
+  /* Make the block full-width or whatever max width you desire */
+  width: 100%;
+  /* Let its height grow automatically with content, or use min-height to ensure enough space */
+  min-height: 400px;  
+  /* Box-sizing ensures the border doesn't encroach on internal content sizing */
+  box-sizing: border-box;
+  /* This is your "white stroke" from the SVG */
+  border: 19px solid #fff;
+  /* The corner radius was ~53.29px in the SVG */
+  border-radius: 53px;
+  /* Replicate the vertical gradient stops from your SVG linearGradient */
+  background: linear-gradient(
+    to bottom,
+    #70482d 1%,
+    #6e472c 2%,
+    #4e3421 19%,
+    #362618 37%,
+    #241c12 55%,
+    #1a150f 75%,
+    #17140e 98%
+  );
+  /* (Optional) If you want to remove any margin or spacing around the div */
+  margin: 10px;
+  padding: 20px; /* add some internal spacing for content if you like */
+}
+    .boldWhite {
+        fill: #fff;
+        filter: url(#drop-shadow-1);
+        font-family: 'Neue Haas Grotesk Display Pro';
+        font-weight: 600;
+        top: 50%;
+        font-size: 445.86px
+      }
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important
+  }
+  h1 {
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 700; /* triggers bold file */
+  font-style: normal;
+}
+h2 {
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 600; /* triggers bold file */
+  font-style: normal;
+}
+h3 {
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 500; /* triggers bold file */
+  font-style: normal;
+}
+p {
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 300; /* triggers bold file */
+  font-style: normal;
+  }
+#Horizontal1, #Horizontal2 {
+  /* ensure no extra horizontal spacing is added */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.hPanels1, .hPanels2 {
+  /* each panel is exactly the viewport width */
+  width: 100vw;
+  height: 100vh;
+  flex: none;            /* so it doesn't shrink or grow unpredictably */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body class="body">
+  <div id="smooth-wrapper" class="smooth-wrapper">
+    <div id="smooth-content" class="smooth-content w-node-_3a7356a2-d389-bfb8-aa46-101b3ded633e-dd823d93">
+      <section id= "heroSection" class="section1 hero-section cc-store-home-wrap">
+        <div class="hero-bg"></div>
+        <div class="intro-header">
+          <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
+            <div class="menu">
+              <nav role="navigation" id="w-node-_0c2f937d-eb53-3f51-0686-53893cc2c584-dd823d93" class="navigation-items w-nav-menu">
+                <div class="navitemcustom">Services</div>
+                <div class="navitemcustom">Training<br></div>
+                <div class="navitemcustom">Learn</div>
+                <div class="navitemcustom">Get in Touch</div>
+                <div line-gap="10px" class="navitemcustom hamburger">
+                  <div class="code-embed-12 w-embed"><svg id="HamburgerLine" data-name="Icon" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" style="
+    overflow: visible; 
+    position: absolute; 
+    display: flex;
+    margin: 0 0;
+    flex-direction: column;
+    justify-items: center;
+    align-items:center;
+    justify-self: center">
+                      <defs>
+                        <style>
+      .HamburgerLine {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-width: 3px;
+        justify-self: center;
+      }
+      .middleLine {
+      stroke: #ffd03b;
+      }
+      .topLine {
+        transform: translateY(calc(var(--hamburger-line-gap) * -1px));
+        stroke: #ffd252;
+      }
+      .bottomLine {
+        transform: translateY(calc(var(--hamburger-line-gap) * 1px));
+        stroke: #ffc729;
+      }
+    </style>
+                      </defs>
+                      <line class="HamburgerLine topLine" x1="20" y1="0" x2="50" y2="0"></line>
+                      <line class="HamburgerLine middleLine" x1="25" y1="0" x2="45" y2="0"></line>
+                      <line class="HamburgerLine bottomLine" x1="20" y1="0" x2="50" y2="0"></line>
+                    </svg>
+                    <style>
+  @media screen and (max-width: 479px) {
+    #HamburgerLine {
+      right: 25%;
+      top: 50%; /* override only at small screens */
+      transform: scale(1);
+    }
+  }
+</style>
+                  </div>
+                </div>
+              </nav><img width="150" id="w-node-_0c2f937d-eb53-3f51-0686-53893cc2c581-dd823d93" alt="" src="public/assets/main/LogoforDark.webp" loading="lazy" class="clashlogo">
+            </div>
+          </div>
+        </div>
+        <div id="app1">
+            <div id="pixi-container-hero"></div>
+        </div>
+
+    <!-- Ensure you have enough scroll space -->
+    <div style="height: 2000px;"></div>
+
+    <!-- Load your script -->
+        <script type="module" src="/src/Hero.ts"></script>
+        <div class="w-layout-vflex flex-block">
+          <div id="w-node-_702dd41b-2e4f-b61c-f3c9-39c1f8487166-dd823d93" class="w-embed w-script">
+            <div>
+              <style>
+    .stage {
+        min-height: 100svh;
+        width: 100vw;
+        display: flex;
+        margin: 0 auto;
+        margin-top:-12.5%;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        color: white;
+        font-size: clamp(2rem, 9vw + 1rem, 12rem);
+        top:-10%;
+    }
+   h1 > div {
+        overflow-y: hidden;
+        overflow-x: visible;
+    }
+    span > div {
+        overflow-y: hidden;
+        overflow-x: visible;
+    }
+    .cloneText {
+    position: absolute;
+    overflow-x: visible;
+    left: 0;
+    top: 0;
+    }
+    h1.TitleText {
+      font-size: clamp(1.5rem, 3vw + 1rem, 12rem);
+      text-align: center;
+      font-weight: 400;
+      overflow: visible;
+    }
+  </style>
+            </div>
+            <body>
+              <div id="titleWrapper" class="stage" style="position: static; bottom: 15%">
+                <h1 id="heroTitle" class="TitleText" style="position: absolute; justify-content: center; transform: translate(-8vw,0)">
+                  <span id="heroTitleLine1" style="z-index: -1">Attention Builds Influence,</span><br>
+                  <span id="heroTitleMain" class="sectionHeading" style="overflow: visible !important; font-size: 1.3em; font-weight: 600; text-align: right; margin-left: -30vw; position: absolute; width: 24ch;">We Get<span id="Attention" class="Attention"> Attention.</span></span>
+                  <span id="heroTitleMain2" class="sectionHeading" style="opacity: 0; font-size: 1.3em; font-weight: 600; text-align: right; margin-left: -30vw; position: absolute; width: 24ch;"><span id="glitchTitle">We Get</span><span id="Attention" class="Attention" style="color: #ffb127;"> Attention.</span></span>
+                </h1>
+              </div>
+
+              <!--  3) Your custom script  -->
+              <script>
+    // Example usage of premium plugin
+window.addEventListener("load", function() {
+    // 1) Register the plugins from your bundle
+    gsap.registerPlugin(
+    ScrollTrigger,
+    ScrollSmoother,
+    DrawSVGPlugin,
+    SplitText,
+    Physics2DPlugin,
+    ScrambleTextPlugin
+    );
+    gsap.to("#heroTitleMain", {
+        x: '-20vw',
+        duration:0.2,
+        ease: "power4.Out",
+    });
+    gsap.to("#heroTitleMain2", {
+        x: '-20vw',
+        duration:0.2,
+        ease: "power4.Out",
+    });
+    const repeatCount = 1;
+    const titleGlobalTL = gsap.timeline({ paused: false });
+    const tl = gsap.timeline({ paused: true });
+    const attentionTL = gsap.timeline({ paused: true });
+//split 1
+    const split1 = new SplitText("#heroTitleLine1", { type: "chars" });
+    const line1TL = gsap.timeline();
+    split1.chars.forEach((obj, i) => {
+    let slideTween = gsap.from(obj, {
+        ease: "power4.out",
+        y: 50,
+        opacity: 0,
+        delay: i * 0.02
+      });
+    let colorTween = gsap.from(obj, {
+        color: i % 2 === 0 ? "#ffb127" : "#ffc69e",
+        delay: i * 0.01,
+        ease: "none",
+    });
+    tl.add(slideTween, 0);
+    });
+  // Split 2
+    const split2 = new SplitText("#heroTitleMain", { type: "words" });
+    const rewind2 = Array.from(split2.words).reverse();
+    rewind2.forEach((obj, i) => {
+    let txt = obj.innerText;
+    let heroOpacityTween = gsap.from(obj, {
+        x: 30 +(i * -40),
+        y: -10,
+        opacity: 0,
+        duration: 1,
+        delay: i * 0.1,
+    });
+    attentionTL.add(heroOpacityTween, 0);
+    });
+    titleGlobalTL.to(tl, { duration: 1.5, progress: 1, ease: "power2.Out" }, 0);
+    titleGlobalTL.to(attentionTL, { duration: 2, progress: 1, ease: "power4.Out" }, ">-0.85");
+    titleGlobalTL.to("#heroTitleMain2", {
+        duration: 0.5,
+        opacity: 1,
+        ease: "power4.inOut",
+    }, ">-0.5");
+    titleGlobalTL.to("#heroTitleMain", {
+        duration: 0.5,
+        opacity: 0,
+        ease: "power4.inOut",
+    }, "<0.2");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Get",
+        chars: "clash"
+        },
+        duration: 0.3,
+        scale: 1,
+        ease: "power2.inOut",
+    }, ">2");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "Clash Gets",
+        chars: "clash",
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 1.1,
+    }, ">5");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Get",
+        chars: "clash",
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 1.1,
+    }, ">0.3");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Really Get",
+        chars: "clash"
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 2
+    }, ">4");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Get",
+        chars: "clash",
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 1.1,
+    }, ">0.3");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "Creation Gets",
+        chars: "clash"
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 2
+    }, ">4");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Get",
+        chars: "clash",
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 1.1,
+    }, ">0.3");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "Only We Get",
+        chars: "clash",
+        color: "#ff0000",
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 2
+    }, ">4");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Get",
+        chars: "clash",
+        },
+        duration: 0.3,
+        ease: "power2.inOut",
+        scale: 1.1,
+    }, ">0.3");
+    titleGlobalTL.to( "#glitchTitle", {
+        scrambleText:{
+        text: "We Get",
+        chars: "clash"
+        },
+        duration: 0.3,
+        scale: 1,
+        ease: "power2.inOut",
+    }, ">0.2");
+});
+    </script>
+          </body></div>
+          <div id="pipeContainer" data-speed="1.012" class="w-layout-blockcontainer pipecontainer w-node-dfbb7969-98ab-e6db-324f-67fb8c904b84-dd823d93 w-container">
+            <img src="./public/assets/main/simplePipe.webp" loading="eager" width="965.5" height="Auto" alt="" sizes="90vw" class="pipetop">
+            
+            <div id="eyeBallPipe1" class="eyeballpipe1 w-node-_4426bcc0-0a5b-b706-cde6-7dc0993116f8-dd823d93 w-embed"><svg id="eyeballShooter1" data-name="BallBlast" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 291.65 291.65" style="display: block;">
+                <defs>
+                  <style>
+      .shooterBall {
+        fill: url(#shooterBallGradient);
+      }
+    </style>
+                  <radialgradient id="shooterBallGradient" cx="130" cy="150" fx="55" fy="120" r="200" gradientunits="userSpaceOnUse" gradienttransform="translate(0, 0) skewX(0) skewY(-20)">
+                    <stop offset="0" stop-color="#000"></stop>
+                    <stop offset=".16" stop-color="#000101"></stop>
+                    <stop offset=".2" stop-color="#020506"></stop>
+                    <stop offset=".2" stop-color="#020608"></stop>
+                    <stop offset=".2" stop-color="#10262d"></stop>
+                    <stop offset=".2" stop-color="#183a44"></stop>
+                    <stop offset=".2" stop-color="#225260"></stop>
+                    <stop offset=".21" stop-color="#ffe133"></stop>
+                    <stop offset=".21" stop-color="#ffe133"></stop>
+                    <stop offset=".21" stop-color="#ffe133"></stop>
+                    <stop offset=".34" stop-color="#ffd81a"></stop>
+                    <stop offset=".39" stop-color="#ffd81a"></stop>
+                    <stop offset=".4" stop-color="#e2a805"></stop>
+                    <stop offset=".4" stop-color="#e2a805"></stop>
+                    <stop offset=".4" stop-color="#e2a805"></stop>
+                    <stop offset=".4" stop-color="#e2a805"></stop>
+                    <stop offset=".4" stop-color="#e2a805"></stop>
+                    <stop offset=".4" stop-color="#fff"></stop>
+                    <stop offset=".46" stop-color="#fff"></stop>
+                    <stop offset=".7" stop-color="#dcdcdc"></stop>
+                    <stop offset="1" stop-color="#ababab"></stop>
+                  </radialgradient>
+                </defs>
+                <circle class="shooterBall" cx="145.83" cy="145.83" r="145.83"></circle>
+              </svg></div>
+            <div id="hero-svg-underline" class="code-embed-3 w-node-_80d57416-c63a-7047-9923-e4052389e363-dd823d93 w-embed"><svg id="openingStroke" data-name="openingStroke" xmlns="http://www.w3.org/2000/svg" width="547.91mm" height="97.83mm" viewbox="0 0 1553.13 277.32" style="display:none; width:100%; height:auto;">
+                <defs>
+                  <style>
+      .OrangeStroke1 {
+        fill: none;
+        stroke: url(#LightOrange1);
+        stroke-miterlimit: 10;
+        stroke-width: 3rem;
+      }
+    </style>
+                  <lineargradient id="LightOrange1" x1="0" y1="0" x2="1500" y2="-50" gradientunits="userSpaceOnUse">
+                    <stop offset=".1" stop-color="#000" stop-opacity="0.0"></stop>
+                    <stop offset=".35" stop-color="#eaab4d" stop-opacity="1"></stop>
+                    <stop offset="0.4" stop-color="#feda4f"></stop>
+                    <stop offset=".5" stop-color="#fd9d2d"></stop>
+                    <stop offset=".6" stop-color="#fe992d"></stop>
+                    <stop offset=".7" stop-color="#fe9341" stop-opacity="1"></stop>
+                    <stop offset=".8" stop-color="#571124" stop-opacity="0.0"></stop>
+                    <stop offset="1" stop-color="#350013" stop-opacity="0.2"></stop>
+                  </lineargradient>
+                </defs>
+                <path id="hero-svg-underline-path" class="OrangeStroke1" d="M0,30h1079.07c141.27,0,229.87,80.04,161.47,148.44-74.03,74.03-114.33,68.8-216.43,68.8"></path>
+              </svg></div><img src="./public/assets/main/simplePipeTop.webp" loading="eager" width="965.5" sizes="90vw" alt="" id="Pipes" class="pipetop frontend">
+          </div>
+        </div>
+ 
+      </section>
+      <section id="heroSection2" class="section hero-section-2">
+        <div id="dateSinceWrap" class="gridBlockBasic">
+        <div id="app" style="grid-area: 1/1/7/8">
+          <div id="pixi-container"></div>
+      </div>
+      <h2 id="billionEyesText" class="boldWhite" style="line-height: 0.9; font-size: clamp(2.5rem, 3vw, 4rem);text-align: left; grid-area: 1/2/3/4; align-self: center; justify-self: center">Over<br><span style="font-weight:700; font-size: clamp(3rem, 6vw, 5rem)">1.5 Billion </span> <br><span style="text-align: right; margin-left: 69%; margin-top:-2rem">Eyes. </span></h2>
+     <pre id="dateSince" class="BigSVGText shrinker" style="grid-area: 4/2/6/4; margin-right: -8vw; margin-top: -5vh; position: relative; align-self: center; align-content: left; justify-content: center; justify-self: center; overflow: visible; text-align: left; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600;"></pre>
+        
+                </div>
+      <script type="module" src="/src/Hero2.ts"></script>
+      
+      </section>
+      <section id="section-stats" class="sectionbighow">
+        <div id="statsWrapper" class="div-block-3 w-node-a6095d34-f3f0-fc0e-258b-5992a25f8e2d-dd823d93">
+          <div id="w-node-bcdf5d4b-626f-093d-c441-236618e57292-dd823d93" class="w-layout-vflex viewsgridfg">
+            <div id="viewsFlex" class="w-layout-vflex flex-block-2 _750mtext w-node-_0e293727-acba-53e0-9303-5a3041a2a8ed-dd823d93">
+              <h1 id="viewsCount" class="boldstats">750m</h1>
+              <div class="bigsvgtext thinblack">Views</div>
+            </div>
+            <div id="followersFlex" class="w-layout-vflex flex-block-3 _750mtext w-node-_62fae80e-aef6-9b89-22f8-2400d69d9b27-dd823d93">
+              <h1 id="followersCount" class="boldstats">4.5m</h1>
+              <div class="bigsvgtext thinblack">Followers</div>
+            </div>
+            <div id="interactionsFlex" class="w-layout-vflex flex-block-4 _86mtext w-node-_036f8092-965a-a534-fafe-e62e0a04ac4c-dd823d93">
+              <h1 id="interactionsCount" class="boldstats">86m</h1>
+              <div class="bigsvgtext thinblack">Interactions</div>
+            </div>
+            <div id="loopDeLoop" data-speed="0.7" class="loopdeloop w-node-d06cc3bf-b9ca-38e7-86fb-bdac744ef57c-dd823d93 w-embed">
+              <div id="allLoops" style="position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; min-height: 200vh; ">
+                <svg id="loopDeLoopSVG" data-name="loopLine" preserveaspectratio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 2661.17 1974.47" style="display: block; width: 100%; height: auto; display: block; width: 100%; height: 100%; position:absolute; z-index: 1">
+                  <defs>
+                    <style>
+                        .loopDeLoopPathDot, .loopDeLoopPath {
+                        fill: none;
+                        stroke-miterlimit: 10;
+                        }
+                        .loopDeLoopPath {
+                        stroke: url(#loopGrad1);
+                        stroke-width: 5rem;
+                        }
+                    </style>
+                    <lineargradient id="loopGrad1" x1="0" y1="0" x2="800" y2="1974.71" gradientunits="userSpaceOnUse">
+                      <stop offset=".02" stop-color="#ff7945"></stop>
+                      <stop offset=".45" stop-color="#ff7945"></stop>
+                      <stop offset=".83" stop-color="#e6a03c"></stop>
+                      <stop offset=".92" stop-color="#a06c43"></stop>
+                      <stop offset="1" stop-color="#623d4a"></stop>
+                    </lineargradient>
+                  </defs>
+                  <path id="loopPath1" class="loopDeLoopPath" d="M15.9,868.2C795.6,519.3,742,293.9,712.5,177.5,674.6,27.4,448.8-16.9,377,126.1c-78.3,155.8,336.8,692.8,862.5,710.6,486.4,16.5,667.6-286.5,825.2-461.3"></path>
+                </svg>
+              </div>
+            </div><img class="image-9" data-speed="0.7" src="images/Wiggly-Another.png" width="673.5" alt="" sizes="100vw" id="w-node-_7e58dd1a-6536-a833-7a03-9b9285d90ef2-dd823d93" loading="lazy" srcset="images/Wiggly-Another-p-500.png 500w, images/Wiggly-Another-p-800.png 800w, images/Wiggly-Another-p-1080.png 1080w, images/Wiggly-Another.png 1347w"><img class="image-8" data-speed="0.6" src="images/Artboard-2.webp" width="340.5" alt="" sizes="(max-width: 479px) 86vw, (max-width: 767px) 91vw, (max-width: 991px) 93vw, 99vw" id="w-node-_2e42092c-52a8-1a7f-05ab-a2dbfa114a25-dd823d93" loading="lazy" srcset="images/3f8fb884fe9ccb9fc5169d158eaea100_Artboard-2-p-500.webp 500w, images/3f8fb884fe9ccb9fc5169d158eaea100_Artboard-2-p-800.webp 800w, images/3f8fb884fe9ccb9fc5169d158eaea100_Artboard-2-p-1080.webp 1080w, images/Artboard-2.webp 1362w"><img class="image-7" data-speed="0.75" src="images/LighterSquig1.webp" height="Auto" alt="" sizes="(max-width: 479px) 100vw, (max-width: 991px) 482.91571044921875px, 49vw" id="w-node-a2b2ab10-b822-c739-4e2f-4e9ee34e98ab-dd823d93" loading="lazy" srcset="images/d94b52a3e2945338aa9251df399b9d92_LighterSquig1-p-500.webp 500w, images/d94b52a3e2945338aa9251df399b9d92_LighterSquig1-p-800.webp 800w, images/LighterSquig1.webp 922w">
+            <div id="stareBallWrap" class="flex-block-4" style="display: block; position: relative; grid-area: 3,5,5,9;">
+                <svg id="bigStareBallID" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.22 512.22" style="display:block; width:100%; height: 100%">
+                    <defs>
+                        <radialGradient id="bigStareBall" cx="220.69" cy="254.37" fx="259.75" fy="146.15" r="419.34" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#000"/>
+                            <stop offset=".16" stop-color="#000101"/>
+                            <stop offset=".2" stop-color="#020506"/>
+                            <stop offset=".2" stop-color="#040606"/>
+                            <stop offset=".2" stop-color="#0b0d07"/>
+                            <stop offset=".2" stop-color="#171709"/>
+                            <stop offset=".2" stop-color="#29270c"/>
+                            <stop offset=".2" stop-color="#403b11"/>
+                            <stop offset=".2" stop-color="#5c5316"/>
+                            <stop offset=".2" stop-color="#7e711c"/>
+                            <stop offset=".21" stop-color="#a69323"/>
+                            <stop offset=".21" stop-color="#d1b92a"/>
+                            <stop offset=".21" stop-color="#ffe133"/>
+                            <stop offset=".26" stop-color="#ffdb22"/>
+                            <stop offset=".29" stop-color="#ffd81a"/>
+                            <stop offset=".39" stop-color="#e2a805"/>
+                            <stop offset=".4" stop-color="#e2a807"/>
+                            <stop offset=".4" stop-color="#e3ab10"/>
+                            <stop offset=".4" stop-color="#e4b01e"/>
+                            <stop offset=".4" stop-color="#e7b833"/>
+                            <stop offset=".4" stop-color="#eac14d"/>
+                            <stop offset=".4" stop-color="#eecc6e"/>
+                            <stop offset=".4" stop-color="#f2da95"/>
+                            <stop offset=".4" stop-color="#f8eac2"/>
+                            <stop offset=".4" stop-color="#fdfbf4"/>
+                            <stop offset=".4" stop-color="#fff"/>
+                            <stop offset=".46" stop-color="#fff"/>
+                            <stop offset=".61" stop-color="#dcdcdc"/>
+                            <stop offset=".8" stop-color="#ababab"/>
+                        </radialGradient>
+                    </defs>
+                    <circle cx="256.11" cy="256.11" r="256.05" style="fill:url(#bigStareBall);"/>
+                </svg>
+            </div>
+            <div id="questionCascade" data-speed="0.8" class="questionmarks w-node-_92cbc0a8-e988-8d0a-8c80-ac3121db1ce0-dd823d93 w-embed"><svg id="questionCascSVG" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 647.2 745.15">
+                <defs>
+                  <style>
+                    .qCasc1Class {
+                        stroke: #f7764f;
+                        stroke-width: 47.3px;
+                    }
+                    .qCasc1Class, .qCasc2Class, .qCasc3Class, .qCasc4Class {
+                        fill: none;
+                        stroke-miterlimit: 10;
+                    }
+                    .qCasc3Class {
+                        stroke: #d84dab;
+                        stroke-width: 77.77px;
+                    }
+                    .qCasc4Class {
+                        stroke: #c22d9a;
+                        stroke-width: 95.08px;
+                    }
+                    .qCasc2Class {
+                        stroke: #ec6f4c;
+                        stroke-width: 61.46px;
+                    }
+                </style>
+                </defs>
+                <g id="allQMarksGroup" data-name="Layer 1">
+                  <g id="qCasc1">
+                    <path class="qCasc1Class" d="M435.35,452.81c39.6-39.6,58.63-55.18,93.91-57.3,76.83-4.61,117.77,88.49,80.09,139.43-34.69,46.91-80.09,70.66-80.09,129.81"></path>
+                    <line class="qCasc1Class" x1="530.49" y1="690.63" x2="530.49" y2="745.15"></line>
+                  </g>
+                  <g id="qCasc2">
+                    <path class="qCasc2Class" d="M319.63,365.34c51.45-51.45,76.17-71.69,122.01-74.44,99.81-6,153,114.97,104.06,181.15-45.07,60.94-104.06,91.8-104.06,168.64"></path>
+                    <line class="qCasc2Class" x1="443.23" y1="674.31" x2="443.23" y2="745.15"></line>
+                  </g>
+                  <g id="qCasc3">
+                    <path class="qCasc3Class" d="M186.63,267.19c65.11-65.11,96.38-90.71,154.39-94.2,126.3-7.59,193.61,145.48,131.68,229.23-57.03,77.12-131.68,116.17-131.68,213.41"></path>
+                    <line class="qCasc3Class" x1="343.04" y1="658.17" x2="343.04" y2="745.15"></line>
+                  </g>
+                  <g id="qCasc4">
+                    <path class="qCasc4Class" d="M33.62,163.04C113.21,83.44,151.45,52.13,222.36,47.87c154.42-9.28,236.7,177.86,160.98,280.25-69.73,94.28-160.98,142.02-160.98,260.9"></path>
+                    <line class="qCasc4Class" x1="224.84" y1="641.03" x2="224.84" y2="745.15"></line>
+                  </g>
+                </g>
+              </svg></div><img id="blueBall" src="images/Blue-Ball.svg" loading="lazy" id="w-node-c0797f17-eee2-18a7-67c3-80d339e8d52b-dd823d93" alt="" class="blueball">
+            <h6 id="bigHow" class="heading-9 w-node-ad2502e1-4ab7-3ce9-f979-1417db4a7c16-dd823d93">How?</h6>
+            <svg id="eyeballSVG" data-name="Layer 1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 291.65 291.65" width="5rem" height="5rem">
+
+  <defs>
+    <!-- Updated style with a more unique class name -->
+    <style>
+      .eyeBallBlueIris {
+        fill: url(#eyeballGradient);
+      }
+    </style>
+
+    <radialGradient id="eyeballGradient" cx="147.25" cy="145.31"
+                    fx="147.25" fy="145.31" r="238"
+                    gradientUnits="userSpaceOnUse">
+
+      <!-- The repeated stops from your original code.
+           The multiple offset="0" stops are unusual, but won't necessarily break things.
+           The final gradient will end up going from black (#000) at offset=0
+           toward #ababab at offset=1.
+           You can tidy these if you want. -->
+
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".16" stop-color="#000101"/>
+      <stop offset=".2" stop-color="#020506"/>
+      <stop offset=".2" stop-color="#020608"/>
+      <stop offset=".2" stop-color="#050c0f"/>
+      <stop offset=".2" stop-color="#09171b"/>
+      <stop offset=".2" stop-color="#10262d"/>
+      <stop offset=".2" stop-color="#183a44"/>
+      <stop offset=".2" stop-color="#225260"/>
+      <stop offset=".21" stop-color="#2f6f82"/>
+      <stop offset=".21" stop-color="#3c8fa8"/>
+      <stop offset=".21" stop-color="#45a3bf"/>
+      <stop offset=".34" stop-color="#409ccf"/>
+      <stop offset=".39" stop-color="#40c3be"/>
+      <stop offset=".4" stop-color="#42c3be"/>
+      <stop offset=".4" stop-color="#4bc6c1"/>
+      <stop offset=".4" stop-color="#59cbc6"/>
+      <stop offset=".4" stop-color="#6ed1cd"/>
+      <stop offset=".4" stop-color="#88d9d6"/>
+      <stop offset=".4" stop-color="#a9e4e1"/>
+      <stop offset=".4" stop-color="#d0f0ef"/>
+      <stop offset=".4" stop-color="#fcfefd"/>
+      <stop offset=".4" stop-color="#fff"/>
+      <stop offset=".46" stop-color="#fff"/>
+      <stop offset=".7" stop-color="#dcdcdc"/>
+      <stop offset="1" stop-color="#ababab"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Note the circle uses the new class name. -->
+  <circle id="eyeballCircle" class="eyeBallBlueIris" cx="145.83" cy="145.83" r="145.83"/>
+</svg>
+            <div id="QMarks" class="qmarks w-node-_733fe56c-9cc8-0282-c469-55a736b88760-dd823d93 w-embed">
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg id="allQMarksSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 1442.6 1138">
+                <defs>
+                  <style>
+
+  </style>
+                  <lineargradient id="b" x1="568.2" y1="-27.2" x2="1055.6" y2="817" gradientunits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#ff7945"></stop>
+                    <stop offset=".3" stop-color="#ff7945"></stop>
+                    <stop offset=".5" stop-color="#ff7945"></stop>
+                    <stop offset=".9" stop-color="#40309d"></stop>
+                  </lineargradient>
+                </defs>
+                <g>
+                  <path id="Qcasc4" class="Qcascade" d="M1117.9,845.7c39.6-39.6,58.6-55.2,93.9-57.3,76.8-4.6,117.8,88.5,80.1,139.4-34.7,46.9-80.1,70.7-80.1,129.8" style="fill: none; stroke: #c22d9a; stroke-miterlimit: 10; stroke-width: 47.3px;"></path>
+                  <line id="Qcasc4dot" class="Qcascade" x1="1213.1" y1="1083.5" x2="1213.1" y2="1138" style="fill: none; stroke: #c22d9a; stroke-miterlimit: 10; stroke-width: 47.3px;"></line>
+                </g>
+                <g>
+                  <path id="QCask1" class="Qcascade" d="M1002.2,758.2c51.5-51.5,76.2-71.7,122-74.4,99.8-6,153,115,104.1,181.1s-104.1,91.8-104.1,168.6" style="fill: none; stroke: #d84dab; stroke-miterlimit: 10; stroke-width: 61.5px;"></path>
+                  <line id="QCask1dot" class="Qcascade" x1="1125.8" y1="1067.2" x2="1125.8" y2="1138" style="fill: none; stroke: #d84dab; stroke-miterlimit: 10; stroke-width: 61.5px;"></line>
+                </g>
+                <g>
+                  <path id="QCask2" class="Qcascade" d="M869.2,660c65.1-65.1,96.4-90.7,154.4-94.2,126.3-7.6,193.6,145.5,131.7,229.2-57,77.1-131.7,116.2-131.7,213.4" style="fill: none; stroke: #ec6f4c; stroke-miterlimit: 10; stroke-width: 77.8px;"></path>
+                  <line id="QCask2dot" class="Qcascade" x1="1025.6" y1="1051" x2="1025.6" y2="1138" style="fill: none; stroke: #ec6f4c; stroke-miterlimit: 10; stroke-width: 77.8px;"></line>
+                </g>
+                <g>
+                  <path id="QCask3" class="Qcascade" d="M716.2,555.9c79.6-79.6,117.8-110.9,188.7-115.2,154.4-9.3,236.7,177.9,161,280.2-69.7,94.3-161,142-161,260.9" style="fill: none; stroke: #f7764f; stroke-miterlimit: 10; stroke-width: 95.1px;"></path>
+                  <line id="QCask3dot" class="Qcascade" x1="907.4" y1="1033.9" x2="907.4" y2="1138" style="fill: none; stroke: #f7764f; stroke-miterlimit: 10; stroke-width: 95.1px;"></line>
+                </g>
+                <line id="mainQMarkdot" x1="773.6" y1="1019.1" x2="773.6" y2="1138" style="fill: none; stroke: #40309d; stroke-miterlimit: 10; stroke-width: 110px;"></line>
+                <path id="mainQMark" d="M1441.7,39.3C1206.7,33.9,39,94,39,415.1s353.9,210.5,513.4,51c80.9-80.9,136.3-128.3,218.4-133.2,178.6-10.7,273.8,205.8,186.2,324.2-80.7,109.1-186.2,164.3-186.2,301.8" style="fill: none; stroke: url(#b); stroke-miterlimit: 10; stroke-width: 78px;"></path>
+              </svg>
+            </div>
+          </div>
+        </div><img src="images/littleGradient1.5x.webp" loading="lazy" sizes="100vw" srcset="images/eb3983ccec197aeab42bc29ddf345e9a_littleGradient1.5x-p-500.webp 500w, images/eb3983ccec197aeab42bc29ddf345e9a_littleGradient1.5x-p-1080.webp 1080w, images/eb3983ccec197aeab42bc29ddf345e9a_littleGradient1.5x-p-1600.webp 1600w, images/eb3983ccec197aeab42bc29ddf345e9a_littleGradient1.5x-p-2000.webp 2000w, images/littleGradient1.5x.webp 2880w" alt="" class="bottomgradient1">
+      </section>
+      <section id="Horizontal1" class="horizontal-scroll-1 w-clearfix">
+        <section id="splitScreenWrapper" class="splitscreen-wrapper hpanels1 w-clearfix">
+          <div id="w-node-_8c8fdf72-a2c7-67f1-af22-0ac6a1e37692-dd823d93" class="code-embed-9 w-embed">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="thinStrokeW" data-name="thinStroke" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 7 2200">
+              <defs>
+                <style>
+      .thinStroke {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+    </style>
+              </defs>
+              <line class="thinStroke" x1="3.5" x2="3.5" y2="2200"></line>
+            </svg>
+          </div>
+          <div id="lWrpFucking" class="lwrpfucking w-node-_28481ed1-7e0d-d9f5-731d-bca48a159918-dd823d93">
+            <div id="w-node-a51a6d46-b85d-c393-7533-b89c906ad292-dd823d93" class="code-embed-8 w-embed">
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 955 789.92" style="align-content: center; justify-content: center;">
+                <defs>
+                  <style>
+      .cls-1 {
+        font-size: 199.07px;
+      }
+      .cls-1, .cls-2 {
+        fill: #fff;
+        font-family: NHaasGroteskDSPro-65Md, 'Neue Haas Grotesk Display Pro';
+        font-weight: 500;
+      }
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+      .cls-4 {
+        letter-spacing: -.09em;
+      }
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+      .cls-2 {
+        font-size: 150px;
+      }
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+    </style>
+                </defs>
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <g>
+                    <text class="cls-2" transform="translate(36.38 128.62)">
+                      <tspan x="0" y="0">WE MAKE</tspan>
+                    </text>
+                    <text class="cls-1" style="font-weight:600; overflow: visible" transform="translate(48.12 310.38)">
+                      <tspan x="0" y="0" xml:space="preserve">F CKING</tspan>
+                      <tspan x="0" y="189.59" xml:space="preserve"> GR</tspan>
+                      <tspan class="cls-6" x="376.04" y="189.59">E</tspan>
+                      <tspan class="cls-4" x="500.26" y="189.59">A</tspan>
+                      <tspan x="613.53" y="189.59">T</tspan>
+                      <tspan x="0" y="379.19" xml:space="preserve"> VID</tspan>
+                      <tspan class="cls-5" x="475.18" y="379.19">E</tspan>
+                      <tspan class="cls-3" x="595.42" y="379.19">OS</tspan>
+                    </text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <h1 id="w-node-_04e5a978-0582-3094-1778-e0c87d44a010-dd823d93" class="heading-6"><span class="text-span-5">WE MAKE<br></span><span class="text-span-8">FUCKING<br></span><span class="text-span-6">GREAT</span><br><span class="text-span-7">VIDEOS. </span></h1>
+          </div>
+          <div id="rWrpPhones" class="rwrpphones w-node-_0d54124a-d434-98fa-4327-c774ea4f63d8-dd823d93"><img src="images/Asset-431x.webp" loading="lazy" width="181.5" height="Auto" alt="" id="w-node-_570a7135-b105-ff79-a2d8-7f7b683b7187-dd823d93" class="image-11"></div>
+        </section>
+        <section id="section-serpentine" class="div-block-10 hpanels1">
+          <div id="w-node-b0d629dd-d26f-3dd7-84cc-4f1327c3d455-dd823d93" class="w-layout-blockcontainer gradientstrokesmobile wrapperfortext w-container">
+            <div id="BigGradientStrokes" class="gradientstrokes w-node-_125a02d1-2725-5bfc-710c-5a31c47026e4-dd823d93 w-embed"><!--  Parent container with the same aspect ratio as your SVG (2151.56 x 1442.33). 
+     Ratio = (1442.33 / 2151.56) * 100 ≈ 67%. 
+     This ensures a responsive box matching the image + SVG dimensions.  -->
+              <div class="squiggly-wrapper" style="
+       position: relative; 
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+     ">
+                <svg id="leftToRight" data-name="SquigglyStrokes" xmlns="http://www.w3.org/2000/svg" viewbox="0 -20 2151.56 1472.33" preserveaspectratio="none" style="display: block; width: 101%; height: 100%;">
+                  <defs>
+                    <!--  Renamed from "uuid-ae64d5ff-ed2c-46fd-a56c-98ed617233f7"  -->
+                    <lineargradient id="gradientOrangeBrown" x1="944.4" y1="1442" x2="944.4" y2="502.8" gradienttransform="translate(0 1442) scale(1 -1)" gradientunits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#eba046"></stop>
+                      <stop offset="0" stop-color="#e49b45"></stop>
+                      <stop offset=".2" stop-color="#d39045"></stop>
+                      <stop offset=".3" stop-color="#b77d45"></stop>
+                      <stop offset=".4" stop-color="#8f6245"></stop>
+                      <stop offset=".5" stop-color="#5c4045"></stop>
+                      <stop offset=".6" stop-color="#4a3e41"></stop>
+                      <stop offset=".7" stop-color="#194f61"></stop>
+                      <stop offset="1" stop-color="#18234c"></stop>
+                    </lineargradient>
+                    <!--  Renamed from "uuid-ad40ae23-e4ab-49fd-bc9d-00506c362840"  -->
+                    <lineargradient id="gradientTealGreen" x1="1847.4" y1="60.6" x2="2274.6" y2="487.7" gradienttransform="translate(0 1442) scale(1 -1)" gradientunits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#02a190"></stop>
+                      <stop offset="0" stop-color="#279c76"></stop>
+                      <stop offset=".3" stop-color="#539657"></stop>
+                      <stop offset=".4" stop-color="#65944c"></stop>
+                      <stop offset=".5" stop-color="#7f9a4a"></stop>
+                      <stop offset=".6" stop-color="#a6a448"></stop>
+                      <stop offset=".8" stop-color="#c2ab47"></stop>
+                      <stop offset=".9" stop-color="#d3af46"></stop>
+                      <stop offset="1" stop-color="#dab146"></stop>
+                    </lineargradient>
+                    <!--  Renamed from "uuid-8d677c5f-7b24-4d1c-9bc8-b3bd36b4e060"  -->
+                    <lineargradient id="gradientPinkPurple" x1="260.5" y1="373" x2="1842.6" y2="373" gradienttransform="translate(0 1442) scale(1 -1)" gradientunits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#cf7192"></stop>
+                      <stop offset=".2" stop-color="#be688c"></stop>
+                      <stop offset=".3" stop-color="#a25a84"></stop>
+                      <stop offset=".5" stop-color="#7a4578"></stop>
+                      <stop offset=".6" stop-color="#482b68"></stop>
+                      <stop offset=".7" stop-color="#3f2766"></stop>
+                      <stop offset=".8" stop-color="#2e3061"></stop>
+                      <stop offset="1" stop-color="#18234c"></stop>
+                    </lineargradient>
+                    <!--  Renamed from "uuid-442f9607-3343-41b6-bf8f-27263d4bc039"  -->
+                    <lineargradient id="gradientTealPink" x1="1829.9" y1="193.9" x2="200" y2="193.9" gradienttransform="translate(0 1442) scale(1 -1)" gradientunits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#0e8382"></stop>
+                      <stop offset=".2" stop-color="#20576d"></stop>
+                      <stop offset=".3" stop-color="#274666"></stop>
+                      <stop offset=".5" stop-color="#5c5474"></stop>
+                      <stop offset=".8" stop-color="#b36b8a"></stop>
+                      <stop offset="1" stop-color="#cf7192"></stop>
+                    </lineargradient>
+                  </defs>
+                  <g id="gradPath">
+                    <path id="grdstrk1-d" vector-effect="non-scaling-stroke" d="M494.4,7.79s38.6,269.84-102.03,269.84c-104.44,0-291.17,35.08-291.17,305.36,0,148.64,106.72,243.24,267.1,243.24h1229.39s189.97-18.58,189.97,130" style="fill:none; stroke-miterlimit:10; stroke-width: var(--strokeWidthH1); stroke:url(#gradientOrangeBrown)"></path>
+                    <path id="grdstrk4-d" d="M1908.74,1332.33c34.03,1.79,73.51,6.47,104.87-5.02,20.53-7.58,25.73-22.74,27.29-43.05,2.61-28.35-8.37-42.58-29.09-61.24-28.43-24.89-54.34-49.09-59.89-89.59-7.96-63,23.72-93.02,83.76-100.73,16.54-2.52,34.25-3.12,49.7-6.71,3.44-.84,6.53-1.93,8.53-3.01,1.57-.93,2.3-1.24,3.14-2.46.8-1.6.53-4.27.01-6.43-.76-3.28-2.26-6.91-3.82-10.02-11.6-23.9-24.5-50.83-20.88-78.28,3.88-28.55,30.89-45.27,55.01-55.67,7.95-3.49,16.05-6.53,24.19-9.37-26.25,13.14-66.39,32.93-67.46,66.22-.38,24.17,15.2,48.27,27.96,68.21,10.94,16.21,13.99,35.6-3.15,48.91-5.06,3.89-10,6.17-14.71,8.1-8.97,3.55-17.76,5.79-26.78,8.08-20.71,5.67-64.43,12.77-68.5,36.69-1.03,5.21-.43,11.49.52,16.87,1.12,6.65,3.04,12.59,5.68,17.74,5.93,11.46,14.67,18.69,25.77,26.49,14.31,9.86,30.01,18.74,44.5,31.15,17.44,14.36,32.86,36.16,39.74,58.45,12.71,40.6,9.95,87.23-14.33,123.14-29.79,44.89-87.9,62.1-137.16,67.35-18.32,2.23-37.23,3.06-54.9,4.18,0,0,0-110,0-110h0Z" style="stroke-miterlimit:10; stroke-width: 0; fill:url(#gradientTealGreen)"></path>
+                    <path id="grdstrk2-d" vector-effect="non-scaling-stroke" d="M260.48,1108.78h1346.53c184.02,0,180.62-133.27,180.62-163" style="fill:none; stroke-miterlimit:10; stroke-width: var(--strokeWidthH1); stroke:url(#gradientPinkPurple)"></path>
+                    <path id="grdstrk3-d" vector-effect="non-scaling-stroke" d="M1829.87,1387.33H260.36s-147.36-6.81-147.36-135.75c0-113.08,126.62-142.8,147.36-142.8" style="fill:none; stroke-miterlimit:10; stroke-width: var(--strokeWidthH1); stroke:url(#gradientTealPink)"></path>
+                 </g>
+                     <g id="gradPath-m">
+                    <path id="grdstrk1-m" vector-effect="non-scaling-stroke" d="M345.247 7.931s27.02 188.888-71.421 188.888c-73.108 0-217.819 24.556-217.819 213.752 1.393 135.429 102.704 198.268 214.97 198.268h294.091c176.813 0 279.818 62.72 279.818 186.214" style="fill:none; stroke-miterlimit:10; stroke-width: var(--strokeWidthH1); stroke:url(#gradientOrangeBrown)"></path>
+                    <path id="grdstrk4-m" d="M1010.037 1335.068c22.022 1.869 46.186 5.383 66.479.728 2.17-.525 3.633-.966 4.739-1.274 1.113-.329 1.967-.539 2.989-1.358 3.731-3.325 4.515-8.981 5.411-13.888.854-5.474 1.491-10.773.07-16.058-2.114-7.154-7.63-12.691-13.853-18.998-12.74-12.215-28.14-26.264-36.12-43.722-6.559-13.594-8.946-29.029-7.784-43.862.686-17.297 8.232-34.419 22.568-44.716 12.53-9.345 28.665-12.852 43.232-14.504 11.879-1.47 23.184-1.456 34.51-3.472 2.205-.413 4.074-.987 4.991-1.295.462-.147.665-.175.7.014.049.175.014.567.147.749.112.182.308.056.413-.399.091-.469.091-1.218-.049-2.107-.329-2.044-1.211-4.515-2.142-6.489-6.748-14.546-13.335-29.827-14.252-46.214-1.022-18.746 8.603-32.263 24.171-41.454 10.64-6.349 22.099-10.535 33.747-14.294-5.383 2.772-10.689 5.663-15.785 8.82-20.503 12.922-36.589 27.307-26.411 53.025 4.011 10.472 10.283 20.272 16.744 29.617 1.001 1.484 2.009 2.919 2.898 4.487 11.025 18.704 2.926 34.503-16.191 42.224-16.422 6.867-35.196 9.219-50.61 17.066-5.194 2.87-8.911 5.369-10.318 9.604-.882 3.689.119 7.973.945 11.76 2.583 11.823 10.199 17.738 20.496 24.087 18.053 10.703 37.968 22.113 51.177 40.971 11.851 16.233 17.948 36.302 19.544 56.049 2.324 29.267-6.349 59.22-26.978 80.836-30.282 32.214-76.258 40.824-116.816 44.422 0 0-18.662 1.645-18.662 1.645 0 0 0-112 0-112h0Z" style="stroke-miterlimit:10; stroke-width: 0; fill:url(#gradientTealGreen)"></path>
+                    <path id="grdstrk2-m" vector-effect="non-scaling-stroke" d="M460.383 1002.624h133.441c281.127 0 251.055-207.41 251.055-207.41" style="fill:none; stroke-miterlimit:10; stroke-width: var(--strokeWidthH1); stroke:url(#gradientPinkPurple)"></path>
+                    <path id="grdstrk3-m" vector-effect="non-scaling-stroke" d="M987.504 1393.609h-534.114c-44.933 0-222.313-9.52-222.313-189.889 0-158.186 155.841-201.152 229.313-201.152" style="fill:none; stroke-miterlimit:10; stroke-width: var(--strokeWidthH1); stroke:url(#gradientTealPink)"></path>
+                        </g>
+                  </svg>
+                </svg>
+              </div>
+            </div>
+            <div class="w-layout-blockcontainer container-5 w-container">
+              <h3 id="w-node-_42446307-5485-8b1f-2264-a5d4c457e295-dd823d93" class="bigsvgtext chasetrends">We Don&#x27;t Chase Trends,</h3>
+              <h3 id="followFormulas" class="bigsvgtext followformulas w-node-_38b4245c-5ed2-3601-415b-35b7e954d623-dd823d93">We Don&#x27;t Follow &quot;Formulas&quot;,</h3>
+              <h3 id="followFormulas" class="bigsvgtext followformulas w-node-dc759ff3-ab32-20a1-bb51-7fa2d660e289-dd823d93">We Understand Audiences,</h3>
+            </div>
+          </div>
+          <div id="w-node-_8e631f7d-88ee-5e27-11c7-e29ab3701e3b-dd823d93" class="code-embed-17 w-embed">
+            <svg id="purpleCross" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="9rem" height="9rem" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="-6 6 179.3 179.3">
+              <defs>
+                <style>
+      .uuid-c878c057-1fd5-4fa0-a085-49f87d987e12 {
+        filter: url(#uuid-9b6affe2-059d-4433-b471-941a7b15cf5e);
+        fill: url(#uuid-aeaf5c69-0306-45cb-83e5-a516c1d2326a);
+      }
+      .uuid-e4215393-86bb-4056-9190-8d2caf20552e {
+        fill: url(#uuid-aeaf5c69-0306-45cb-83e5-a516c1d2326a);
+      }
+    </style>
+                <filter id="uuid-9b6affe2-059d-4433-b471-941a7b15cf5e" data-name="drop-shadow-1" x="-48.1" y="-36.35" width="264" height="264" filterunits="userSpaceOnUse">
+                  <feoffset dx="-6" dy="6">
+                  <fegaussianblur result="uuid-07d0713c-4e99-4c2f-8376-088253ed8238" stddeviation="14">
+                  <feflood flood-color="#332518" flood-opacity=".3">
+                  <fecomposite in2="uuid-07d0713c-4e99-4c2f-8376-088253ed8238" operator="in">
+                  <fecomposite in="SourceGraphic">
+                </fecomposite></fecomposite></feflood></fegaussianblur></feoffset></filter>
+                <radialgradient id="uuid-aeaf5c69-0306-45cb-83e5-a516c1d2326a" cx="150" cy="20" fx="150" fy="20" r="170" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#b392bf"></stop>
+                  <stop offset=".17" stop-color="#b08bbb"></stop>
+                  <stop offset=".38" stop-color="#aa7ab0"></stop>
+                  <stop offset=".62" stop-color="#a05e9f"></stop>
+                  <stop offset=".63" stop-color="#a05d9f"></stop>
+                  <stop offset=".73" stop-color="#8e5299"></stop>
+                  <stop offset=".94" stop-color="#62368c"></stop>
+                  <stop offset=".98" stop-color="#59308a"></stop>
+                </radialgradient>
+              </defs>
+              <g id="uuid-5e9695a0-179e-417b-b6b4-266e41287b29" data-name="Layer 1">
+                <g class="uuid-c878c057-1fd5-4fa0-a085-49f87d987e12">
+                  <path class="uuid-e4215393-86bb-4056-9190-8d2caf20552e" d="M135.84,43.46C134.38,19.22,114.27,0,89.65,0h0c-24.61,0-44.73,19.22-46.19,43.46C19.22,44.92,0,65.04,0,89.65h0c0,24.61,19.22,44.73,43.46,46.19,1.46,24.25,21.58,43.46,46.19,43.46h0c24.61,0,44.73-19.22,46.19-43.46,24.25-1.46,43.46-21.58,43.46-46.19h0c0-24.61-19.22-44.73-43.46-46.19ZM133.75,89.65c0,2.77-1.99,5.15-4.72,5.65l-24.65,4.46c-2.36.43-4.2,2.27-4.63,4.63l-4.46,24.65c-.49,2.73-2.87,4.72-5.65,4.72s-5.15-1.99-5.65-4.72l-4.46-24.65c-.43-2.36-2.27-4.2-4.63-4.63l-24.65-4.46c-2.73-.49-4.72-2.87-4.72-5.65h0c0-2.78,1.99-5.15,4.72-5.65l24.65-4.46c2.36-.43,4.2-2.27,4.63-4.63l4.46-24.65c.49-2.73,2.87-4.72,5.65-4.72s5.15,1.99,5.65,4.72l4.46,24.65c.43,2.36,2.27,4.2,4.63,4.63l24.65,4.46c2.73.49,4.72,2.87,4.72,5.65h0Z"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div id="w-node-_4a53369a-4803-c16e-528e-342d4c4d772b-dd823d93" class="code-embed-17 w-embed">
+            <svg id="pinkHalfHalfCircle" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="8rem" height="8rem" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="-6 6 172.74 172.52">
+              <defs>
+                <style>
+      .uuid-632bf527-03e2-45a3-8edd-603a5debfedd {
+        fill: url(#uuid-0eba475b-5d21-40bf-9512-46d16661ff54);
+      }
+      .uuid-b066274f-cb5a-48f5-88da-2dfa77ed21d0 {
+        fill: url(#uuid-8b6cc7b3-211e-4633-a2cc-46854f832e07);
+      }
+      .uuid-67f8a923-92c2-42c8-8f37-0e7f3c6c7670 {
+        filter: url(#uuid-766a9659-5487-4a8e-a2d3-68c54f44247b);
+      }
+      .uuid-715254ea-299b-448b-b5c6-38ae8f609064 {
+        fill: url(#uuid-c5e20152-56fd-4bfb-aa55-76b388e6adc2);
+      }
+    </style>
+                <filter id="uuid-766a9659-5487-4a8e-a2d3-68c54f44247b" data-name="drop-shadow-1" x="-48.86" y="-36.01" width="258" height="257" filterunits="userSpaceOnUse">
+                  <feoffset dx="-6" dy="6">
+                  <fegaussianblur result="uuid-46c4be81-cc76-4a9d-b45d-00c920f676e5" stddeviation="14">
+                  <feflood flood-color="#332518" flood-opacity=".3">
+                  <fecomposite in2="uuid-46c4be81-cc76-4a9d-b45d-00c920f676e5" operator="in">
+                  <fecomposite in="SourceGraphic">
+                </fecomposite></fecomposite></feflood></fegaussianblur></feoffset></filter>
+                <radialgradient id="uuid-c5e20152-56fd-4bfb-aa55-76b388e6adc2" cx="114.99" cy="47.95" fx="114.99" fy="47.95" r="153.55" gradienttransform="translate(-21.89 154.63) rotate(-90)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#e17696"></stop>
+                  <stop offset=".14" stop-color="#da7597"></stop>
+                  <stop offset=".3" stop-color="#c9729a"></stop>
+                  <stop offset=".48" stop-color="#ad6da0"></stop>
+                  <stop offset=".63" stop-color="#9169a7"></stop>
+                  <stop offset=".98" stop-color="#a166a4"></stop>
+                </radialgradient>
+                <radialgradient id="uuid-0eba475b-5d21-40bf-9512-46d16661ff54" cx="783.91" cy="-321.86" fx="783.91" fy="-321.86" r="153.55" gradienttransform="translate(-175.18 -651.03) rotate(90)" xlink:href="#uuid-c5e20152-56fd-4bfb-aa55-76b388e6adc2">
+                <lineargradient id="uuid-8b6cc7b3-211e-4633-a2cc-46854f832e07" x1="801.67" y1="-299.05" x2="680.5" y2="-204.72" gradienttransform="translate(-175.18 -651.03) rotate(90)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#e17696"></stop>
+                  <stop offset=".14" stop-color="#da7597"></stop>
+                  <stop offset=".3" stop-color="#c9729a"></stop>
+                  <stop offset=".48" stop-color="#ad6da0"></stop>
+                  <stop offset=".63" stop-color="#9169a7"></stop>
+                  <stop offset=".98" stop-color="#a166a4"></stop>
+                </lineargradient>
+              </radialgradient></defs>
+              <g id="uuid-03691f6b-ce02-423b-b591-e01323c6c977" data-name="Layer 1">
+                <g class="uuid-67f8a923-92c2-42c8-8f37-0e7f3c6c7670">
+                  <path class="uuid-715254ea-299b-448b-b5c6-38ae8f609064" d="M86.26,0v34.2c-28.75,0-52.06,23.31-52.06,52.06s23.31,52.06,52.06,52.06v34.2C38.62,172.52,0,133.9,0,86.26S38.62,0,86.26,0Z"></path>
+                  <g>
+                    <path class="uuid-632bf527-03e2-45a3-8edd-603a5debfedd" d="M86.48,172.52v-34.2c28.75,0,52.06-23.31,52.06-52.06s-23.31-52.06-52.06-52.06V0c47.64,0,86.26,38.62,86.26,86.26s-38.62,86.26-86.26,86.26Z"></path>
+                    <path class="uuid-b066274f-cb5a-48f5-88da-2dfa77ed21d0" d="M86.48,138.32c-28.75,0-52.06-23.31-52.06-52.06s23.31-52.06,52.06-52.06v104.12Z"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div id="w-node-dc542126-aba3-863c-20a0-cf366cd6c8ba-dd823d93" class="code-embed-17 w-embed">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="tealStar" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="8rem" height="8rem" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="-6 6 194.78 192.93">
+              <defs>
+                <style>
+      .uuid-ef41d053-1f78-4d4e-a8e4-75f533013510 {
+        fill: url(#uuid-71d7980f-d4de-4bb1-8e0a-c215d975aaa8);
+      }
+      .uuid-9a6053dc-ec30-4730-8c3a-a759fe6279aa {
+        filter: url(#uuid-e2cbe1ac-5323-4705-b018-5a58445bfb3c);
+      }
+    </style>
+                <filter id="uuid-e2cbe1ac-5323-4705-b018-5a58445bfb3c" data-name="drop-shadow-1" x="-48.9" y="-36.36" width="280" height="278" filterunits="userSpaceOnUse">
+                  <feoffset dx="-6" dy="6">
+                  <fegaussianblur result="uuid-3dd317cc-176c-4965-8df5-25d74b257f0b" stddeviation="14">
+                  <feflood flood-color="#332518" flood-opacity=".3">
+                  <fecomposite in2="uuid-3dd317cc-176c-4965-8df5-25d74b257f0b" operator="in">
+                  <fecomposite in="SourceGraphic">
+                </fecomposite></fecomposite></feflood></fegaussianblur></feoffset></filter>
+                <radialgradient id="uuid-71d7980f-d4de-4bb1-8e0a-c215d975aaa8" cx="146.61" cy="23.15" fx="146.61" fy="23.15" r="184.86" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#73bea6"></stop>
+                  <stop offset=".18" stop-color="#6cbca6"></stop>
+                  <stop offset=".39" stop-color="#5bb6a7"></stop>
+                  <stop offset=".63" stop-color="#41afaa"></stop>
+                  <stop offset=".7" stop-color="#3aa298"></stop>
+                  <stop offset=".85" stop-color="#28836c"></stop>
+                  <stop offset=".98" stop-color="#15613d"></stop>
+                </radialgradient>
+              </defs>
+              <g id="uuid-0c134604-84d8-4870-9210-a65190c4feea" data-name="Layer 1">
+                <g class="uuid-9a6053dc-ec30-4730-8c3a-a759fe6279aa">
+                  <path class="uuid-ef41d053-1f78-4d4e-a8e4-75f533013510" d="M100.33,15.36L119.39,1.27c3.46-2.56,8.41-1.11,9.94,2.92l8.42,22.16c.77,2.03,2.78,3.32,4.94,3.18l23.66-1.54c4.29-.28,7.67,3.62,6.78,7.83l-4.9,23.2c-.45,2.12.54,4.29,2.44,5.35l20.74,11.49c3.76,2.09,4.5,7.19,1.47,10.25l-16.66,16.87c-1.53,1.54-1.86,3.9-.84,5.82l11.23,20.88c2.04,3.79-.1,8.48-4.3,9.42l-23.14,5.18c-2.12.47-3.68,2.28-3.85,4.44l-1.84,23.64c-.33,4.29-4.67,7.08-8.71,5.6l-22.27-8.15c-2.04-.75-4.33-.07-5.64,1.66l-14.33,18.89c-2.6,3.43-7.76,3.43-10.36,0l-14.33-18.89c-1.31-1.73-3.6-2.4-5.64-1.66l-22.27,8.15c-4.04,1.48-8.38-1.31-8.71-5.6l-1.84-23.64c-.17-2.16-1.73-3.97-3.85-4.44l-23.14-5.18c-4.2-.94-6.34-5.63-4.3-9.42l11.23-20.88c1.03-1.91.69-4.27-.84-5.82L1.88,86.1c-3.02-3.06-2.29-8.17,1.47-10.25l20.74-11.49c1.9-1.05,2.89-3.22,2.44-5.35l-4.9-23.2c-.89-4.21,2.49-8.11,6.78-7.83l23.66,1.54c2.17.14,4.17-1.15,4.94-3.18l8.42-22.16c1.53-4.02,6.48-5.48,9.94-2.92l19.07,14.09c1.75,1.29,4.13,1.29,5.88,0Z"></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </section>
+      </section>
+      <section id="whoAreWe" class="whoarewe">
+        <div id="whoWrapper" class="wrapperleading">
+          <h1 id="Short-Form-Agency" class="heading leadingagency w-node-a4e293f1-1e39-efb5-4fda-ecace266a670-dd823d93">Clash Creation is the UK’s leading short form <span id="asterix-spanID" class="asterix-span">agency</span>.</h1>
+          <div id="asterixYellowBlock" class="w-node-a4e293f1-1e39-efb5-4fda-ecace266a675-dd823d93 w-embed"><svg id="asterixYellow" data-name="shapes" xmlns="http://www.w3.org/2000/svg" width="57.85" height="56.06" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 57.85 56.06">
+              <defs>
+                <style>
+      .uuid-4308c7dd-0931-42a1-9f46-f06784a1b02c {
+        fill: url(#uuid-13060901-fdd3-46cd-b0e1-aba66702cebb);
+      }
+    </style>
+                <radialgradient id="uuid-13060901-fdd3-46cd-b0e1-aba66702cebb" cx="-1638.24" cy="45.05" fx="-1638.24" fy="45.05" r="82.08" gradienttransform="translate(876.34 -657.2) rotate(-36.46) scale(.66)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#f9d64b"></stop>
+                  <stop offset=".17" stop-color="#f2cf4a"></stop>
+                  <stop offset=".38" stop-color="#e1bf4a"></stop>
+                  <stop offset=".62" stop-color="#c5a349"></stop>
+                  <stop offset=".63" stop-color="#c4a249"></stop>
+                  <stop offset=".75" stop-color="#b29243"></stop>
+                  <stop offset=".98" stop-color="#886d35"></stop>
+                </radialgradient>
+              </defs>
+              <g id="uuid-9e2b3bd3-6987-4d8f-9def-abc2ac5e23d7" data-name="Layer 1">
+                <path class="uuid-4308c7dd-0931-42a1-9f46-f06784a1b02c" d="M40.91,16.63l-2.49.74.07-2.6S38.85.24,29.51,0c-9.35-.23-9.71,14.3-9.71,14.3l-.07,2.6-2.45-.86S3.57,11.2.46,20.01c-3.11,8.82,10.6,13.65,10.6,13.65l2.45.86-1.58,2.06s-8.84,11.55-1.42,17.23c7.42,5.68,16.26-5.86,16.26-5.86l1.58-2.06,1.47,2.14s8.25,11.98,15.95,6.67c7.7-5.3-.55-17.28-.55-17.28l-1.47-2.14,2.49-.74s13.94-4.14,11.27-13.1-16.6-4.82-16.6-4.82Z"></path>
+              </g>
+            </svg></div>
+          <h2 id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a676-dd823d93" class="heading-3">We’re a small team of creatives who love making videos.</h2>
+          <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a678-dd823d93" class="div-block-6">
+            <h3 id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a679-dd823d93" class="italicsthin">Who are we?</h3>
+            <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a67b-dd823d93" class="scrollerbutton w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75">
+                <defs>
+                  <style>
+      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
+        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
+      }
+      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
+        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
+      }
+      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
+        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
+      }
+    </style>
+                  <radialgradient id="uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
+                    <stop offset=".02" stop-color="#eda751"></stop>
+                    <stop offset=".16" stop-color="#eba051"></stop>
+                    <stop offset=".36" stop-color="#e88f54"></stop>
+                    <stop offset=".59" stop-color="#e27359"></stop>
+                    <stop offset=".63" stop-color="#e16e5a"></stop>
+                    <stop offset=".75" stop-color="#da7d6b"></stop>
+                    <stop offset=".97" stop-color="#caa497"></stop>
+                    <stop offset=".98" stop-color="#caa699"></stop>
+                  </radialgradient>
+                  <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
+                  <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
+                    <stop offset=".02" stop-color="#eda751"></stop>
+                    <stop offset=".16" stop-color="#eba051"></stop>
+                    <stop offset=".36" stop-color="#e88f54"></stop>
+                    <stop offset=".59" stop-color="#e27359"></stop>
+                    <stop offset=".63" stop-color="#e16e5a"></stop>
+                    <stop offset=".75" stop-color="#da7d6b"></stop>
+                    <stop offset=".97" stop-color="#caa497"></stop>
+                    <stop offset=".98" stop-color="#caa699"></stop>
+                  </lineargradient>
+                </radialgradient></defs>
+                <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
+                  <circle cx="79.88" cy="79.88" r="79.88"></circle>
+                  <g>
+                    <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
+                    <g>
+                      <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
+                      <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg></div>
+          </div>
+          <h1 id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a67c-dd823d93" class="heading-2"><span class="text-span-2">We know what people want,</span><br><span class="text-span-3">we know how to make it,</span><br><span class="text-span-4">and we make it well.</span></h1>
+          <div id="w-node-a4e293f1-1e39-efb5-4fda-ecace266a685-dd823d93" class="code-embed-11 w-embed">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 736.2 178.71">
+              <defs>
+                <style>
+      .placeHolder {
+        fill: none;
+        stroke: #f1f2f2;
+        stroke-miterlimit: 10;
+        stroke-width: 15px;
+      }
+    </style>
+              </defs>
+              <rect class="placeHolder" x="7.5" y="7.5" width="721.2" height="163.71" rx="44.11" ry="44.11"></rect>
+            </svg>
+          </div>
+        </div>
+        
+      </section>
+      <section id="Horizontal2" class="casestudies">
+        <section id="whoWrapper" class="testimonialswrapper hpanels2 w-node-c19b2f38-075f-9682-e29e-a90a4559164b-dd823d93">
+          <h1 id="Short-Form-Agency" class="heading w-node-_0a93a520-a556-bbaf-6832-60a1f73ab14e-dd823d93">Our numbers and testimonials speak for themselves.</h1>
+          <div id="caseTestGreen" class="casestudybutton w-node-ffdcb8c1-466c-7f8a-fa8d-28b238713993-dd823d93 w-embed"><svg id="greenCaseSVG" class="caseStudyButton" data-name="buttonGreen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 239.48 239.48">
+              <defs>
+                <style>
+      .uuid-ce8d46b3-0a2c-48ee-aaf7-a9e9e2892b17 {
+        fill: url(#uuid-f3afed6f-a5aa-4e27-9fb0-d6a3d3b8f213);
+      }
+    </style>
+                <radialgradient id="uuid-f3afed6f-a5aa-4e27-9fb0-d6a3d3b8f213" cx="143.03" cy="65.96" fx="143.03" fy="65.96" r="229.3" gradienttransform="translate(37.22 -37.22)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#c4ff7e"></stop>
+                  <stop offset=".1" stop-color="#bdfc7a"></stop>
+                  <stop offset=".21" stop-color="#acf471"></stop>
+                  <stop offset=".34" stop-color="#90e761"></stop>
+                  <stop offset=".48" stop-color="#68d54b"></stop>
+                  <stop offset=".63" stop-color="#38bf31"></stop>
+                  <stop offset=".73" stop-color="#38ad39"></stop>
+                  <stop offset=".92" stop-color="#3a814d"></stop>
+                  <stop offset=".98" stop-color="#3b7355"></stop>
+                </radialgradient>
+              </defs>
+              <g id="greenCaseSVGPath" data-name="pathType">
+                <path class="uuid-ce8d46b3-0a2c-48ee-aaf7-a9e9e2892b17" d="M181.43,58.05C179.48,25.66,152.61,0,119.74,0h0c-32.87,0-59.74,25.66-61.69,58.05C25.66,60,0,86.86,0,119.74h0c0,32.87,25.66,59.74,58.05,61.69,1.95,32.38,28.82,58.05,61.69,58.05h0c32.87,0,59.74-25.66,61.69-58.05,32.38-1.95,58.05-28.82,58.05-61.69h0c0-32.87-25.66-59.74-58.05-61.69ZM178.63,119.74c0,3.71-2.65,6.88-6.3,7.54l-32.92,5.95c-3.15.57-5.61,3.03-6.18,6.18l-5.95,32.92c-.66,3.65-3.83,6.3-7.54,6.3s-6.88-2.65-7.54-6.3l-5.95-32.92c-.57-3.15-3.03-5.61-6.18-6.18l-32.92-5.95c-3.65-.66-6.3-3.83-6.3-7.54h0c0-3.71,2.65-6.88,6.3-7.54l32.92-5.95c3.15-.57,5.61-3.03,6.18-6.18l5.95-32.92c.66-3.65,3.83-6.3,7.54-6.3s6.88,2.65,7.54,6.3l5.95,32.92c.57,3.15,3.03,5.61,6.18,6.18l32.92,5.95c3.65.66,6.3,3.83,6.3,7.54h0Z"></path>
+              </g>
+            </svg></div>
+          <div id="caseTestBlue" class="casestudybutton w-node-f918b7b3-c4f5-ca88-6992-8c0f819edada-dd823d93 w-embed">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="blueCaseSVG" class="caseStudyButton" data-name="buttonBlue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 245.63 245.94">
+              <defs>
+                <style>
+      .uuid-623faaff-2e78-4eef-b9d4-2421d696aa89 {
+        fill: url(#uuid-ee972be3-b2a4-423b-ade7-30e83454d517);
+      }
+      .uuid-ea3804b4-c6cb-41b0-bea0-c903a52e8095 {
+        fill: url(#uuid-f8111e2a-a5e8-4d00-bf67-c42fe1875ba5);
+      }
+      .uuid-6640e163-292e-46ae-b7bd-64d92aa1c317 {
+        fill: url(#uuid-639fe4be-c57b-4f99-87a8-27c6c0372d98);
+      }
+      .uuid-e2c86a32-8f15-4d66-81f5-c4d9cd0d500a {
+        fill: url(#uuid-aec9ab22-56a8-4b9a-a5b7-130d89042615);
+      }
+    </style>
+                <radialgradient id="uuid-f8111e2a-a5e8-4d00-bf67-c42fe1875ba5" cx="-145.73" cy="372.01" fx="-145.73" fy="372.01" r="218.62" gradienttransform="translate(334.92 -334.91)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#00c3e3"></stop>
+                  <stop offset=".16" stop-color="#02bce0"></stop>
+                  <stop offset=".36" stop-color="#0aabd9"></stop>
+                  <stop offset=".59" stop-color="#178fcf"></stop>
+                  <stop offset=".63" stop-color="#1a8acd"></stop>
+                  <stop offset=".76" stop-color="#1f78c6"></stop>
+                  <stop offset=".98" stop-color="#2d54b8"></stop>
+                </radialgradient>
+                <lineargradient id="uuid-aec9ab22-56a8-4b9a-a5b7-130d89042615" x1="-120.44" y1="404.5" x2="-292.95" y2="538.79" gradienttransform="translate(334.92 -334.91)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#00c3e3"></stop>
+                  <stop offset=".16" stop-color="#02bce0"></stop>
+                  <stop offset=".36" stop-color="#0aabd9"></stop>
+                  <stop offset=".59" stop-color="#178fcf"></stop>
+                  <stop offset=".63" stop-color="#1a8acd"></stop>
+                  <stop offset=".76" stop-color="#1f78c6"></stop>
+                  <stop offset=".98" stop-color="#2d54b8"></stop>
+                </lineargradient>
+                <radialgradient id="uuid-639fe4be-c57b-4f99-87a8-27c6c0372d98" cx="-5037.46" cy="-4825.31" fx="-5037.46" fy="-4825.31" r="218.62" gradienttransform="translate(-4981.01 -4616.46) rotate(-180)" xlink:href="#uuid-f8111e2a-a5e8-4d00-bf67-c42fe1875ba5">
+                <lineargradient id="uuid-ee972be3-b2a4-423b-ade7-30e83454d517" x1="-5012.17" y1="-4792.82" x2="-5184.69" y2="-4658.53" gradienttransform="translate(-4981.01 -4616.46) rotate(-180)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#00dbe3"></stop>
+                  <stop offset=".15" stop-color="#02d4e1"></stop>
+                  <stop offset=".32" stop-color="#08c3db"></stop>
+                  <stop offset=".52" stop-color="#12a7d2"></stop>
+                  <stop offset=".63" stop-color="#1a94cd"></stop>
+                  <stop offset=".76" stop-color="#1f82c6"></stop>
+                  <stop offset=".98" stop-color="#2d5bb8"></stop>
+                </lineargradient>
+              </radialgradient></defs>
+              <g id="uuid-4702c00e-ddcc-4b6f-9955-66ee4a6b2d45" data-name="Bluebuttonpath">
+                <g>
+                  <g>
+                    <path class="uuid-ea3804b4-c6cb-41b0-bea0-c903a52e8095" d="M245.63,122.82h-48.7c0-40.93-33.18-74.12-74.12-74.12S48.7,81.89,48.7,122.82H0C0,54.99,54.99,0,122.82,0s122.82,54.99,122.82,122.82Z"></path>
+                    <path class="uuid-e2c86a32-8f15-4d66-81f5-c4d9cd0d500a" d="M196.94,122.82c0,40.94-33.18,74.12-74.12,74.12s-74.12-33.18-74.12-74.12h148.24Z"></path>
+                  </g>
+                  <g>
+                    <path class="uuid-6640e163-292e-46ae-b7bd-64d92aa1c317" d="M0,123.13h48.7c0,40.93,33.18,74.12,74.12,74.12s74.12-33.18,74.12-74.12h48.7c0,67.83-54.99,122.82-122.82,122.82S0,190.96,0,123.13Z"></path>
+                    <path class="uuid-623faaff-2e78-4eef-b9d4-2421d696aa89" d="M48.7,123.13c0-40.94,33.18-74.12,74.12-74.12s74.12,33.18,74.12,74.12H48.7Z"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div id="caseTestYellow" class="casestudybutton w-node-_2a4fa4ac-4831-a0db-8079-7a6efc8aebd5-dd823d93 w-embed">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg id="yellowCaseSVG" data-name="buttonYellow" class="caseStudyButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 241.21 241.21">
+              <defs>
+                <style>
+      .uuid-5f2da7d2-5728-4db8-aa21-5dde32f47fae {
+        fill: url(#uuid-4b7f748f-54b4-4a89-96df-ea2a2ff3e070);
+      }
+    </style>
+                <radialgradient id="uuid-4b7f748f-54b4-4a89-96df-ea2a2ff3e070" cx="-440.5" cy="685.78" fx="-440.5" fy="685.78" r="218.45" gradienttransform="translate(638.2 -638.2)" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#ffe87e"></stop>
+                  <stop offset=".07" stop-color="#fae074"></stop>
+                  <stop offset=".32" stop-color="#e6bf47"></stop>
+                  <stop offset=".52" stop-color="#daab2b"></stop>
+                  <stop offset=".63" stop-color="#d6a421"></stop>
+                  <stop offset=".76" stop-color="#c99217"></stop>
+                  <stop offset=".99" stop-color="#ad6b00"></stop>
+                </radialgradient>
+              </defs>
+              <g id="yellowCasePath" data-name="yellowCase">
+                <path class="uuid-5f2da7d2-5728-4db8-aa21-5dde32f47fae" d="M224.61,118.11c10.82-2.55,17.6-13.32,15.16-24.19h0c-2.43-10.87-13.16-17.73-24.03-15.42,9.02-6.49,11.16-19.04,4.75-28.15h0c-6.41-9.11-18.94-11.34-28.1-5.05,5.85-9.45,3.02-21.86-6.39-27.83-9.41-5.96-21.84-3.23-27.89,6.09,1.79-10.97-5.58-21.35-16.55-23.26-10.97-1.91-21.41,5.38-23.44,16.3-2.55-10.82-13.32-17.6-24.19-15.16h0c-10.87,2.43-17.73,13.16-15.42,24.03-6.49-9.02-19.04-11.16-28.15-4.75h0c-9.11,6.41-11.34,18.94-5.05,28.1-9.45-5.85-21.86-3.02-27.83,6.39h0c-5.96,9.41-3.23,21.84,6.09,27.89-10.97-1.79-21.35,5.58-23.27,16.55h0c-1.91,10.97,5.38,21.41,16.3,23.44-10.81,2.55-17.59,13.32-15.16,24.19,2.43,10.87,13.16,17.73,24.03,15.42-9.02,6.49-11.16,19.04-4.75,28.15,6.41,9.11,18.94,11.34,28.1,5.05-5.85,9.45-3.02,21.86,6.39,27.83,9.41,5.96,21.84,3.23,27.89-6.09-1.79,10.97,5.58,21.36,16.55,23.27,10.97,1.91,21.41-5.38,23.44-16.3,2.55,10.81,13.32,17.59,24.19,15.16h0c10.87-2.43,17.73-13.16,15.42-24.03,6.49,9.02,19.04,11.16,28.15,4.75h0c9.11-6.41,11.34-18.94,5.05-28.1,9.45,5.85,21.86,3.02,27.83-6.39h0c5.96-9.41,3.23-21.84-6.09-27.89,10.97,1.79,21.35-5.58,23.27-16.55h0c1.91-10.97-5.38-21.41-16.3-23.44ZM121.5,157.96l-4.69-15.56-9.67,13.06,1.62-16.17-13.93,8.37,7.69-14.32-16.08,2.4,12.58-10.29-15.77-3.94,15.56-4.69-13.06-9.67,16.17,1.62-8.37-13.93,14.32,7.69-2.4-16.08,10.29,12.58,3.94-15.77,4.69,15.56,9.67-13.06-1.62,16.17,13.93-8.37-7.69,14.32,16.08-2.4-12.58,10.29,15.77,3.94-15.56,4.69,13.06,9.67-16.17-1.62,8.37,13.93-14.32-7.69,2.4,16.08-10.29-12.58-3.94,15.77Z"></path>
+              </g>
+            </svg>
+          </div>
+          <h2 id="w-node-f9bdb48e-5b1b-57ff-6cf6-8ce0fa1ddd8c-dd823d93" class="italicsthin believetext">Don&#x27;t believe us?</h2>
+          <div id="w-node-_10881635-34b2-f8ce-a5ef-1b4547ce5d15-dd823d93" class="div-block-6">
+            <div id="w-node-_4781527f-fa03-7360-c794-a593820fd8f3-dd823d93" class="scrollerbutton w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75">
+                <defs>
+                  <style>
+      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
+        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
+      }
+      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
+        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
+      }
+      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
+        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
+      }
+    </style>
+                  <radialgradient id="uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
+                    <stop offset=".02" stop-color="#eda751"></stop>
+                    <stop offset=".16" stop-color="#eba051"></stop>
+                    <stop offset=".36" stop-color="#e88f54"></stop>
+                    <stop offset=".59" stop-color="#e27359"></stop>
+                    <stop offset=".63" stop-color="#e16e5a"></stop>
+                    <stop offset=".75" stop-color="#da7d6b"></stop>
+                    <stop offset=".97" stop-color="#caa497"></stop>
+                    <stop offset=".98" stop-color="#caa699"></stop>
+                  </radialgradient>
+                  <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
+                  <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
+                    <stop offset=".02" stop-color="#eda751"></stop>
+                    <stop offset=".16" stop-color="#eba051"></stop>
+                    <stop offset=".36" stop-color="#e88f54"></stop>
+                    <stop offset=".59" stop-color="#e27359"></stop>
+                    <stop offset=".63" stop-color="#e16e5a"></stop>
+                    <stop offset=".75" stop-color="#da7d6b"></stop>
+                    <stop offset=".97" stop-color="#caa497"></stop>
+                    <stop offset=".98" stop-color="#caa699"></stop>
+                  </lineargradient>
+                </radialgradient></defs>
+                <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
+                  <circle cx="79.88" cy="79.88" r="79.88"></circle>
+                  <g>
+                    <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
+                    <g>
+                      <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
+                      <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg></div>
+          </div><img src="images/Asset-30.svg" loading="lazy" width="212.5" id="w-node-_9a20e8a3-46f8-b8c5-9860-8466c79d480b-dd823d93" alt="" class="contactbutton">
+          <h2 id="w-node-_36d00111-a39c-8b7e-0060-f964ffdaafef-dd823d93" class="ourstory">Our Story --&gt;</h2>
+          <div id="w-node-e8511ed2-7b02-3784-8d93-73662868a15f-dd823d93" class="text-block">(click one)</div><img src="images/wiggly-underscore.webp" loading="lazy" width="491" id="w-node-ee508e3b-d33b-61ed-4728-f12cb11a243f-dd823d93" alt="" srcset="images/wiggly-underscore-p-500.webp 500w, images/wiggly-underscore.webp 982w" sizes="(max-width: 479px) 3vw, (max-width: 991px) 4vw, 5vw" class="image-12">
+          <div id="w-node-_0615f5f4-dcba-a46d-ce59-6383ebbfe65e-dd823d93" class="case-text">B</div>
+          <div id="w-node-_5fdf51f2-12e2-1f4f-d75c-e62c426152d4-dd823d93" class="case-text">C</div>
+          <div id="w-node-_59515577-bb19-cce0-ddba-1c05d1a64e7e-dd823d93" class="case-text">A</div>
+          <div id="case-study-box" class="casebox case-content w-node-_25b85b0e-13af-c123-dc90-efba46ce4224-dd823d93"><img src="images/Asset-14.svg" loading="lazy" id="closeBoxBtn" alt="" class="image-13"></div>
+        </section>
+        <section id="OurStorySection" class="w-layout-blockcontainer ourstorywrapper hpanels2 w-node-_8a8b271a-0a8e-ea2a-04da-bbb6c6875178-dd823d93 w-container">
+          <h3 id="w-node-f09e8939-ed92-4b85-632d-e939278c041e-dd823d93" class="italicsthin-2 ccyears">2023</h3>
+          <h3 id="w-node-_681849a8-5119-3dd6-b3fa-53d5f83cc966-dd823d93" class="italicsthin-2 ccyears">2024</h3>
+          <h3 id="w-node-_7107a794-34d2-ca3f-07b4-804196d6b304-dd823d93" class="italicsthin-2 ccyears">2025</h3>
+          <h3 id="w-node-_34093107-c82e-6d48-eecb-700e065b7516-dd823d93" class="italicsthin-2 ccyears">Genesis*</h3>
+          <div id="w-node-_03f4fda2-79d4-ac1d-2f00-86af51aab05b-dd823d93" class="div-block-7"></div>
+          <div id="w-node-_97367bd7-8440-6c86-515e-1f9fd432ddcd-dd823d93" class="scrollerbutton _2023 w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;">
+  <defs>
+    <style>
+      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
+        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
+      }
+      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
+        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
+      }
+      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
+        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
+      }
+    </style>
+    <radialGradient id= "uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
+              <stop offset=".02" stop-color="#eda751"></stop>
+              <stop offset=".16" stop-color="#eba051"></stop>
+              <stop offset=".36" stop-color="#e88f54"></stop>
+              <stop offset=".59" stop-color="#e27359"></stop>
+              <stop offset=".63" stop-color="#e16e5a"></stop>
+              <stop offset=".75" stop-color="#da7d6b"></stop>
+              <stop offset=".97" stop-color="#caa497"></stop>
+              <stop offset=".98" stop-color="#caa699"></stop>
+              <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
+              <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
+                <stop offset=".02" stop-color="#eda751"></stop>
+                <stop offset=".16" stop-color="#eba051"></stop>
+                <stop offset=".36" stop-color="#e88f54"></stop>
+                <stop offset=".59" stop-color="#e27359"></stop>
+                <stop offset=".63" stop-color="#e16e5a"></stop>
+                <stop offset=".75" stop-color="#da7d6b"></stop>
+                <stop offset=".97" stop-color="#caa497"></stop>
+                <stop offset=".98" stop-color="#caa699"></stop>
+              </lineargradient>
+              <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
+                <circle cx="79.88" cy="79.88" r="79.88"></circle>
+                <g>
+                  <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
+                  <g>
+                    <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
+                    <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
+                  </g>
+                </g>
+              </g>
+            </radialgradient></svg></div>
+          <div id="w-node-_1ff421cd-adff-9178-2de2-adf0e66b1ff0-dd823d93" class="scrollerbutton w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row;">
+  <defs>
+    <style>
+      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
+        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
+      }
+      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
+        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
+      }
+      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
+        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
+      }
+    </style>
+    <radialGradient id=" uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
+              <stop offset=".02" stop-color="#eda751"></stop>
+              <stop offset=".16" stop-color="#eba051"></stop>
+              <stop offset=".36" stop-color="#e88f54"></stop>
+              <stop offset=".59" stop-color="#e27359"></stop>
+              <stop offset=".63" stop-color="#e16e5a"></stop>
+              <stop offset=".75" stop-color="#da7d6b"></stop>
+              <stop offset=".97" stop-color="#caa497"></stop>
+              <stop offset=".98" stop-color="#caa699"></stop>
+              <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
+              <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
+                <stop offset=".02" stop-color="#eda751"></stop>
+                <stop offset=".16" stop-color="#eba051"></stop>
+                <stop offset=".36" stop-color="#e88f54"></stop>
+                <stop offset=".59" stop-color="#e27359"></stop>
+                <stop offset=".63" stop-color="#e16e5a"></stop>
+                <stop offset=".75" stop-color="#da7d6b"></stop>
+                <stop offset=".97" stop-color="#caa497"></stop>
+                <stop offset=".98" stop-color="#caa699"></stop>
+              </lineargradient>
+              <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
+                <circle cx="79.88" cy="79.88" r="79.88"></circle>
+                <g>
+                  <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
+                  <g>
+                    <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
+                    <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
+                  </g>
+                </g>
+              </g>
+            </radialgradient></svg></div><img src="images/Asset-481x.svg" loading="lazy" width="71.5" id="w-node-f6261287-94ac-5cec-5afb-380415eb69cf-dd823d93" alt="" class="scrollerbutton">
+          <div id="w-node-_60296f74-3b71-67c1-f076-13345733ed0f-dd823d93" class="scrollerbutton _2024 w-embed"><svg id="uuid-a810822c-76b0-4a27-95ad-3d398a5a57db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 159.75 159.75" style="position:relative; display:flex; flex-direction: row">
+  <defs>
+    <style>
+      .uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45 {
+        fill: url(#uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4);
+      }
+      .uuid-7e599052-d57a-42b2-9083-d36d4f328323 {
+        fill: url(#uuid-ad19e496-9da4-493b-a927-a58afecccead);
+      }
+      .uuid-db447fdd-89b4-48f5-8d20-847063cbfa57 {
+        fill: url(#uuid-37cac789-c57c-4fea-aa93-507914d17bdc);
+      }
+    </style>
+    <radialGradient id=" uuid-37cac789-c57c-4fea-aa93-507914d17bdc" cx="-459.16" cy="-1034.25" fx="-459.16" fy="-1034.25" r="94.98" gradienttransform="translate(567.94 1076.75)" gradientunits="userSpaceOnUse">
+              <stop offset=".02" stop-color="#eda751"></stop>
+              <stop offset=".16" stop-color="#eba051"></stop>
+              <stop offset=".36" stop-color="#e88f54"></stop>
+              <stop offset=".59" stop-color="#e27359"></stop>
+              <stop offset=".63" stop-color="#e16e5a"></stop>
+              <stop offset=".75" stop-color="#da7d6b"></stop>
+              <stop offset=".97" stop-color="#caa497"></stop>
+              <stop offset=".98" stop-color="#caa699"></stop>
+              <radialgradient id="uuid-b8a3b4ff-eca7-47c7-9c90-b7def1c187d4" cx="-3903.89" cy="-1148.26" fx="-3903.89" fy="-1148.26" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" xlink:href="#uuid-37cac789-c57c-4fea-aa93-507914d17bdc">
+              <lineargradient id="uuid-ad19e496-9da4-493b-a927-a58afecccead" x1="-3892.9" y1="-1134.14" x2="-3967.85" y2="-1075.8" gradienttransform="translate(-3852.78 -1031.14) rotate(-180)" gradientunits="userSpaceOnUse">
+                <stop offset=".02" stop-color="#eda751"></stop>
+                <stop offset=".16" stop-color="#eba051"></stop>
+                <stop offset=".36" stop-color="#e88f54"></stop>
+                <stop offset=".59" stop-color="#e27359"></stop>
+                <stop offset=".63" stop-color="#e16e5a"></stop>
+                <stop offset=".75" stop-color="#da7d6b"></stop>
+                <stop offset=".97" stop-color="#caa497"></stop>
+                <stop offset=".98" stop-color="#caa699"></stop>
+              </lineargradient>
+              <g id="uuid-01e24717-23a2-4679-b251-4e2f3fe9faa1" data-name="Layer 1">
+                <circle cx="79.88" cy="79.88" r="79.88"></circle>
+                <g>
+                  <path class="uuid-db447fdd-89b4-48f5-8d20-847063cbfa57" d="M133.3,79.74h-21.15c0-17.78-14.42-32.2-32.2-32.2s-32.2,14.42-32.2,32.2h-21.15c0-29.47,23.89-53.36,53.36-53.36s53.36,23.89,53.36,53.36Z"></path>
+                  <g>
+                    <path class="uuid-6b2b75ca-9f0d-40c3-b1f7-0eece801cd45" d="M26.59,79.88h21.15c0,17.78,14.42,32.2,32.2,32.2s32.2-14.42,32.2-32.2h21.15c0,29.47-23.89,53.36-53.36,53.36s-53.36-23.89-53.36-53.36Z"></path>
+                    <path class="uuid-7e599052-d57a-42b2-9083-d36d4f328323" d="M47.74,79.88c0-17.78,14.42-32.2,32.2-32.2s32.2,14.42,32.2,32.2H47.74Z"></path>
+                  </g>
+                </g>
+              </g>
+            </radialgradient></svg></div>
+          <div id="2023-Div-Block" class="ourstorydivblock _2025 w-node-_0407a6ed-3643-1c54-b889-193e014da668-dd823d93">some text</div>
+          <div id="w-node-_1ea0c1ca-0f98-85c3-946b-e94c579d06fe-dd823d93" class="ourstorydivblock _2023"></div>
+          <div id="2023-Div-Block" class="ourstorydivblock _2025 w-node-_80515a00-4611-7293-4d4e-a6bf2099f738-dd823d93">some text</div>
+          <div id="w-node-fcc8f788-1923-8c65-80f0-3de44fb1adc7-dd823d93" class="ourstorydivblock genesis"></div>
+        </section>
+        <section id="whoAreYou-section" class="w-layout-blockcontainer whoareyou-section hpanels2 w-node-_6055fd85-a6b2-510a-b0bc-f5604ac1f106-dd823d93 w-container">
+          <div id="w-node-f264e4ba-a2b3-0246-5432-3942e129a358-dd823d93" class="pickyourselfbox leftgreencreative w-embed"><svg id="chooseYourself1" data-name="youngCreative" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 589.36 494.12" style="width:100%; height: auto">
+              <defs>
+                <style>
+      .pickBoxStyle1 {
+        fill: url(#pickBox1);
+      }
+    </style>
+                <lineargradient id="pickBox1" x1="97.91" y1="144.38" x2="598.03" y2="405.36" gradientunits="userSpaceOnUse">
+                  <stop offset=".02" stop-color="#b7d494"></stop>
+                  <stop offset=".14" stop-color="#b0cf90"></stop>
+                  <stop offset=".31" stop-color="#9fc187"></stop>
+                  <stop offset=".5" stop-color="#83aa77"></stop>
+                  <stop offset=".63" stop-color="#6d996b"></stop>
+                  <stop offset=".77" stop-color="#648765"></stop>
+                  <stop offset=".99" stop-color="#53665c"></stop>
+                </lineargradient>
+              </defs>
+              <g id="pickBox1" data-name="Layer 1">
+                <rect class="pickBoxStyle1" width="589.36" height="494.12" rx="105.88" ry="105.88"></rect>
+              </g>
+            </svg></div>
+          <div id="w-node-_9a8053ce-5d2a-c047-7fee-5afececa85c5-dd823d93" class="text-block-2">That&#x27;s us...</div>
+          <div id="leftGreenCreativeBlock" class="pickyourselfdivbox leftgreencreative w-node-_13e7a06e-abd8-11aa-ece0-12dd078c306e-dd823d93"></div>
+          <h2 id="w-node-_40018e40-4092-2bc2-42f0-f9cf3bb39b6d-dd823d93" class="heading-7">So who are you?</h2>
+          <div id="middleBlueBuilderBlock" class="pickyourselfdivbox middlebluebuilder w-node-_1503b3f8-63a4-c95d-e178-f2cc12397cb4-dd823d93"></div>
+          <div id="rightPinkExecBlock" class="pickyourselfdivbox rightpinkexec w-node-_91b12cdf-d3ff-9312-4f15-d4aa47a415db-dd823d93"></div>
+          <div id="w-node-c27fc106-9561-8e01-9494-fd3339b4fb92-dd823d93" class="div-block-7"></div>
+        </section>
+      </section>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6793c1488129e8f2dd823cc9" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script>
+  // Wait until the page (fonts & images) finishes loading
+  window.addEventListener("load", function() {
+    // 1) Register the plugins from your bundle
+    gsap.registerPlugin(
+      ScrollTrigger,
+      ScrollSmoother,
+      DrawSVGPlugin,
+      SplitText,
+      Physics2DPlugin,
+      Observer,
+      InertiaPlugin,
+      Draggable,
+      EasePack
+    );
+function animateNumber(tl, startVal, endVal, selector, decimals = 0, position = "<") {
+    const obj = { value: startVal };
+    tl.to(obj, {
+      value: endVal,
+      duration: 0.38,
+      ease: "power4.out",
+      onUpdate() {
+        // If decimals == 0, round. Otherwise, use toFixed(decimals).
+        const currentVal = (decimals === 0)
+          ? Math.round(obj.value)
+          : obj.value.toFixed(decimals);
+        // Update the DOM
+        document.querySelector(selector).textContent = currentVal + "m+";
+      }
+    }, position);
+  }
+  function statsOpacity(tl, selector, position = "<") {
+    tl.from(selector, {
+        opacity: 0,
+        duration: 0.4,
+        ease: CustomEase.create("custom", "M0,0 C0,0 0.137,0 0.185,0 0.224,0 0.322,0 0.364,0 0.4,0 0.445,0 0.5,0 0.545,0 0.612,0.081 0.661,0.128 0.692,0.158 0.805,0.341 0.824,0.385 0.842,0.426 0.88,0.511 0.901,0.58 0.916,0.63 0.94,0.734 0.955,0.783 0.971,0.837 1,1 1,1 ")
+    }, position);
+  }
+function eyeBallCreateRotationProperties(svgSelector) {
+  // 1) Find the <radialGradient> inside your SVG
+  const gradient = document.querySelector(`${svgSelector} #eyeballGradient`);
+  if (!gradient) {
+    console.warn("No gradient found with id='eyeballGradient' inside:", svgSelector);
+    return null;
+  }
+  // 2) Parse initial attributes from the radial gradient
+  const baseX = parseFloat(gradient.getAttribute('cx'));
+  const baseY = parseFloat(gradient.getAttribute('cy'));
+  const baseR = parseFloat(gradient.getAttribute('r'));
+  // 3) Define some helper functions for the math
+  /**
+   * Convert "rotation angles" (X/Y in degrees) into a 2D offset
+   * for the gradient focal point (like a spherical coordinate approximation).
+   */
+  function getGradientPositionFromAngles(angleX, angleY, radius) {
+    const radX = angleX * (Math.PI / 180);
+    const radY = angleY * (Math.PI / 180);
+    // Simple spherical approach:
+    // x = R * sin(angleX) * cos(angleY)
+    // y = R * sin(angleY)
+    const x = radius * Math.sin(radX) * Math.cos(radY);
+    const y = radius * Math.sin(radY);
+    return { x, y };
+  }
+  /**
+   * Scale factor to simulate perspective flattening
+   * The further from "straight on", the smaller the gradient radius.
+   */
+  function getScaleFactorFromAngles(angleX, angleY) {
+    const maxFlatten = 0.2;  // up to 20% flatten
+    const distanceFromCenter = Math.sqrt(angleX * angleX + angleY * angleY);
+    // If total angle is 90°, that's the max flatten
+    const ratio = Math.min(distanceFromCenter / 90, 1);
+    return 1 - ratio * maxFlatten;
+  }
+  /**
+   * Update the <radialGradient> attributes to move the pupil
+   * based on the given angles (in degrees).
+   * @param {number} angleX - horizontal rotation angle
+   * @param {number} angleY - vertical rotation angle
+   * @param {number} movementRadius - how far the pupil can move from center
+   */
+  function updateEyeball(angleX, angleY, movementRadius = 20) {
+    // Get the XY offset for the pupil
+    const { x, y } = getGradientPositionFromAngles(angleX, angleY, movementRadius);
+    // Scale the gradient for perspective
+    const scaleFactor = getScaleFactorFromAngles(angleX, angleY);
+    const newRadius = baseR * scaleFactor;
+    // Apply changes to the radial gradient
+    gradient.setAttribute("fx", (baseX + x).toFixed(2));
+    gradient.setAttribute("fy", (baseY + y).toFixed(2));
+    gradient.setAttribute("r", newRadius.toFixed(2));
+  }
+  // 4) Return an object so your main code can use these
+  return {
+    baseX,
+    baseY,
+    baseR,
+    updateEyeball,
+    getGradientPositionFromAngles,
+    getScaleFactorFromAngles
+  };
+}
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 2,
+      smoothTouch: 0.1,
+      effects: true
+    });
+/*
+    const heroTL = gsap.timeline ({ 
+        scrollTrigger: {
+            trigger: "#heroSection",
+            pin: true,
+            scrub: true,
+            start: "top top",
+            end: +1500,
+        }
+    })
+
+	heroTL.from("#pipeContainer", {
+      duration: 2.5,
+      x: 300,
+      y:150,
+      ease: "power4.out"
+    }, 0);
+    */
+    // 3) Simple ballistic motion on eyeball
+    Draggable.create("#eyeBallMoving", {
+        bounds: ".body",
+        inertia: true,
+    }); /*
+    heroTL.from("#eyeBallPipe1", {
+        x: 30,
+        y: 20,
+        scale: 0.3,
+        duration: 1,
+        ease: "power3.in",
+      }, 2)
+    heroTL.to("#eyeBallPipe1", {
+      duration: 3,
+      physics2D: {
+        velocity: 1500,
+        angle: 180,
+        gravity: 4000,
+        friction: 0.1
+      },
+      scale: 1.3,
+      ease: "power4.out",
+      rotate: 700,
+    },"<")
+
+    heroTL.to({}, { 
+        duration: 1, // Controls stagger speed
+        repeat: gsap.utils.random(3, 6, 1),
+        onRepeat: createFlyingEyeball, // Calls function repeatedly with stagger
+    }, 1);
+*/
+    function createFlyingEyeball() {
+    const container = document.querySelector("#pipeContainer"); // Adjust to your section
+    if (!container) return;
+
+    // Create an SVG eyeball element dynamically
+    const eyeball = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    eyeball.setAttribute("viewBox", "0 0 291.65 291.65");
+    eyeball.setAttribute("width", "9.8rem");
+    eyeball.setAttribute("height", "9.8rem");
+    eyeball.setAttribute("class", "eyeBallPipe1");
+    eyeball.innerHTML = `
+        <circle class="eyeBallPipe1" cx="145.83" cy="145.83" r="145.83" 
+                fill="url(#shooterBallGradient)"/>
+    `;
+
+    // Position eyeball near the pipe where animation starts
+    container.appendChild(eyeball);
+    gsap.set(eyeball, {
+        position: "absolute",
+        inset: "8% 52%",
+        scale: 1,
+    }, "<");
+
+    // 🎯 **GSAP Animation: Physics-Based Launch**
+    gsap.to(eyeball, {
+    duration: 2,
+    scale: 1.8,
+    rotate: "random(180, 720)",
+    ease: "power3.out",
+    stagger: {
+        each: 0.2, // 🎯 Delay between each eyeball
+        from: "random", // 🎯 Random order
+    },
+    physics2D: {
+        velocity: gsap.utils.random(1800, 2400),
+        angle: 175,
+        gravity: 4000,
+        friction: 0.1
+    },
+    onComplete: () => eyeball.remove(),
+    });
+}
+// 3) Attach scrollTrigger to the entire timeline
+let statsMasterTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section-stats",
+    pin: false,
+    start: "top center",
+    end: "bottom bottom",
+    scrub: true
+  }
+});
+//    let qMarkTL = gsap.timeline();
+// 2) Add tweens in sequence, or with relative positions
+gsap.fromTo("#loopPath1",
+  { drawSVG: 0 },
+  { duration: 0.7, drawSVG: "100%", ease: "slow(0.2, 0.9, false)",
+    scrollTrigger: {
+      trigger: "#section-stats",
+      pin: false,
+      scrub: true,
+      start: "top center",
+      end: "+=500"
+    }
+   },
+  0
+);
+statsMasterTL.fromTo("#mainQMark", 
+    { drawSVG: 0 },
+    { duration: 1, drawSVG: "100%", ease: "power3.inOut" },
+    0.5 // starts 0.2s after prior tween begins, for example
+  )
+  .fromTo("#mainQMarkdot",
+    { drawSVG: 0 },
+    { duration: 0.3, drawSVG: "100%", ease: "slow(0.2, 0.9, false)" },
+    "<+0.8" // starts 0.5s after the previous tween ends
+  )
+  .fromTo(".Qcascade",
+    { drawSVG: 0 },
+    { duration: 0.5, drawSVG: "100%", ease: "power3.out", stagger: { each: 0.025, from: "end" }},
+    "<+0.5"
+  );
+/*
+statsMasterTL.to("#section-stats", {
+  y: -window.innerHeight,
+  duration: 2,
+  ease: "circ.inOut"
+}, 0); */
+  animateNumber(statsMasterTL, 0, 750, "#viewsCount", 0, 0);
+  statsMasterTL.from("#viewsFlex", {
+    y: 400,
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.35,
+    ease: "slow(0.2, 0.9, false)"
+  },"<");
+  animateNumber(statsMasterTL, 0, 4.5, "#followersCount", 1, "<0.2");
+  statsMasterTL.from("#followersFlex", {
+    y: 500,
+    scale: 0.9,
+    opacity: 0,
+    duration: 0.35,
+    ease: "slow(0.2, 0.9, false)"
+  },"<");
+  animateNumber(statsMasterTL, 0, 86, "#interactionsCount", 0, "<0.2");
+  statsMasterTL.from("#interactionsFlex", {
+    y: 300,
+    scale: 0.9,
+    opacity: 0,
+    duration: 0.35,
+    ease: "slow(0.2, 0.9, false)"
+  },"<");
+  statsMasterTL.from("#bigHow", {
+    scale: 0.05,
+    opacity: 0,
+    duration: 1,
+    ease: "expo.out"
+  },">");
+    // 5) Create a timeline for the text + underline
+    let tl = gsap.timeline();
+    let hSections1 = gsap.utils.toArray(".hPanels1");
+const container = document.querySelector("#Horizontal1");
+// We'll animate the x from 0 to negative total overflow:
+// totalWidth = container.scrollWidth
+// windowWidth = window.innerWidth
+// so the net distance to move horizontally is (totalWidth - windowWidth).
+// We'll also use the same value for the ScrollTrigger's end distance
+// so the vertical scroll covers that horizontal distance.
+gsap.to(container, {
+x: () => -(container.scrollWidth - window.innerWidth),
+ease: "none",  // important for a linear scroll
+scrollTrigger: {
+  trigger: container,
+  pin: true,
+  pinSpacing: true,
+  scrub: 0.5,  // or any scrub speed you prefer
+  start: "top top",
+  end: () => "+=" + (container.scrollWidth - window.innerWidth),
+  markers: true  // uncomment for debugging
+}
+});
+const container2 = document.querySelector("#Horizontal2");
+gsap.to(container2, {
+x: () => -(container2.scrollWidth - window.innerWidth),
+ease: "none",
+scrollTrigger: {
+  trigger: container2,
+  pin: true,
+  pinSpacing: true,
+  scrub: 0.5,
+  start: "top top",
+  end: () => "+=" + (container2.scrollWidth - window.innerWidth),
+  // markers: true // enable to debug
+}
+});
+    // 1) Get the rule object
+	let asterixTL = gsap.timeline(0)
+    // 2) Animate it with GSAP
+    gsap.from(".heading.leadingagency", {
+      "--scale1":0.6,
+      duration: 2,
+      ease: "power4.inOut"
+    },0);
+  let asterixTween1 = gsap.to(".heading.leadingagency", {
+      duration: 3,
+      "--rotation": 359.9,
+      ease: "none"
+    },"<");
+    asterixTL.add(asterixTween1, 0);
+    gsap.to(asterixTL, {
+      progress: 1,
+      duration: 4,
+      ease:"none",
+      repeat: -1
+    });
+    let asterixSpeedUp = gsap.to(asterixTL, {
+            duration: 0.5,
+            timeScale: 2,
+            ease: "power2.Out"
+            });
+  	let asterixSpeedDown = gsap.to(asterixTL, {
+            duration: 2,
+            timeScale: 1,
+            ease: "power2.in"
+            });
+    Observer.create({
+    target: "#asterix-spanID",
+    type: "pointer, touch",
+    onHover: () => asterixSpeedUp,
+    onHoverEnd: () => asterixSpeedDown,
+    });
+    // (c) Finally, draw the path that underlines the title
+    //     Only after text is done
+    const eyeball = eyeBallCreateRotationProperties("#eyeballSVG");
+    // 2) If successful, animate the eyeball using GSAP
+    if (eyeball) {
+      // Let's store angles in an object
+      const angles = { x: 0, y: 0 };
+      // We'll do a simple timeline that moves the eyeball around
+      gsap.timeline({ repeat: -1, repeatDelay: 1 })
+        .to(angles, {
+          x: -30,
+          duration: 1.5,
+          ease: "power2.inOut",
+          onUpdate: () => eyeball.updateEyeball(angles.x, angles.y, 25)
+        })
+        .to(angles, {
+          y: -15,
+          duration: 1,
+          ease: "power2.inOut",
+          onUpdate: () => eyeball.updateEyeball(angles.x, angles.y, 25)
+        })
+        .to(angles, {
+          x: 30, y: 0,
+          duration: 2,
+          ease: "power2.inOut",
+          onUpdate: () => eyeball.updateEyeball(angles.x, angles.y, 25)
+        })
+        .to(angles, {
+          x: 0, y: 20,
+          duration: 1.5,
+          ease: "power2.inOut",
+          onUpdate: () => eyeball.updateEyeball(angles.x, angles.y, 25)
+        })
+        .to(angles, {
+          x: 0, y: 0,
+          duration: 1,
+          ease: "power2.inOut",
+          onUpdate: () => eyeball.updateEyeball(angles.x, angles.y, 25)
+        });
+    }
+  });
+</script>
+  <script>
+  // Ensure we have GSAP + Observer loaded
+  gsap.registerPlugin(Observer, CustomEase, CustomWiggle);
+  CustomWiggle.create("easyWiggle", {wiggles: 4}, "anticipate");
+  // We'll attach an Observer to each icon
+  const icons = document.querySelectorAll(".caseStudyButton");
+  console.log("Icons found:", document.querySelectorAll(".caseStudyButton"));
+  icons.forEach((icon) => {
+    Observer.create({
+      // The element you want to observe is this icon
+      target: icon,
+      type: "pointer,touch",   // we want pointer & touch events
+      onHover: self => {
+        // Spin the shape
+        gsap.to(icon, { rotation: 180, duration: 1.5, ease: "power2.Out"})
+        .to(icon, { scale: 1.1, duration: 1.5, ease: "back.out"},"<");
+        // Show text: we fade in .icon-text
+        const textEl = icon.querySelector(".case-text");
+        if (textEl) {
+          gsap.set(textEl, { display: "block", autoAlpha: 0 });
+          gsap.to(textEl, { autoAlpha: 1, duration: 0.4 })
+          .to(icon, { scale: 1.1, duration: 1.5, ease: "back.out"},"<");
+        }
+      },
+      onHoverEnd: self => {
+        // Reverse shape spin
+        gsap.to(icon, { rotation: 0, duration: 2, ease: "power3.in" });
+        // Hide text
+        const textEl = icon.querySelector(".case-text");
+        if (textEl) {
+          gsap.to(textEl, { autoAlpha: 0, duration: 0.3, onComplete: () => {
+            gsap.set(textEl, { display: "none" });
+          }});
+        }
+      },
+      onClick: self => {
+        // Animate shape into top-left corner of a new box
+        // We can store its current bounding box, or just do a direct tween
+        // For example:
+        gsap.to(icon, { 
+          x: 0, 
+          y: 0, 
+          scale: 0.5, 
+          duration: 0.5,
+          ease: "power2.inOut",
+          onComplete: showCaseStudyBox
+        });
+        // We'll pass which case # by reading data-case
+        const caseNum = icon.getAttribute("data-case");
+        showCaseStudyDetails(caseNum);
+      }
+    });
+  });
+  // Then define your function for revealing the box with case study details
+  function showCaseStudyBox() {
+    const box = document.getElementById("case-study-box");
+    gsap.set(box, { display: "block", autoAlpha: 0, scale: 0.4 });
+    gsap.to(box, { autoAlpha: 1, scale: 1, duration: 1.2, ease: "elastic.out(1.75,1)" });
+  }
+  // Example: fill content for the chosen case
+  function showCaseStudyDetails(caseNum) {
+    const boxContent = document.querySelector("#case-study-box .case-content");
+    if (!boxContent) return;
+    let detailsHTML = "";
+    switch (caseNum) {
+      case "1":
+        detailsHTML = "<h3>Case Study #1</h3><p>All about the first study...</p>";
+        break;
+      case "2":
+        detailsHTML = "<h3>Case Study #2</h3><p>Here’s the second one..</p>";
+        break;
+      case "3":
+        detailsHTML = "<h3>Case Study #3</h3><p>Third study details..</p>";
+        break;
+      default:
+        detailsHTML = "<h3>Unknown case</h3>";
+    }
+    boxContent.innerHTML = detailsHTML;
+  }
+  // For closing the box
+  document.getElementById("closeBoxBtn").addEventListener("click", () => {
+    gsap.to("#case-study-box", { autoAlpha: 0, scale: 0.8, duration: 0.3, 
+      onComplete: () => {
+        gsap.set("#case-study-box", { display: "none" });
+      }
+    });
+    // Optionally reset the icon back to original
+    gsap.to(".caseStudyButton", { x: 0, y: 0, scale:1, duration: 0.5 });
+  });
+  </script>
+  <script type="module" src="/src/serpentine.ts"></script>
+</body>
+</html>

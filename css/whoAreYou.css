@@ -1,0 +1,437 @@
+/* Who Are You Section Styles */
+.whoareyou-section {
+  position: relative;
+  min-height: 650px;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 6rem 0;
+  background-image: url('../public/assets/main/DARKBLUE2.jpg');
+  background-size: 100% auto;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Main heading styling */
+.heading-7 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #333 0%, #000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Subtitle styling */
+.text-block-2 {
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+/* Add basic fallback background colors to category boxes */
+.leftgreencreative {
+  background: linear-gradient(145deg, #b7d494, #53665c);
+  color: white;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.middlebluebuilder {
+  background: linear-gradient(145deg, #88BCED, #204F8C);
+  color: white;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.rightpinkexec {
+  background: linear-gradient(145deg, #f1848e, #d32e77);
+  color: white;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Category box styling */
+.pickyourselfdivbox {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9); /* Bright background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  opacity: 1 !important; /* Force visibility */
+  visibility: visible !important; /* Force visibility */
+}
+
+/* More obvious hover effect for category boxes - indicates clickability */
+.pickyourselfdivbox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-out;
+}
+
+/* Add a subtle pulsing border or glow on hover to indicate clickability */
+.pickyourselfdivbox:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  animation: pulse 1.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.015); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+/* Content inside each category */
+.category-content {
+  position: relative;
+  padding: 40px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  overflow: hidden;
+}
+
+/* Category title styling */
+.category-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  visibility: visible !important;
+}
+
+/* Add "Click to learn more" indicator */
+.pickyourselfdivbox:hover .category-title::after {
+  content: 'Click to learn more';
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: none;
+  opacity: 0.9;
+  letter-spacing: normal;
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 0.9; transform: translateY(0); }
+}
+
+/* Style for the hidden content that appears on click */
+.category-hidden-content {
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+/* Make active box visually distinct */
+#whoAreYou-section[data-active] .pickyourselfdivbox {
+  opacity: 0.7;
+  transform: scale(0.95);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#whoAreYou-section[data-active="left"] #leftGreenCreativeBlock,
+#whoAreYou-section[data-active="middle"] #middleBlueBuilderBlock,
+#whoAreYou-section[data-active="right"] #rightPinkExecBlock {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* Add instruction at the top of section */
+.whoareyou-section::before {
+  content: 'Select your path';
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+#whoAreYou-section[data-active]::before {
+  content: 'Click outside boxes to reset selection';
+}
+
+/* Category description */
+.category-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Call to action button */
+.category-cta-button {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 30px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+/* Button hover effect */
+.category-cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Button after element for shine effect */
+.category-cta-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.category-cta-button:hover::after {
+  left: 120%;
+}
+
+/* Background gradients for each category */
+.creative-gradient {
+  background: linear-gradient(135deg, #b7d494 0%, #53665c 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+.builder-gradient {
+  background: linear-gradient(135deg, #88BCED 0%, #204F8C 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+.executive-gradient {
+  background: linear-gradient(135deg, #FF9D9D 0%, #9A2848 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Creative box CTA button */
+.creative-gradient .category-cta-button {
+  color: #53665c;
+  background: linear-gradient(to right, #fff, #ECF5E4);
+}
+.creative-gradient .category-cta-button:hover {
+  background: linear-gradient(to right, #ECF5E4, #fff);
+}
+
+/* Builder box CTA button */
+.builder-gradient .category-cta-button {
+  color: #204F8C;
+  background: linear-gradient(to right, #fff, #E4F0FF);
+}
+.builder-gradient .category-cta-button:hover {
+  background: linear-gradient(to right, #E4F0FF, #fff);
+}
+
+/* Executive box CTA button */
+.executive-gradient .category-cta-button {
+  color: #9A2848;
+  background: linear-gradient(to right, #fff, #FFE6EA);
+}
+.executive-gradient .category-cta-button:hover {
+  background: linear-gradient(to right, #FFE6EA, #fff);
+}
+
+/* CSS for expanding/collapsing boxes with data-active attribute */
+#whoAreYou-section:not([data-active]) #leftGreenCreativeBlock,
+#whoAreYou-section:not([data-active]) #middleBlueBuilderBlock,
+#whoAreYou-section:not([data-active]) #rightPinkExecBlock {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Left (Creative) Box States */
+#whoAreYou-section[data-active="left"] #leftGreenCreativeBlock {
+  grid-area: 4 / 1 / 7 / 6;
+  z-index: 2;
+  transform: scale(1.05);
+}
+#whoAreYou-section[data-active="left"] #middleBlueBuilderBlock {
+  grid-area: 4 / 6 / 7 / 8;
+  z-index: 1;
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+#whoAreYou-section[data-active="left"] #rightPinkExecBlock {
+  grid-area: 4 / 8 / 7 / 10;
+  z-index: 1;
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* Middle (Builder) Box States */
+#whoAreYou-section[data-active="middle"] #leftGreenCreativeBlock {
+  grid-area: 4 / 1 / 7 / 3;
+  z-index: 1;
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+#whoAreYou-section[data-active="middle"] #middleBlueBuilderBlock {
+  grid-area: 4 / 3 / 7 / 8;
+  z-index: 2;
+  transform: scale(1.05);
+}
+#whoAreYou-section[data-active="middle"] #rightPinkExecBlock {
+  grid-area: 4 / 8 / 7 / 10;
+  z-index: 1;
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* Right (Executive) Box States */
+#whoAreYou-section[data-active="right"] #leftGreenCreativeBlock {
+  grid-area: 4 / 1 / 7 / 3;
+  z-index: 1;
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+#whoAreYou-section[data-active="right"] #middleBlueBuilderBlock {
+  grid-area: 4 / 3 / 7 / 5;
+  z-index: 1;
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+#whoAreYou-section[data-active="right"] #rightPinkExecBlock {
+  grid-area: 4 / 5 / 7 / 10;
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+  .whoareyou-section {
+    min-height: 600px;
+    padding: 4rem 0;
+  }
+  
+  .heading-7 {
+    font-size: 3rem;
+  }
+  
+  .category-title {
+    font-size: 3rem;
+  }
+  
+  .category-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .whoareyou-section {
+    min-height: 550px;
+    padding: 3rem 0;
+  }
+  
+  .heading-7 {
+    font-size: 2.5rem;
+  }
+  
+  .category-title {
+    font-size: 2.5rem;
+  }
+  
+  .category-content {
+    padding: 30px;
+  }
+  
+  .category-hidden-content {
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .whoareyou-section {
+    min-height: 500px;
+    padding: 2rem 0;
+  }
+  
+  .heading-7 {
+    font-size: 2rem;
+  }
+  
+  .category-title {
+    font-size: 2rem;
+  }
+  
+  .category-content {
+    padding: 20px;
+  }
+  
+  .category-hidden-content {
+    padding: 1rem;
+  }
+  
+  .category-cta-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+} 

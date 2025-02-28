@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
-import { assetpackPlugin } from "./scripts/assetpack-vite-plugin";
+import { assetpackPlugin } from "./scripts/assetpack-vite-plugin.js";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,19 +18,35 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: 'src/main.ts',
+        main: './index.html'
       },
       output: {
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]'
-      }
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash][extname]'
+      },
+      external: ['@node-rs/crc32-wasm32-wasi', 'fsevents']
     }
   },
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
   },
   base: './',
+  optimizeDeps: {
+    include: ['matter-js', 'hsl-to-hex', '@assetpack/core'],
+    exclude: [
+      'gsap',
+      'gsap/ScrollTrigger',
+      'gsap/DrawSVGPlugin',
+      'gsap/SplitText',
+      'gsap/MotionPathPlugin',
+      'gsap/Physics2DPlugin',
+      'gsap/ScrollSmoother',
+      'gsap/PixiPlugin',
+      '@node-rs/crc32-wasm32-wasi',
+      'fsevents'
+    ]
+  },
   // Prevent Vite from rewriting asset URLs
   experimental: {
     renderBuiltUrl: (filename, { hostType }) => {

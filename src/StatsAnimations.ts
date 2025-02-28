@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Count up animation
         gsap.to({ value: 0 }, {
           value: stat.value,
-          duration: 1.8,
+          duration: 1.1,
           delay: delay + 0.2,
-          ease: "power2.out",
+          ease: "power3.inOut",
           onUpdate: function() {
             const formatted = this.targets()[0].value.toFixed(stat.decimals || 0);
             numberEl.textContent = `${parseFloat(formatted)}m+`;
@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       start: "top 70%",
       once: true,
       markers: false,
+      toggleActions: "play none reverse reset",
       onEnter: () => {
         console.log("HOW triggered - stats will swoop to it");
         
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1, 
             opacity: 1, 
             duration: 1, 
-            ease: "back.out(1.7)",
+            ease: "back.out(2)",
             onComplete: swoopStatsToHOW 
           }
         );
@@ -174,9 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 y: moveY,
                 scale: i===0 ? 0.4 : i===1 ? 0.3 : 0.2,
                 rotation: 0,
-                duration: 1.5,
+                duration: 1,
                 delay: i * 0.1,
                 ease: "back.inOut(1.7)",
+                toggleActions: "play none reverse reset",
                 onComplete: () => {
                   // Add subtle floating animation after they arrive
                   gsap.to(container, {

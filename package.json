@@ -2,7 +2,8 @@
   "name": "creative3",
   "version": "1.0.0",
   "description": "Creative website with animations",
-  "main": "dist/main.js",
+  "type": "module",
+  "main": "src/main.ts",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
@@ -11,10 +12,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "gsap": "^3.12.2"
+    "gsap": "^3.12.2",
+    "hsl-to-hex": "^1.0.0",
+    "matter-js": "^0.20.0",
+    "pixi.js": "^8.8.1"
   },
   "devDependencies": {
+    "@assetpack/core": "^1.4.0",
+    "terser": "^5.39.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^5.1.4"
   }
 }

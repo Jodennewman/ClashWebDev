@@ -5,13 +5,16 @@ import { SplitText } from 'gsap/SplitText';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Physics2DPlugin } from 'gsap/Physics2DPlugin';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { Flip } from 'gsap/Flip';
+import { CustomEase } from 'gsap/CustomEase';
 
 // Import our animation modules
 import { initSerpentineAnimation, initSplitScreenScroll, initRotatingStar } from './serpentine';
 import { initHorizontalSections } from './horizontalSections';
-// Import other animations as needed
-// import { setupStatsAnimations } from './StatsAnimations';
-// import { setupHorizontalSections } from './horizontalSections';
+import './ourStory.ts';
+
+// Import the whoAreYou module with its named export
+import { initWhoAreYouSection } from './whoareyou';
 
 // =============================================
 // IMPORTANT: This is the ONLY place where GSAP plugins should be registered
@@ -23,7 +26,9 @@ gsap.registerPlugin(
   SplitText,
   MotionPathPlugin,
   Physics2DPlugin,
-  ScrollSmoother
+  ScrollSmoother,
+  Flip,
+  CustomEase
 );
 
 /**
@@ -78,15 +83,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize ScrollTrigger first
   initScrollTrigger();
   
-  // Initialize animations in the correct order (top to bottom of page)
-  console.log('Initializing serpentine animation...');
-  initSerpentineAnimation();
-  console.log('Initializing split screen scroll...');
-  initSplitScreenScroll();
-  console.log('Initializing rotating star...');
-  initRotatingStar();
-  console.log('Initializing horizontal sections...');
-  initHorizontalSections();
+  // Log script loading attempts
+  console.log('About to try initializing Who Are You section...');
+  
+  try {
+    // Initialize animations in the correct order (top to bottom of page)
+    console.log('Initializing serpentine animation...');
+    initSerpentineAnimation();
+    console.log('Initializing split screen scroll...');
+    initSplitScreenScroll();
+    console.log('Initializing rotating star...');
+    initRotatingStar();
+    console.log('Initializing horizontal sections...');
+    initHorizontalSections();
+    
+    // Add a delay to ensure DOM is fully processed
+    console.log('Waiting to initialize Who Are You section...');
+    setTimeout(() => {
+      console.log('Attempting to initialize Who Are You section...');
+      try {
+        initWhoAreYouSection();
+      } catch (e: any) {
+        console.error('Error initializing Who Are You section:', e);
+        console.error('Who Are You section initialization failed:', e.message);
+      }
+    }, 1000);
+  } catch (e: any) {
+    console.error('Error in main initialization:', e);
+    console.error('Main initialization failed:', e.message);
+  }
   
   // Initialize other animations as needed
   // setupStatsAnimations();
