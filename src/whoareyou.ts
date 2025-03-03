@@ -34,8 +34,8 @@ function initWhoAreYouSection(): void {
   // Set up enhanced content for each box
   setupEnhancedContent(leftBox, middleBox, rightBox);
   
-  // Create a custom ease for smoother animations
-  CustomEase.create("customBounce", "M0,0 C0.156,0.028 0.192,0.726 0.318,0.852 0.45,0.984 0.504,1 1,1");
+  // Create a custom ease for smoother animations - replacing the bouncy one with a smoother curve
+  CustomEase.create("smoothTransition", "M0,0 C0.25,0.1 0.25,0.9 1,1");
   
   // Add dynamic styles from the codepen
   addDynamicGridStyles();
@@ -48,7 +48,7 @@ function initWhoAreYouSection(): void {
     [leftBox, middleBox, rightBox].forEach(box => {
       if (!box) return;
       
-      box.addEventListener("mouseenter", () => {
+      box.addEventListener("click", () => {
         let newActive: string | null = null;
         if (box === leftBox) newActive = "left";
         if (box === middleBox) newActive = "middle";
@@ -104,10 +104,10 @@ function initWhoAreYouSection(): void {
       }
     }
     
-    // 3) animate from old to new
+    // 3) animate from old to new with calmer animation
     Flip.from(state, {
-      duration: 0.8,
-      ease: "customBounce",
+      duration: 0.5, // Reduced from 0.8
+      ease: "smoothTransition", // Using our new custom ease
       onComplete: () => {
         console.log('Box animation completed');
       }
@@ -121,7 +121,6 @@ function initWhoAreYouSection(): void {
    * Animate content elements with dramatic effects
    */
   function animateContent(stateName: string | null): void {
-    // Handle each box's content animations
     [leftBox, middleBox, rightBox].forEach(box => {
       if (!box) return;
       
@@ -135,78 +134,70 @@ function initWhoAreYouSection(): void {
                        (stateName === 'right' && box === rightBox);
       
       if (isActive) {
-        // For active box - show extended content with dramatic animations
-        
-        // Title animation - grow and emphasize
+        // For active box - show content with smoother animations
         if (title) {
           gsap.to(title, {
-            scale: 1.3,
-            y: -10,
+            scale: 1.15, // Reduced scale
+            y: 0, // Removed y movement
             color: "white",
-            textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-            fontWeight: "bold",
-            duration: 0.5
+            fontWeight: "600",
+            duration: 0.4,
+            ease: "power2.out"
           });
         }
         
-        // Description animation - fade in and emphasize
         if (desc) {
           gsap.to(desc, {
             opacity: 1,
             y: 0,
-            scale: 1.1,
-            duration: 0.4,
+            scale: 1, // Removed scale change
+            duration: 0.3,
             delay: 0.1
           });
         }
         
-        // Extended content animation - dramatic reveal
         if (extContent) {
           gsap.set(extContent, { display: 'block' });
           gsap.fromTo(extContent, 
-            { opacity: 0, y: 30 }, 
-            { opacity: 1, y: 0, duration: 0.5, delay: 0.2 }
+            { opacity: 0, y: 15 }, // Reduced y movement
+            { opacity: 1, y: 0, duration: 0.4, delay: 0.2, ease: "power2.out" }
           );
         }
         
-        // Button animation - bounce in
         if (button) {
           gsap.set(button, { display: 'block' });
           gsap.fromTo(button,
-            { opacity: 0, y: 20, scale: 0.8 },
+            { opacity: 0, y: 10, scale: 0.95 },
             { 
               opacity: 1, 
               y: 0, 
               scale: 1, 
-              duration: 0.5, 
-              delay: 0.4,
-              ease: "back.out(1.7)"
+              duration: 0.3, 
+              delay: 0.3,
+              ease: "power2.out"
             }
           );
         }
         
-        // Add subtle glow to the active box
+        // Subtle highlight for active box
         gsap.to(box, {
-          boxShadow: "0 0 30px rgba(255,255,255,0.3)",
-          duration: 0.5
+          boxShadow: "0 0 40px rgba(0,0,0,0.2)",
+          duration: 0.4
         });
         
       } else {
-        // For inactive boxes - hide extended content
-        
-        // Reset title
+        // For inactive boxes - smoother transitions out
         if (title) {
           gsap.to(title, {
             scale: 1,
             y: 0,
             color: "rgba(255,255,255,0.9)",
-            textShadow: "none",
-            fontWeight: "normal",
-            duration: 0.3
+            fontWeight: "400",
+            duration: 0.3,
+            ease: "power2.out"
           });
         }
         
-        // Fade description
         if (desc) {
           gsap.to(desc, {
             opacity: 0.7,
@@ -215,43 +206,40 @@ function initWhoAreYouSection(): void {
           });
         }
         
-        // Hide extended content
         if (extContent) {
           gsap.to(extContent, {
             opacity: 0,
-            y: 10,
-            duration: 0.3,
+            y: 5, // Reduced movement
+            duration: 0.2,
             onComplete: () => { 
               gsap.set(extContent, { display: 'none' }); 
             }
           });
         }
         
-        // Hide button
         if (button) {
           gsap.to(button, {
             opacity: 0,
-            y: 10,
-            duration: 0.3,
+            y: 5, // Reduced movement
+            duration: 0.2,
             onComplete: () => { 
               gsap.set(button, { display: 'none' }); 
             }
           });
         }
         
-        // Remove glow from inactive boxes
         gsap.to(box, {
           boxShadow: "none",
-          duration: 0.5
+          duration: 0.3
         });
       }
     });
   }
   
-  // Initial entrance animation for the boxes
+  // Initial entrance animation - smoother and more subtle
   gsap.fromTo([leftBox, middleBox, rightBox], 
-    { y: 50, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: "power3.out" }
+    { y: 30, opacity: 0 }, // Reduced y movement
+    { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power2.out" }
   );
   
   console.log('Who Are You section initialized with dramatic box expansion');
@@ -264,69 +252,78 @@ function addDynamicGridStyles(): void {
   const styleElement = document.createElement('style');
   styleElement.id = 'dynamic-whoareyou-styles';
   
-  // Use EXACTLY the grid-area values from the codepen
   styleElement.textContent = `
-    /* Left Box Expanded */
+    /* Base styles for boxes */
+    .pickyourselfdivbox {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Left Box (Creative) */
+    #leftGreenCreativeBlock {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    }
+
+    /* Middle Box (Builder) */
+    #middleBlueBuilderBlock {
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+    }
+
+    /* Right Box (Executive) */
+    #rightPinkExecBlock {
+      background: linear-gradient(135deg, #831843, #be185d);
+    }
+
+    /* Grid layouts remain the same */
     #whoAreYou-section[data-active="left"] #leftGreenCreativeBlock {
       grid-area: 4 / 1 / 7 / 6 !important;
       z-index: 1;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     #whoAreYou-section[data-active="left"] #middleBlueBuilderBlock {
       grid-area: 4 / 6 / 7 / 8 !important;
       z-index: 0;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     #whoAreYou-section[data-active="left"] #rightPinkExecBlock {
       grid-area: 4 / 8 / 7 / 10 !important;
       z-index: 0;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
     /* Middle Box Expanded */
     #whoAreYou-section[data-active="middle"] #leftGreenCreativeBlock {
       grid-area: 4 / 1 / 7 / 3 !important;
       z-index: 1;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     #whoAreYou-section[data-active="middle"] #middleBlueBuilderBlock {
       grid-area: 4 / 3 / 7 / 8 !important;
       z-index: 0;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     #whoAreYou-section[data-active="middle"] #rightPinkExecBlock {
       grid-area: 4 / 8 / 7 / 10 !important;
       z-index: 1;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
     /* Right Box Expanded */
     #whoAreYou-section[data-active="right"] #leftGreenCreativeBlock {
       grid-area: 4 / 1 / 7 / 3 !important;
       z-index: 1;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     #whoAreYou-section[data-active="right"] #middleBlueBuilderBlock {
       grid-area: 4 / 3 / 7 / 5 !important;
       z-index: 1;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     #whoAreYou-section[data-active="right"] #rightPinkExecBlock {
       grid-area: 4 / 5 / 7 / 10 !important;
       z-index: 0;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
-    /* Additional styling for content elements */
-    .pickyourselfdivbox {
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      overflow: hidden;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
+    /* Modern content styling */
     .persona-content {
       width: 100%;
       height: 100%;
@@ -336,55 +333,72 @@ function addDynamicGridStyles(): void {
       color: white;
       text-align: center;
     }
-    
+
     .persona-title {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
       font-weight: 600;
+      letter-spacing: -0.02em;
     }
-    
+
     .persona-description {
-      font-size: 1rem;
+      font-size: 1.1rem;
       opacity: 0.9;
+      line-height: 1.5;
+      max-width: 80%;
+      margin: 0 auto;
     }
-    
+
     .extended-content {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       display: none;
     }
-    
+
     .extended-content p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
-    
+
     .extended-content ul {
       text-align: left;
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
+      padding-left: 0;
+      list-style: none;
+      margin: 1.5rem auto;
+      max-width: 80%;
     }
-    
+
     .extended-content li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
     }
-    
+
+    .extended-content li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: rgba(255,255,255,0.5);
+    }
+
     .get-started-btn {
-      background: white;
-      color: #333;
-      border: none;
-      border-radius: 30px;
-      padding: 10px 25px;
-      font-weight: 600;
-      margin-top: 1rem;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-weight: 500;
+      margin-top: 2rem;
       cursor: pointer;
       display: none;
       align-self: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
     }
-    
+
     .get-started-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
     }
   `;
   
@@ -409,11 +423,11 @@ function setupEnhancedContent(leftBox: HTMLElement, middleBox: HTMLElement, righ
       <p class="persona-description">You're a creative who wants to push the boundaries of short-form content.</p>
       
       <div class="extended-content">
-        <p>As a creative, you're looking for ways to express your unique vision across platforms. Our tools help you:</p>
-        <ul>
-          <li>Unlock new creative possibilities</li>
-          <li>Reach wider audiences authentically</li>
-          <li>Turn your creative passion into influence</li>
+        <p>As a creative, you're looking for ways to express your unique vision across platforms. <br>Our tools help you:</p>
+        <ul style="text-align: center;">
+          <br>Unlock new creative possibilities
+          <br>Reach wider audiences authentically
+          <br>Turn your creative passion into influence
         </ul>
       </div>
       

@@ -1,7 +1,6 @@
-import { Application, Assets, Circle, Container, DisplacementFilter, Graphics, Sprite } from 'pixi.js';
+import { Application, Assets, Container, DisplacementFilter, Sprite } from 'pixi.js';
 import gsap from 'gsap';
 import { PixiPlugin } from 'gsap/PixiPlugin';
-import { progress } from 'motion'; // if you need it
 import { mm } from "./utils/gsapMatchMedia";
 
 
@@ -21,8 +20,9 @@ import { mm } from "./utils/gsapMatchMedia";
     });
 
     
+    
 
-    gsap.registerPlugin(PixiPlugin, ScrollTrigger, Physics2DPlugin, MotionPathPlugin, EasePack, MotionPathHelper);
+    gsap.registerPlugin(PixiPlugin, ScrollTrigger, Physics2DPlugin, MotionPathPlugin, EasePack);
 
     // Attach the Pixi canvas
     document.getElementById("pixi-container-hero")?.appendChild(app.canvas);

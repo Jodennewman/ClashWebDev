@@ -1,7 +1,6 @@
-import { Application, Graphics, Sprite, Assets, TextStyle, BitmapText, Container } from "pixi.js";
-import Matter from "matter-js";
-import hsl from "hsl-to-hex";
-import { SplitText } from "gsap/all";
+import { Application, Graphics, Sprite, Assets, Container } from "pixi.js";
+import  Matter  from "matter-js";
+import  hsl  from "hsl-to-hex";
 
 (async () => {
     // 1️⃣ Initialize PixiJS Application
@@ -238,11 +237,14 @@ import { SplitText } from "gsap/all";
       return { tl, split };
     }
 
-      let billionEyesAnimation = TextSplitter("#billionEyesText", true, true, "elastic.out(1,0.6)", 1.2, 0.05, 0).tl;
+      const billionEyesEl = document.querySelector("#billionEyesText") as HTMLElement;
+      let billionEyesAnimation = TextSplitter(billionEyesEl, true, true, "elastic.out(1,0.6)", 1.2, 0.05, 0).tl;
     
       ScrollTrigger.create( {
       trigger: "#billionEyesText",
-      start: "middle 80%",
+      scroller: "#smooth-content",
+      start: "50% 80%",
+      end: "bottom top",
       pin:false,
       scrub: false,
       toggleActions: "play none none reverse",

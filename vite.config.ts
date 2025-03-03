@@ -18,7 +18,8 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: './index.html'
+        main: './index.html',
+        vs: './src/vertical-shortcut/index.htnl'
       },
       output: {
         entryFileNames: 'assets/[name].[hash].js',
@@ -33,8 +34,10 @@ export default defineConfig({
   },
   base: './',
   optimizeDeps: {
-    include: ['matter-js', 'hsl-to-hex', '@assetpack/core'],
-    exclude: [
+    include: [
+      'matter-js',
+      'hsl-to-hex',
+      '@assetpack/core',
       'gsap',
       'gsap/ScrollTrigger',
       'gsap/DrawSVGPlugin',
@@ -42,7 +45,13 @@ export default defineConfig({
       'gsap/MotionPathPlugin',
       'gsap/Physics2DPlugin',
       'gsap/ScrollSmoother',
+      'gsap/Flip',
+      'gsap/CustomEase',
+      'gsap/EasePack',
       'gsap/PixiPlugin',
+      'gsap/all'
+    ],
+    exclude: [
       '@node-rs/crc32-wasm32-wasi',
       'fsevents'
     ]

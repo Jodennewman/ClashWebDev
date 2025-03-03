@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { SplitText } from 'gsap/SplitText';
@@ -7,6 +7,8 @@ import { Physics2DPlugin } from 'gsap/Physics2DPlugin';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { Flip } from 'gsap/Flip';
 import { CustomEase } from 'gsap/CustomEase';
+import { EasePack } from 'gsap/EasePack';
+import { PixiPlugin } from 'gsap/PixiPlugin';
 
 // Import our animation modules
 import { initSerpentineAnimation, initSplitScreenScroll, initRotatingStar } from './serpentine';
@@ -15,6 +17,7 @@ import './ourStory.ts';
 
 // Import the whoAreYou module with its named export
 import { initWhoAreYouSection } from './whoareyou';
+import { initCaseStudies } from './caseStudies';
 
 // =============================================
 // IMPORTANT: This is the ONLY place where GSAP plugins should be registered
@@ -28,7 +31,9 @@ gsap.registerPlugin(
   Physics2DPlugin,
   ScrollSmoother,
   Flip,
-  CustomEase
+  CustomEase,
+  EasePack,
+  PixiPlugin
 );
 
 /**
@@ -83,41 +88,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize ScrollTrigger first
   initScrollTrigger();
   
-  // Log script loading attempts
-  console.log('About to try initializing Who Are You section...');
-  
+  // Initialize all sections in order from top to bottom of the page
   try {
-    // Initialize animations in the correct order (top to bottom of page)
-    console.log('Initializing serpentine animation...');
+    console.log('Initializing sections in order...');
+    
+    // First section animations
     initSerpentineAnimation();
-    console.log('Initializing split screen scroll...');
+    console.log('Serpentine animation initialized');
+    
+    // Split screen section
     initSplitScreenScroll();
-    console.log('Initializing rotating star...');
+    console.log('Split screen scroll initialized');
+    
+    // Who are you section
+    initWhoAreYouSection();
+    console.log('Who are you section initialized');
+    
+    // Case studies section
+    initCaseStudies();
+    console.log('Case studies initialized');
+    
+    // Other animations
     initRotatingStar();
-    console.log('Initializing horizontal sections...');
     initHorizontalSections();
     
-    // Add a delay to ensure DOM is fully processed
-    console.log('Waiting to initialize Who Are You section...');
-    setTimeout(() => {
-      console.log('Attempting to initialize Who Are You section...');
-      try {
-        initWhoAreYouSection();
-      } catch (e: any) {
-        console.error('Error initializing Who Are You section:', e);
-        console.error('Who Are You section initialization failed:', e.message);
-      }
-    }, 1000);
+    // Final refresh after all sections are initialized
+    gsap.delayedCall(0.5, () => {
+      ScrollTrigger.refresh(true);
+      console.log('Final ScrollTrigger refresh after all initializations');
+      
+      // Log all active triggers for debugging
+      console.log('Active ScrollTrigger instances:', 
+        ScrollTrigger.getAll().map(st => ({
+          id: st.vars.id,
+          trigger: st.trigger?.classList.toString(),
+          isActive: st.isActive
+        }))
+      );
+    });
+    
   } catch (e: any) {
     console.error('Error in main initialization:', e);
     console.error('Main initialization failed:', e.message);
   }
-  
-  // Initialize other animations as needed
-  // setupStatsAnimations();
-  
-  // Log all ScrollTrigger instances for debugging
-  console.log('All ScrollTrigger instances:', ScrollTrigger.getAll().map(st => st.vars.id || 'unnamed'));
-  
-  console.log('All animations initialized from main.ts');
 }); 

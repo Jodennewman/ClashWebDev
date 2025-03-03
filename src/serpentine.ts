@@ -1,10 +1,3 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-
-// IMPORTANT: Do not register plugins here. All plugins should be registered in main.ts
-// gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin);
 
 // Initialize timelines
 let serpTL = gsap.timeline();
@@ -21,7 +14,7 @@ export function initSerpentineAnimation(): void {
     // Log detailed element information
     console.log("Section details:", {
         found: !!section,
-        height: section?.getBoundingClientRect().height,
+        height: section?.offsetHeight,
         inView: section ? isElementInViewport(section) : false,
         classes: section?.classList.toString()
     });
@@ -56,75 +49,66 @@ export function initSerpentineAnimation(): void {
         }
     });
     
-    // Make sure the path is visible immediately
+    // Make sure the path is visible immediately but start with drawSVG at 0
     gsap.set([serpentinePath, animationPath], { 
-        autoAlpha: 0,
+        autoAlpha: 1,
         scale: 0.95,
         y: 30
     });
+    
+    // Set drawSVG to 0 initially
+    gsap.set(animationPath, { drawSVG: 0 });
     
     // Create the main timeline with more detailed ScrollTrigger config
     const mainTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: section,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: 1,
-            markers: true,
-            id: "serpentinePathTrigger",
-            toggleActions: "play reverse play reverse",
             scroller: "#smooth-content",
-            onEnter: () => {
-                console.log("Entered serpentine section");
-                logTriggerState("onEnter");
-            },
-            onLeave: () => {
-                console.log("Left serpentine section");
-                logTriggerState("onLeave");
-            },
-            onEnterBack: () => {
-                console.log("Entered back serpentine section");
-                logTriggerState("onEnterBack");
-            },
-            onLeaveBack: () => {
-                console.log("Left back serpentine section");
-                logTriggerState("onLeaveBack");
-            },
-            onUpdate: (self) => {
-                console.log("Progress:", self.progress.toFixed(3));
-                logTriggerState("onUpdate");
-            },
-            onToggle: (self) => {
-                console.log("Active:", self.isActive);
-                logTriggerState("onToggle");
-            }
+            start: "top bottom",
+            end: "+800px",
+            scrub: 1,
+            id: "serpentinePathTrigger",
+            toggleActions: "play none none reverse",
+            onEnter: () => console.log("Entered serpentine section"),
+            onLeave: () => console.log("Left serpentine section"),
+            onEnterBack: () => console.log("Entered back serpentine section"),
+            onLeaveBack: () => console.log("Left back serpentine section")
         }
     });
     
     // Add animations to the timeline
     mainTimeline
+        // First animate scale and position
         .to([serpentinePath, animationPath], {
-            autoAlpha: 1,
             scale: 1,
             y: 0,
-            duration: 1,
+            duration: 0.5,
             ease: "power2.out"
         })
+        // Then animate the path drawing with DrawSVG
+        .to(animationPath, {
+            drawSVG: "100%",
+            duration: 1.5,
+            ease: "power2.inOut"
+        }, "-=0.3")
+        // Animate text after path is drawn
         .from(".serpentine-text", {
             y: 50,
             opacity: 0,
             stagger: 0.2,
             duration: 1,
             ease: "power2.out"
-        }, "-=0.5");
+        }, "-=0.8");
     
-    // Force a refresh of ScrollTrigger and log the result
-    console.log("Before ScrollTrigger refresh");
-    ScrollTrigger.refresh(true);
-    console.log("After ScrollTrigger refresh");
+    // Also set up the motion path animations from the original code
+    setupMotionPathAnimations();
     
-    // Log all ScrollTrigger instances for debugging
-    console.log("Active ScrollTrigger instances:", ScrollTrigger.getAll());
+    // Call the orange star animation
+    animateOrangeStar();
+
+    initSplitScreenScroll();
+
+    animateGalleryItems()
     
     // Helper function to check if element is in viewport
     function isElementInViewport(el: Element) {
@@ -137,24 +121,66 @@ export function initSerpentineAnimation(): void {
         );
     }
     
-    // Helper function to log trigger state
-    function logTriggerState(event: string) {
-        const st = ScrollTrigger.getById("serpentinePathTrigger");
-        if (st) {
-            console.log(`ScrollTrigger state (${event}):`, {
-                progress: st.progress,
-                direction: st.direction,
-                isActive: st.isActive,
-                start: st.start,
-                end: st.end,
-                trigger: st.trigger,
-                scroller: st.scroller
-            });
-        }
-    }
+    console.log("Serpentine animation with DrawSVG initialized successfully");
 }
 
-// Handle the split screen scrolling effect
+// Set up the motion path animations for the decorative elements
+function setupMotionPathAnimations() {
+    // Clear the timeline first
+    serpTL.clear();
+    
+    // Check if elements exist
+    const blueBall = document.querySelector("#blueBall");
+    const purpleCross = document.querySelector("#purpleCross");
+    const animationPath = document.querySelector("#serpentineAnimationPath");
+    
+    if (!animationPath) {
+        console.error("Animation path not found for motion paths");
+        return;
+    }
+    
+    if (blueBall) {
+        serpTL.to("#blueBall", {
+            motionPath: {
+                path: "#serpentineAnimationPath",
+                autoRotate: true,
+            },
+            ease: "none",
+            duration: 0.5,
+        }, 0);
+    } else {
+        console.warn("Blue ball element not found for motion path");
+    }
+    
+    if (purpleCross) {
+        serpTL.to("#purpleCross", {
+            motionPath: {
+                path: "#serpentineAnimationPath",
+                curviness: 2,
+                autoRotate: true,
+            },
+            ease: "none",
+            duration: 0.5,
+        }, 0.5);
+    } else {
+        console.warn("Purple cross element not found for motion path");
+    }
+    
+    // Create ScrollTrigger for these motion path animations
+    ScrollTrigger.create({
+        trigger: "#section-serpentine",
+        scroller: "#smooth-content",
+        start: "top middle",
+        animation: serpTL,
+        end: "+500px",
+        scrub: 1,
+        id: "serpentineMotionTrigger",
+        toggleActions: "play none none reverse"
+    });
+    
+    console.log("Motion path animations initialized");
+}
+
 export function initSplitScreenScroll(): void {
     console.log("Initializing split screen scroll with true parallax effect");
     
@@ -234,6 +260,7 @@ export function initSplitScreenScroll(): void {
         ease: "power3.out",
         scrollTrigger: {
             trigger: ".left-content",
+            scroller: "#smooth-content",
             start: "top 80%",
             toggleActions: "play none none none"
         }
@@ -261,7 +288,9 @@ export function initSplitScreenScroll(): void {
             ease: "power2.out",
             scrollTrigger: {
                 trigger: ".left-content",
-                start: "top 60%",
+                scroller: "#smooth-content",
+                start: "50% 50%",
+                end: "+800px",
                 toggleActions: "play none none none"
             }
         });
@@ -278,7 +307,9 @@ export function initSplitScreenScroll(): void {
         ease: "back.out(1.7)",
         scrollTrigger: {
             trigger: ".stats-container",
+            scroller: "#smooth-content",
             start: "top 80%",
+            end: "bottom top",
             toggleActions: "play none none none"
         }
     });
@@ -345,9 +376,11 @@ ScrollTrigger.create({
     trigger: "#section-serpentine",
     start: "top middle",
     animation: serpTL,
+    scroller: "#smooth-content",
     markers: true,
     end: "+500px",
     scrub: 1,
+    id: "serpentineMotionTrigger",
     toggleActions: "play reverse play reverse"
 });
 
@@ -400,19 +433,11 @@ function animateOrangeStar(): void {
     const starTL = gsap.timeline({
         scrollTrigger: {
             trigger: "#section-serpentine",
-            start: "top 80%", // Start earlier
-            end: "bottom top",
+            start: "top 90%", // Start earlier
+            end: "+800px",
+            scroller: "#smooth-content",
             scrub: 1.5, // Smoother scrubbing
-            markers: true, // Enable markers for debugging
-            id: "orangeStarTrigger",
-            onUpdate: (self) => {
-                // Increase the star's scale as it moves further down the path
-                const progress = self.progress;
-                gsap.to(orangeStar, {
-                    scale: 0.7 + (progress * 0.8), // Scale from 0.7 to 1.5
-                    duration: 0.1
-                });
-            }
+            id: "orangeStarTrigger"
         }
     });
     
@@ -431,22 +456,6 @@ function animateOrangeStar(): void {
             },
             duration: 8, // Longer duration for smoother motion
             ease: "power1.inOut"
-        })
-        .to(orangeStar, {
-            y: "+=100vh", // Continue moving down into the next section
-            duration: 3, // Longer duration
-            ease: "power1.in",
-            onComplete: () => {
-                // When the animation is complete, make sure the star is positioned at the start of the next section
-                const splitScreenSection = document.getElementById('splitScreenWrapper');
-                if (splitScreenSection) {
-                    // Position the star at the top of the split screen section
-                    gsap.set(orangeStar, {
-                        y: splitScreenSection.offsetTop,
-                        x: window.innerWidth / 2
-                    });
-                }
-            }
         });
     
     // Add a spinning animation
@@ -456,6 +465,6 @@ function animateOrangeStar(): void {
         repeat: -1,
         ease: "none"
     });
-    
+
     console.log("Orange star animation initialized");
 }

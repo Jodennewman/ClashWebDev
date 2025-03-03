@@ -12,13 +12,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "gsap": "^3.12.2",
+    "@gsap/react": "^2.1.2",
+    "@types/matter-js": "^0.19.8",
+    "feather-icons": "^4.29.2",
+    "gsap": "npm:@gsap/shockingly@^3.12.7",
     "hsl-to-hex": "^1.0.0",
     "matter-js": "^0.20.0",
     "pixi.js": "^8.8.1"
   },
   "devDependencies": {
     "@assetpack/core": "^1.4.0",
+    "@types/feather-icons": "^4.29.4",
+    "@types/hsl-to-hex": "^1.0.2",
     "terser": "^5.39.0",
     "typescript": "^5.0.2",
     "vite": "^5.1.4"

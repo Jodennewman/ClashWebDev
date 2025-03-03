@@ -3195,7 +3195,6 @@ section.sectionbighow,
   font-size: 5vw;
   font-weight: 500;
 }
-
 .text-span-6 {
   margin-left: 3.5vw;
   position: static;
@@ -3248,18 +3247,12 @@ section.sectionbighow,
   grid-column-gap: 0rem;
   pointer-events: auto;
   order: 1;
-  grid-template-rows: minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%);
-  grid-template-columns: minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%) minmax(10%, 10%);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   position: relative;
-  top: auto;
-  bottom: auto;
-  left: auto;
-  right: auto;
   width: 100vw;
   min-width: 100vw;
   max-width: 100vw;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .casestudybutton {
@@ -5007,7 +5000,7 @@ pre {
 .rectangle-right {
   grid-column: 2;
   grid-row: 1 / 2;
-  background: url('../public/assets/main/red-purple.webp.jpg');
+  background: url('../public/assets/main/Main5.jpg');
   background-size: 120% 120%;
   background-position: 50% 100%;
 
@@ -5502,8 +5495,8 @@ pre {
 }
 
 .left-content-inner {
-  background-color: #f8a47c; /* Peachy orange color */
-  background-image: url("./public/assets/main/Peachy.webp");
+
+  background-image: url("/assets/main/Peachy.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -5786,8 +5779,8 @@ pre {
   grid-column: 1 / 11;
   z-index: 1;
   display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   justify-items: center;
   align-items: center;
   gap: 2rem;
@@ -5798,12 +5791,12 @@ pre {
 
 .case-study-buttons-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-column: 1 / 11;
-  grid-row: 1 / 11;
-  gap: 2rem;
-  margin: 2rem 0;
-  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 5 / 12;
+  grid-row: 8 / 10;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  height: 100%;
   max-width: 1000px;
   z-index: 10;
   position: relative;
@@ -6172,9 +6165,10 @@ pre {
   background-image: url('/public/assets/main/DARKBLUE2.jpg');
   min-height: 600px;
 }
-
 .ourstorywrapper.hpanels2 {
   overflow: visible !important;
 }
-
 /* End OurStorySection Styles */
+
+
+

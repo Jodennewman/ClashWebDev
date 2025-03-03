@@ -178,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1,
                 delay: i * 0.1,
                 ease: "back.inOut(1.7)",
-                toggleActions: "play none reverse reset",
                 onComplete: () => {
                   // Add subtle floating animation after they arrive
                   gsap.to(container, {
