@@ -1,0 +1,214 @@
+/* Hero Section */
+.hero-section {
+    padding: 8rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    background-color: var(--background-primary);
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -30%;
+    width: 80%;
+    height: 160%;
+    background: radial-gradient(circle at 80% 50%, var(--dark-blue-mid) 0%, transparent 70%);
+    z-index: 0;
+    opacity: 0.6;
+  }
+  
+  .hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+  }
+  
+  .hero-eyeball {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+    filter: blur(1px);
+    opacity: 0.9;
+    will-change: transform;
+  }
+  
+  .hero-eyeball-1 {
+    top: 5%;
+    right: 15%;
+    animation: float 8s ease-in-out infinite;
+    width: 240px;
+    height: 240px;
+  }
+  
+  .hero-eyeball-2 {
+    bottom: 15%;
+    left: 10%;
+    animation: float 9s ease-in-out infinite 1s;
+    width: 140px;
+    height: 140px;
+  }
+  
+  .hero-eyeball-3 {
+    top: 45%;
+    right: 8%;
+    animation: float 7s ease-in-out infinite 2s;
+    width: 160px;
+    height: 160px;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+
+  .hero-headline-container {
+    margin-bottom: 2rem;
+  }
+  
+  .hero-headline {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.8s ease;
+  }
+  
+  .hero-headline.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  .hero-title {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, var(--orange) 0%, var(--pink) 50%, var(--blue) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    animation: gradientMove 8s ease infinite;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .hero-cta {
+    display: inline-block;
+    background-color: var(--pink);
+    color: white !important;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+  }
+  
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -10px rgba(251, 113, 133, 0.4);
+  }
+  
+  .hero-cta:hover::before {
+    left: 100%;
+  }
+  
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .results-graph {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 1;
+    opacity: 0.6;
+    transform: scale(1.5);
+  }
+  
+  .small-eyeball {
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    width: 120px !important;
+    height: 120px !important;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1200px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+    
+    .hero-section {
+      padding: 6rem 0;
+    }
+    
+    .hero-eyeball {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .hero-eyeball-1 {
+      width: 160px;
+      height: 160px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }

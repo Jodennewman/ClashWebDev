@@ -1,0 +1,82 @@
+/* variables.css */
+:root {
+    /* Standard sRGB colors (fallbacks for older browsers) */
+    --brand-red: #D81A22;
+    --brand-orange: #FA9644;
+    --brand-orange-light: #FEAF52;
+    --brand-blue-dark: #33626F;
+    --brand-blue: #378596;
+    --brand-cream: #FFF5E9;
+    
+    /* P3 color space versions - more vibrant on supported displays */
+    --brand-red: color(display-p3 0.847 0.102 0.133);
+    --brand-orange: color(display-p3 0.98 0.588 0.267);
+    --brand-orange-light: color(display-p3 0.996 0.686 0.322);
+    --brand-blue-dark: color(display-p3 0.2 0.384 0.435);
+    --brand-blue: color(display-p3 0.216 0.522 0.588);
+    --brand-cream: color(display-p3 1 0.961 0.914);
+    
+    /* Dark mode palette - sRGB fallbacks */
+    --dark-blue-black: #08141B;
+    --dark-blue: #123C55;
+    --dark-teal: #0F474A;
+    --dark-slate: #243843;
+    --dark-blue-mid: #186080;
+    
+    /* Dark mode palette - P3 versions */
+    --dark-blue-black: color(display-p3 0.031 0.078 0.106);
+    --dark-blue: color(display-p3 0.071 0.235 0.333);
+    --dark-teal: color(display-p3 0.059 0.278 0.29);
+    --dark-slate: color(display-p3 0.141 0.22 0.263);
+    --dark-blue-mid: color(display-p3 0.094 0.376 0.502);
+    
+    /* Accent colors - sRGB fallbacks */
+    --accent-teal: #3196AD;
+    --accent-coral: #D45D56;
+    --accent-peach: #F49272;
+    --accent-gold: #FFC590;
+    
+    /* Accent colors - P3 versions */
+    --accent-teal: color(display-p3 0.192 0.588 0.678);
+    --accent-coral: color(display-p3 0.831 0.365 0.337);
+    --accent-peach: color(display-p3 0.957 0.573 0.447);
+    --accent-gold: color(display-p3 1 0.773 0.565);
+
+    /* Theme colors */
+    --orange: #FF7D00;
+    --pink: #FF2D55;
+    --blue: #0A84FF;
+    --purple: #AF52DE;
+    --green: #30D158;
+    
+    /* Background and UI colors */
+    --background-primary: var(--dark-blue-black);
+    --background-secondary: var(--dark-blue);
+    --card-bg: var(--dark-slate);
+    --card-hover: rgba(36, 56, 67, 0.8);
+    --accent-color: var(--brand-orange);
+    --text-primary: var(--brand-cream);
+    --text-secondary: rgba(255, 245, 233, 0.7);
+    
+    /* Typography */
+    --heading-font: 'Inter', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix for ScrollSmoother */
+#vs-smooth-content {
+  transform: none !important;
+}

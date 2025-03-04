@@ -1,0 +1,129 @@
+/* In components/effects.css */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: difference;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+  
+
+.grainy-gradient {
+    position: relative;
+    isolation: isolate;
+  }
+  
+  .grainy-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .gradient-orange-red {
+    background: linear-gradient(135deg, var(--brand-orange), var(--brand-red));
+  }
+  
+  .gradient-blue-teal {
+    background: linear-gradient(135deg, var(--brand-blue), var(--dark-teal));
+  }
+
+
+  
+  .gradient-dark {
+    background: linear-gradient(135deg, var(--dark-blue-black), var(--dark-blue));
+  }
+
+    /* Common gradient backgrounds */
+.gradient-bg-pink {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(251, 113, 133, 0.08) 0%, rgba(15, 23, 42, 0) 70%);
+    z-index: -1;
+  }
+  
+  .gradient-bg-blue {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+  }
+
+    
+  .hero-section.grainy-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    width: 80%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(250, 150, 68, 0.15) 0%, transparent 70%);
+    z-index: -2;
+    border-radius: 50%;
+  }
+
+
+  /* In components/effects.css */
+.eyeball-decoration {
+    position: absolute;
+    border-radius: 50%;
+    background: #FFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .eyeball-decoration::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: var(--brand-blue);
+  }
+  
+  .eyeball-decoration::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background: #08141B;
+  }
+  
+  .eyeball-1 {
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    right: 10%;
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .eyeball-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 25%;
+    left: 15%;
+    animation: float 6s ease-in-out infinite 1s;
+  }
