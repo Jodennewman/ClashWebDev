@@ -1,59 +1,43 @@
-<svg id="eyeballSVG" data-name="Layer 1"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 291.65 291.65" width="5rem" height="5rem">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="eyeballSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 5 5">
+  <!-- Generator: Adobe Illustrator 29.3.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 146)  -->
   <defs>
-    <!-- Updated style with a more unique class name -->
     <style>
-      .eyeBallBlueIris {
-        fill: url(#eyeballGradient);
+      .st0 {
+        fill: url(#radial-gradient);
       }
     </style>
-
-    <radialGradient id="eyeballGradient" cx="147.25" cy="145.31"
-                    fx="147.25" fy="145.31" r="238"
-                    gradientUnits="userSpaceOnUse">
-
-      <!-- The repeated stops from your original code.
-           The multiple offset="0" stops are unusual, but won't necessarily break things.
-           The final gradient will end up going from black (#000) at offset=0
-           toward #ababab at offset=1.
-           You can tidy these if you want. -->
-
-      <stop offset="0" stop-color="#000"/>
-      <stop offset="0" stop-color="#000"/>
-      <stop offset="0" stop-color="#000"/>
-      <stop offset="0" stop-color="#000"/>
-      <stop offset="0" stop-color="#000"/>
-      <stop offset=".16" stop-color="#000101"/>
-      <stop offset=".2" stop-color="#020506"/>
-      <stop offset=".2" stop-color="#020608"/>
-      <stop offset=".2" stop-color="#050c0f"/>
-      <stop offset=".2" stop-color="#09171b"/>
-      <stop offset=".2" stop-color="#10262d"/>
-      <stop offset=".2" stop-color="#183a44"/>
-      <stop offset=".2" stop-color="#225260"/>
-      <stop offset=".21" stop-color="#2f6f82"/>
-      <stop offset=".21" stop-color="#3c8fa8"/>
-      <stop offset=".21" stop-color="#45a3bf"/>
-      <stop offset=".34" stop-color="#409ccf"/>
-      <stop offset=".39" stop-color="#40c3be"/>
-      <stop offset=".4" stop-color="#42c3be"/>
-      <stop offset=".4" stop-color="#4bc6c1"/>
-      <stop offset=".4" stop-color="#59cbc6"/>
-      <stop offset=".4" stop-color="#6ed1cd"/>
-      <stop offset=".4" stop-color="#88d9d6"/>
-      <stop offset=".4" stop-color="#a9e4e1"/>
-      <stop offset=".4" stop-color="#d0f0ef"/>
-      <stop offset=".4" stop-color="#fcfefd"/>
-      <stop offset=".4" stop-color="#fff"/>
-      <stop offset=".46" stop-color="#fff"/>
-      <stop offset=".7" stop-color="#dcdcdc"/>
-      <stop offset="1" stop-color="#ababab"/>
+    <radialGradient id="radial-gradient" cx="28640.3" cy="-28632.3" fx="28640.3" fy="-28632.3" r="238" gradientTransform="translate(-488.5 -488.4) scale(0 0)" gradientUnits="userSpaceOnUse">
+      <stop offset=".2" stop-color="#350013"/>
+      <stop offset=".2" stop-color="#360214"/>
+      <stop offset=".2" stop-color="#3a091b"/>
+      <stop offset=".2" stop-color="#411527"/>
+      <stop offset=".2" stop-color="#4c2738"/>
+      <stop offset=".2" stop-color="#5a3e4e"/>
+      <stop offset=".2" stop-color="#6b5a69"/>
+      <stop offset=".2" stop-color="#7f7c8a"/>
+      <stop offset=".2" stop-color="#97a3af"/>
+      <stop offset=".2" stop-color="#b1ced8"/>
+      <stop offset=".2" stop-color="#bfe6ef"/>
+      <stop offset=".2" stop-color="#aedce7"/>
+      <stop offset=".3" stop-color="#84c2d4"/>
+      <stop offset=".4" stop-color="#2f6587"/>
+      <stop offset=".4" stop-color="#316688"/>
+      <stop offset=".4" stop-color="#3a6c8b"/>
+      <stop offset=".4" stop-color="#487592"/>
+      <stop offset=".4" stop-color="#5d839a"/>
+      <stop offset=".4" stop-color="#7794a6"/>
+      <stop offset=".4" stop-color="#98aab4"/>
+      <stop offset=".4" stop-color="#bfc4c5"/>
+      <stop offset=".4" stop-color="#ebe0d8"/>
+      <stop offset=".4" stop-color="#feede0"/>
+      <stop offset=".5" stop-color="#fdebdd"/>
+      <stop offset=".5" stop-color="#fae5d3"/>
+      <stop offset=".6" stop-color="#f6dcc4"/>
+      <stop offset=".6" stop-color="#f1ceae"/>
+      <stop offset=".6" stop-color="#efc9a5"/>
+      <stop offset=".7" stop-color="#edc49c"/>
     </radialGradient>
   </defs>
-  
-  <!-- Note the circle uses the new class name. -->
-  <circle id="eyeballCircle" class="eyeBallBlueIris" cx="145.83" cy="145.83" r="145.83"/>
+  <circle id="eyeballCircle" class="st0" cx="2.5" cy="2.5" r="2.5"/>
 </svg>

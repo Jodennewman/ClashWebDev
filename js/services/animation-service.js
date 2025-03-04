@@ -57,7 +57,7 @@ function initAnimation() {
         setTimeout(() => {
             gsap_setup_1.ScrollTrigger.refresh(true);
             console.log('Forced ScrollTrigger refresh complete');
-        }, 200);
+        }, 600);
     }
     catch (error) {
         console.error('Error creating ScrollSmoother:', error);

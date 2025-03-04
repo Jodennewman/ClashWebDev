@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
-
-import { assetpackPlugin } from "./scripts/assetpack-vite-plugin.js";
+import { assetpackPlugin } from "./scripts/assetpack-vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,7 +18,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        vs: './src/vertical-shortcut/index.htnl'
+        vs: './src/vertical-shortcut/index.html'
       },
       output: {
         entryFileNames: 'assets/[name].[hash].js',
