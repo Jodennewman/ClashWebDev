@@ -1,1391 +1,521 @@
 import feather from 'feather-icons';
-const moduleData = [
-  // Basic Theory and Practices
+
+// Module data for the Vertical Shortcut course
+export const courseModules = [
+  // Foundational Track - Most important for founders
   {
-    id: 'basic-01',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'The Big Picture on Short Form',
-    description: 'Master the fundamental concepts and strategic approach to short-form video content.',
-    icon: 'film',
-    roles: ['founder', 'writer'],
+    track: "Foundational Track",
+    title: "Content Strategy Essentials",
+    description: "Learn how to create a content strategy that aligns with your business goals and attracts your target audience",
+    icon: "compass",
+    forFounder: true,
+    mustWatch: true,
+    imageUrl: "./assets/modules/strategy.jpg",
     submodules: [
-      'Platform ecosystem overview',
-      'Content consumption patterns',
-      'Attention economy principles',
-      'Short-form vs traditional content'
-    ],
-    resources: {
-      duration: '18 min',
-      templates: 3,
-      pdfs: 2
-    }
+      "Business-aligned content strategy",
+      "Audience analysis and targeting",
+      "Content pillar development"
+    ]
   },
   {
-    id: 'basic-02',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'The Script of Sisyphus',
-    description: 'Learn content optimization strategies that drive consistent engagement.',
-    icon: 'edit-3',
-    roles: ['founder', 'writer'],
+    track: "Foundational Track",
+    title: "Industry Analysis & Positioning",
+    description: "Establish your unique market position through competitor analysis and differentiation strategies",
+    icon: "target",
+    forFounder: true,
+    mustWatch: false,
+    imageUrl: "./assets/modules/positioning.jpg",
     submodules: [
-      'Efficient content cycling',
-      'Systematic content creation',
-      'Iteration frameworks',
-      'Avoiding burnout in creation'
-    ],
-    resources: {
-      duration: '15 min',
-      templates: 2,
-      pdfs: 1
-    }
+      "Market gap identification",
+      "Competitive differentiation",
+      "Authority positioning frameworks"
+    ]
   },
   {
-    id: 'basic-03',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Helpful Formats 101',
-    description: 'Master proven content formats that consistently perform well across platforms.',
-    icon: 'layout',
-    roles: ['founder', 'writer', 'editor'],
+    track: "Foundational Track",
+    title: "Creating Your Content Identity",
+    description: "Develop a distinct and recognizable content style that cuts through the noise",
+    icon: "feather",
+    forFounder: true,
+    mustWatch: false,
+    imageUrl: "./assets/modules/branding.jpg",
     submodules: [
-      'Top-performing content structures',
-      'Format selection strategy',
-      'Industry-specific formats',
-      'Format adaptation techniques'
-    ],
-    resources: {
-      duration: '22 min',
-      templates: 5,
-      pdfs: 3
-    }
+      "Visual identity development",
+      "Voice and tone guidelines",
+      "Brand consistency across platforms"
+    ]
   },
   {
-    id: 'basic-04',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Algorithmic Reality',
-    description: 'Understand how platform algorithms work and how to leverage them for growth.',
-    icon: 'trending-up',
-    roles: ['founder', 'writer'],
+    track: "Foundational Track",
+    title: "Algorithm Optimization",
+    description: "Understand how platform algorithms work and how to optimize your content for maximum reach",
+    icon: "trending-up",
+    forFounder: true,
+    mustWatch: true,
+    imageUrl: "./assets/modules/algorithm.jpg",
     submodules: [
-      'Algorithm fundamentals',
-      'Key ranking factors',
-      'Platform-specific strategies',
-      'Algorithm updates adaptation'
-    ],
-    resources: {
-      duration: '25 min',
-      templates: 2,
-      pdfs: 4
-    }
-  },
-  {
-    id: 'basic-05',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Engagement Metrics 101',
-    description: 'Learn to measure and optimize for the metrics that matter to your business goals.',
-    icon: 'bar-chart-2',
-    roles: ['founder'],
-    submodules: [
-      'Key performance indicators',
-      'Meaningful engagement metrics',
-      'Performance benchmarking',
-      'Metrics interpretation framework'
-    ],
-    resources: {
-      duration: '20 min',
-      templates: 4,
-      pdfs: 2
-    }
-  },
-  {
-    id: 'basic-06',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'The Frame Itself',
-    description: 'Master visual composition principles for vertical video that captures attention.',
-    icon: 'square',
-    roles: ['videographer', 'editor'],
-    submodules: [
-      'Vertical composition principles',
-      'Visual hierarchy in limited space',
-      'Movement and framing techniques',
-      'Composition for mobile viewing'
-    ],
-    resources: {
-      duration: '17 min',
-      templates: 1,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'basic-07',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Scriptwriting 101',
-    description: 'Write compelling scripts optimized for short-form vertical content.',
-    icon: 'file-text',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Short-form script structure',
-      'Concise messaging techniques',
-      'Value delivery in limited time',
-      'Script templates by content type'
-    ],
-    resources: {
-      duration: '19 min',
-      templates: 6,
-      pdfs: 2
-    }
-  },
-  {
-    id: 'basic-08',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Hooking Fundamentals',
-    description: 'Master the art of creating hooks that stop the scroll in the first 3 seconds.',
-    icon: 'anchor',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Pattern interruption techniques',
-      'Hook formula frameworks',
-      'Psychological triggers',
-      'Hook testing methodologies'
-    ],
-    resources: {
-      duration: '24 min',
-      templates: 5,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'basic-09',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Strategy Pillars Topics Buckets',
-    description: 'Develop a strategic content framework aligned with business goals.',
-    icon: 'layers',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Content pillar development',
-      'Strategic topic selection',
-      'Content mapping to business objectives',
-      'Long-term content planning'
-    ],
-    resources: {
-      duration: '23 min',
-      templates: 4,
-      pdfs: 2
-    }
-  },
-  {
-    id: 'basic-10',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'The Cardinal Sins and Virtues',
-    description: 'Learn what to embrace and what to avoid in short-form content.',
-    icon: 'alert-triangle',
-    roles: ['founder', 'writer', 'editor', 'videographer'],
-    submodules: [
-      'Critical content mistakes',
-      'Success-driving content elements',
-      'Industry-specific best practices',
-      'Common misconceptions'
-    ],
-    resources: {
-      duration: '21 min',
-      templates: 2,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'basic-11',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Starting an Account for Success',
-    description: 'Set up your accounts and profiles for maximum visibility and growth.',
-    icon: 'user-plus',
-    roles: ['founder'],
-    submodules: [
-      'Profile optimization strategies',
-      'Early content approach',
-      'Audience building fundamentals',
-      'Cross-platform integration'
-    ],
-    resources: {
-      duration: '16 min',
-      templates: 3,
-      pdfs: 2
-    }
-  },
-  {
-    id: 'basic-12',
-    track: 'basic',
-    category: 'Basic Theory and Practices',
-    title: 'Platform Differences',
-    description: 'Understand the unique characteristics and requirements of each platform.',
-    icon: 'grid',
-    roles: ['founder', 'writer', 'editor'],
-    submodules: [
-      'Platform-specific audience behaviors',
-      'Format optimization by platform',
-      'Cross-platform content adaptation',
-      'Platform specialization strategy'
-    ],
-    resources: {
-      duration: '26 min',
-      templates: 4,
-      pdfs: 5
-    }
+      "Platform-specific algorithm insights",
+      "Engagement metrics optimization",
+      "Trend analysis and utilization"
+    ]
   },
   
-  // Advanced Theory and Practices
+  // Content Creation Track - Important for content creators and team members
   {
-    id: 'advanced-01',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Foundations of Manufacturing Authority',
-    description: 'Build authentic expertise and position yourself as a thought leader.',
-    icon: 'award',
-    roles: ['founder'],
+    track: "Content Creation",
+    title: "Hook Writing Masterclass",
+    description: "Master the art of creating hooks that stop the scroll and captivate viewers in the first 3 seconds",
+    icon: "anchor",
+    forFounder: false,
+    mustWatch: false,
+    color: "#4F46E5", // Indigo
+    imageUrl: "./assets/modules/hooks.jpg",
     submodules: [
-      'Authority positioning frameworks',
-      'Expertise demonstration strategies',
-      'Trust-building content patterns',
-      'Credibility acceleration techniques'
-    ],
-    resources: {
-      duration: '28 min',
-      templates: 3,
-      pdfs: 4
-    }
+      "Pattern interruption techniques",
+      "Data-backed hook formulas",
+      "A/B testing hooks methodology"
+    ]
   },
   {
-    id: 'advanced-02',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Authority and Brand Holism through Short Form',
-    description: 'Integrate short-form into your broader brand and authority strategy.',
-    icon: 'shield',
-    roles: ['founder'],
+    track: "Content Creation",
+    title: "Story-Driven Content Creation",
+    description: "Use storytelling principles to create emotional connections with your audience",
+    icon: "book-open",
+    forFounder: false,
+    mustWatch: false,
+    color: "#4F46E5", // Indigo
+    imageUrl: "./assets/modules/storytelling.jpg",
     submodules: [
-      'Brand integration frameworks',
-      'Cohesive messaging architecture',
-      'Authority stacking principles',
-      'Brand consistency systems'
-    ],
-    resources: {
-      duration: '24 min',
-      templates: 3,
-      pdfs: 2
-    }
+      "Story structure for short-form",
+      "Personal narrative development",
+      "Emotion-driven content patterns"
+    ]
   },
   {
-    id: 'advanced-03',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'PR Shaping your Narrative',
-    description: 'Control your public narrative and shape your industry positioning.',
-    icon: 'mic',
-    roles: ['founder'],
+    track: "Content Creation",
+    title: "Script Writing for Vertical",
+    description: "Write compelling scripts optimized for vertical video that deliver your message effectively",
+    icon: "edit-3",
+    forFounder: false,
+    mustWatch: false,
+    color: "#4F46E5", // Indigo
+    imageUrl: "./assets/modules/scriptwriting.jpg",
     submodules: [
-      'Narrative control techniques',
-      'Media integration strategy',
-      'Strategic positioning frameworks',
-      'Reputation management systems'
-    ],
-    resources: {
-      duration: '22 min',
-      templates: 4,
-      pdfs: 3
-    }
+      "Vertical-optimized script formats",
+      "Concise messaging techniques",
+      "Call-to-action optimization"
+    ]
   },
   {
-    id: 'advanced-04',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Basics on PR and Position',
-    description: 'Leverage PR principles to enhance your content strategy.',
-    icon: 'radio',
-    roles: ['founder', 'writer'],
+    track: "Content Creation",
+    title: "Research & Content Planning",
+    description: "Data-driven approaches to discover what your audience wants and how to deliver it",
+    icon: "search",
+    forFounder: false,
+    mustWatch: false,
+    color: "#4F46E5", // Indigo
+    imageUrl: "./assets/modules/research.jpg",
     submodules: [
-      'PR fundamentals for content creators',
-      'Media opportunities through content',
-      'Positioning strategy development',
-      'PR amplification techniques'
-    ],
-    resources: {
-      duration: '20 min',
-      templates: 3,
-      pdfs: 2
-    }
-  },
-  {
-    id: 'advanced-05',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'The Founders Paradox',
-    description: 'Navigate the unique challenges and opportunities of founder content.',
-    icon: 'briefcase',
-    roles: ['founder'],
-    submodules: [
-      'Balancing personal and brand content',
-      'Founder authority development',
-      'Leadership positioning strategies',
-      'Founder storytelling frameworks'
-    ],
-    resources: {
-      duration: '19 min',
-      templates: 2,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'advanced-06',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Handling a Comment Section',
-    description: 'Maximize engagement and build community through comment management.',
-    icon: 'message-square',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Strategic comment engagement',
-      'Community building through comments',
-      'Handling criticism and trolls',
-      'Comment section conversion strategies'
-    ],
-    resources: {
-      duration: '15 min',
-      templates: 2,
-      pdfs: 1
-    }
-  },
-  {
-    id: 'advanced-07',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'The Importance of Lo-Fi',
-    description: 'Leverage lo-fi content for authenticity and higher engagement rates.',
-    icon: 'zap',
-    roles: ['founder', 'videographer'],
-    submodules: [
-      'Lo-fi content advantages',
-      'Balancing production quality',
-      'Authentic content creation',
-      'Lo-fi production techniques'
-    ],
-    resources: {
-      duration: '16 min',
-      templates: 2,
-      pdfs: 1
-    }
-  },
-  {
-    id: 'advanced-08',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Introduction',
-    description: 'Overview of advanced content strategies for authority building.',
-    icon: 'info',
-    roles: ['founder'],
-    submodules: [
-      'Advanced strategy framework',
-      'Module pathway overview',
-      'Implementation approach',
-      'Expected outcomes'
-    ],
-    resources: {
-      duration: '12 min',
-      templates: 1,
-      pdfs: 1
-    }
-  },
-  {
-    id: 'advanced-09',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Script Mastery Optimising for Engagement',
-    description: 'Advanced scriptwriting techniques to maximize viewer engagement.',
-    icon: 'edit-2',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Psychological engagement triggers',
-      'Advanced script structures',
-      'Platform-specific script patterns',
-      'Testing and optimizing scripts'
-    ],
-    resources: {
-      duration: '23 min',
-      templates: 5,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'advanced-10',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Advanced Engagement Metrics',
-    description: 'Deep dive into measuring and optimizing for meaningful engagement.',
-    icon: 'activity',
-    roles: ['founder'],
-    submodules: [
-      'Advanced analytics interpretation',
-      'Custom engagement frameworks',
-      'Correlation analysis methods',
-      'Engagement to revenue mapping'
-    ],
-    resources: {
-      duration: '26 min',
-      templates: 4,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'advanced-11',
-    track: 'advanced',
-    category: 'Advanced Theory and Practices',
-    title: 'Data-Led Iteration',
-    description: 'Use analytics to continuously improve your content strategy.',
-    icon: 'bar-chart-2',
-    roles: ['founder'],
-    submodules: [
-      'Data-driven decision making',
-      'Content performance analysis',
-      'Testing frameworks',
-      'Continuous improvement cycles'
-    ],
-    resources: {
-      duration: '24 min',
-      templates: 5,
-      pdfs: 3
-    }
+      "Audience research methodologies",
+      "Content gap analysis",
+      "Trend identification techniques"
+    ]
   },
   
-  // Delegation modules
+  // Team Training Track - For videographers and editors
   {
-    id: 'delegation-01',
-    track: 'delegation',
-    category: 'Delegation',
-    title: 'Introduction to Delegation',
-    description: 'Learn how to effectively delegate content creation while maintaining quality.',
-    icon: 'users',
-    roles: ['founder'],
+    track: "Team Training",
+    title: "Vertical Video Production",
+    description: "Master the technical aspects of filming high-quality vertical content with any equipment",
+    icon: "video",
+    forFounder: false,
+    mustWatch: false,
+    color: "#0EA5E9", // Sky blue
+    imageUrl: "./assets/modules/production.jpg",
     submodules: [
-      'Delegation readiness assessment',
-      'Team structure planning',
-      'Role definition and documentation',
-      'Quality control frameworks'
-    ],
-    resources: {
-      duration: '22 min',
-      templates: 5,
-      pdfs: 4
-    }
+      "Camera settings optimization",
+      "Lighting for vertical formats",
+      "Audio quality enhancement"
+    ]
   },
   {
-    id: 'delegation-02',
-    track: 'delegation',
-    category: 'Delegation',
-    title: 'First Bottlenecks',
-    description: 'Identify and overcome the initial challenges in content delegation.',
-    icon: 'filter',
-    roles: ['founder'],
+    track: "Team Training",
+    title: "Advanced Editing Techniques",
+    description: "Learn professional editing techniques specifically optimized for short-form vertical content",
+    icon: "scissors",
+    forFounder: false,
+    mustWatch: false,
+    color: "#0EA5E9", // Sky blue
+    imageUrl: "./assets/modules/editing.jpg",
     submodules: [
-      'Common delegation obstacles',
-      'Bottleneck identification',
-      'Systematic solution approaches',
-      'Process flow optimization'
-    ],
-    resources: {
-      duration: '19 min',
-      templates: 4,
-      pdfs: 3
-    }
+      "Pacing and rhythm techniques",
+      "Visual effects optimization",
+      "Transition mastery for engagement"
+    ]
   },
   {
-    id: 'delegation-03',
-    track: 'delegation',
-    category: 'Delegation',
-    title: 'Creation of the Creative Team',
-    description: 'Build and manage an effective content creation team.',
-    icon: 'users',
-    roles: ['founder'],
+    track: "Team Training",
+    title: "Podcast Repurposing Pipeline",
+    description: "Transform long-form podcast content into engaging short-form vertical clips",
+    icon: "mic",
+    forFounder: false,
+    mustWatch: false,
+    color: "#0EA5E9", // Sky blue
+    imageUrl: "./assets/modules/podcast.jpg",
     submodules: [
-      'Team composition planning',
-      'Hiring strategy',
-      'Role definition and documentation',
-      'Team onboarding frameworks'
-    ],
-    resources: {
-      duration: '25 min',
-      templates: 7,
-      pdfs: 4
-    }
+      "Content chunking framework",
+      "Highlight identification system",
+      "Visual overlay strategies"
+    ]
   },
   {
-    id: 'delegation-04',
-    track: 'delegation',
-    category: 'Delegation',
-    title: 'Videography Delegated',
-    description: 'Successfully delegate video production while maintaining quality.',
-    icon: 'video',
-    roles: ['founder', 'videographer'],
+    track: "Team Training",
+    title: "Platform-Specific Optimization",
+    description: "Tailor your content for maximum performance on each specific platform",
+    icon: "smartphone",
+    forFounder: false,
+    mustWatch: false,
+    color: "#0EA5E9", // Sky blue
+    imageUrl: "./assets/modules/platforms.jpg",
     submodules: [
-      'Videographer briefing templates',
-      'Quality standards definition',
-      'Equipment and setup guidance',
-      'Feedback and iteration process'
-    ],
-    resources: {
-      duration: '21 min',
-      templates: 6,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'delegation-05',
-    track: 'delegation',
-    category: 'Delegation',
-    title: 'How to make the content run itself',
-    description: 'Build systems for hands-off content production that maintains quality.',
-    icon: 'settings',
-    roles: ['founder'],
-    submodules: [
-      'Content production systems',
-      'Quality assurance frameworks',
-      'Team empowerment strategies',
-      'Automation opportunities',
-      'Decision-making frameworks',
-      'Founder involvement optimization'
-    ],
-    resources: {
-      duration: '30 min',
-      templates: 7,
-      pdfs: 5
-    }
-  },
-  {
-    id: 'delegation-06',
-    track: 'delegation',
-    category: 'Delegation',
-    title: 'Creating a Team Workflow',
-    description: 'Establish efficient workflows that scale content production.',
-    icon: 'git-branch',
-    roles: ['founder'],
-    submodules: [
-      'Workflow mapping and optimization',
-      'Project management systems',
-      'Approval processes',
-      'Communication protocols',
-      'Deadline management frameworks'
-    ],
-    resources: {
-      duration: '27 min',
-      templates: 8,
-      pdfs: 4
-    }
+      "Platform feature utilization",
+      "Algorithm-specific adjustments",
+      "Format optimization by platform"
+    ]
   },
   
-  // Editing modules
+  // Growth Track - Important for marketing team and founders
   {
-    id: 'editing-01',
-    track: 'editing',
-    category: 'Editing',
-    title: 'Editing Basics',
-    description: 'Master fundamental editing techniques for short-form video.',
-    icon: 'scissors',
-    roles: ['editor'],
+    track: "Growth Strategy",
+    title: "Viral Content Architecture",
+    description: "Learn the science behind content that spreads organically through audience sharing",
+    icon: "zap",
+    forFounder: true,
+    mustWatch: true,
+    imageUrl: "./assets/modules/viral.jpg",
     submodules: [
-      'Software selection and setup',
-      'Basic editing techniques',
-      'Pacing and rhythm fundamentals',
-      'Audio optimization basics',
-      'Essential effects and transitions'
-    ],
-    resources: {
-      duration: '23 min',
-      templates: 4,
-      pdfs: 3
-    }
+      "Viral trigger incorporation",
+      "Social sharing psychology",
+      "Content velocity strategies"
+    ]
   },
   {
-    id: 'editing-02',
-    track: 'editing',
-    category: 'Editing',
-    title: 'Editing Team',
-    description: 'Train your editing team to produce scroll-stopping content consistently.',
-    icon: 'users',
-    roles: ['founder', 'editor'],
+    track: "Growth Strategy",
+    title: "LinkedIn Content Mastery",
+    description: "Specialized hour-long module on maximizing LinkedIn for B2B growth and personal branding",
+    icon: "linkedin",
+    forFounder: true,
+    mustWatch: true,
+    imageUrl: "./assets/modules/linkedin.jpg",
     submodules: [
-      'Editor hiring and onboarding',
-      'Editing team workflows',
-      'Style guide development',
-      'Feedback systems for editors',
-      'Training frameworks for new editors'
-    ],
-    resources: {
-      duration: '27 min',
-      templates: 6,
-      pdfs: 4
-    }
+      "LinkedIn algorithm specifics",
+      "B2B content optimization",
+      "Professional audience engagement"
+    ]
   },
   {
-    id: 'editing-03',
-    track: 'editing',
-    category: 'Editing',
-    title: 'Editing Advanced',
-    description: 'Take your editing skills to the next level with advanced techniques.',
-    icon: 'scissors',
-    roles: ['editor'],
+    track: "Growth Strategy",
+    title: "Multi-Platform Repurposing",
+    description: "Maximize your content's impact by strategically adapting it for multiple platforms",
+    icon: "repeat",
+    forFounder: false,
+    mustWatch: false,
+    imageUrl: "./assets/modules/repurposing.jpg",
     submodules: [
-      'Advanced pacing techniques',
-      'Visual effects optimization',
-      'Advanced transition methods',
-      'Color grading for engagement',
-      'Audio enhancement techniques'
-    ],
-    resources: {
-      duration: '29 min',
-      templates: 5,
-      pdfs: 4
-    }
+      "Cross-platform content strategy",
+      "Asset management systems",
+      "Efficiency in repurposing"
+    ]
   },
   {
-    id: 'editing-04',
-    track: 'editing',
-    category: 'Editing',
-    title: 'Podcast Clipping',
-    description: 'Transform long-form podcast content into viral short-form clips.',
-    icon: 'headphones',
-    roles: ['editor', 'podcast'],
+    track: "Growth Strategy",
+    title: "Data-Led Iteration",
+    description: "Use analytics to continuously improve your content strategy and increase performance",
+    icon: "bar-chart-2",
+    forFounder: true,
+    mustWatch: false,
+    imageUrl: "./assets/modules/data.jpg",
     submodules: [
-      'Key moment identification',
-      'Engaging clip selection criteria',
-      'Audio-to-visual transformation',
-      'Captions and visual enhancement',
-      'Distribution optimization'
-    ],
-    resources: {
-      duration: '24 min',
-      templates: 5,
-      pdfs: 3
-    }
+      "Performance metrics analysis",
+      "Testing frameworks",
+      "Continuous improvement cycles"
+    ]
   },
   
-  // Monetisation modules
+  // Team Building Track
   {
-    id: 'monetisation-01',
-    track: 'monetisation',
-    category: 'Monetisation',
-    title: 'Monetisation Basics',
-    description: 'Understand the fundamentals of content monetization strategies.',
-    icon: 'dollar-sign',
-    roles: ['founder'],
+    track: "Team Building",
+    title: "Content Team Structure",
+    description: "Learn how to build and structure the ideal content team for your specific business needs",
+    icon: "users",
+    forFounder: true,
+    mustWatch: true,
+    color: "#F43F5E", // Rose
+    imageUrl: "./assets/modules/team.jpg",
     submodules: [
-      'Monetization model overview',
-      'Revenue stream identification',
-      'Basic conversion frameworks',
-      'Monetization readiness assessment'
-    ],
-    resources: {
-      duration: '20 min',
-      templates: 3,
-      pdfs: 2
-    }
+      "Role definition and documentation",
+      "Team composition planning",
+      "Hiring and onboarding frameworks"
+    ]
   },
   {
-    id: 'monetisation-02',
-    track: 'monetisation',
-    category: 'Monetisation',
-    title: 'Monetisation Pro',
-    description: 'Advanced strategies to convert content viewers into customers and revenue.',
-    icon: 'dollar-sign',
-    roles: ['founder'],
+    track: "Team Building",
+    title: "Delegation Systems",
+    description: "Learn how to effectively delegate content creation while maintaining quality and brand voice",
+    icon: "share-2",
+    forFounder: true,
+    mustWatch: false,
+    color: "#F43F5E", // Rose
+    imageUrl: "./assets/modules/delegation.jpg",
     submodules: [
-      'Content-to-cash conversion models',
-      'Funnel integration strategies',
-      'Offer presentation frameworks',
-      'Monetization content types',
-      'Direct and indirect revenue streams',
-      'ROI measurement systems'
-    ],
-    resources: {
-      duration: '32 min',
-      templates: 7,
-      pdfs: 5
-    }
+      "Task delegation frameworks",
+      "Quality control systems",
+      "Brand consistency protocols"
+    ]
   },
   {
-    id: 'monetisation-03',
-    track: 'monetisation',
-    category: 'Monetisation',
-    title: 'Monetisation Founder',
-    description: 'Founder-specific strategies for building a content-powered business.',
-    icon: 'briefcase',
-    roles: ['founder'],
+    track: "Team Building",
+    title: "Team Management",
+    description: "Manage your content team effectively with minimal founder time investment",
+    icon: "clipboard",
+    forFounder: true,
+    mustWatch: false,
+    color: "#F43F5E", // Rose
+    imageUrl: "./assets/modules/management.jpg",
     submodules: [
-      'Business model integration',
-      'Strategic monetization planning',
-      'Value ladder development',
-      'Premium positioning strategies',
-      'Scaling monetization systems'
-    ],
-    resources: {
-      duration: '34 min',
-      templates: 6,
-      pdfs: 5
-    }
+      "Performance measurement systems",
+      "Workflow optimization",
+      "Team motivation strategies"
+    ]
+  },
+  {
+    track: "Team Building",
+    title: "Content Calendar Systems",
+    description: "Build efficient content scheduling systems that make production consistent and reliable",
+    icon: "calendar",
+    forFounder: true,
+    mustWatch: false,
+    color: "#F43F5E", // Rose
+    imageUrl: "./assets/modules/calendar.jpg",
+    submodules: [
+      "Calendar setup and organization",
+      "Content batching strategies",
+      "Publishing schedule optimization"
+    ]
   },
   
-  // Posting & Scheduling modules
+  // Business Systems Track
   {
-    id: 'posting-01',
-    track: 'posting',
-    category: 'Posting & Scheduling',
-    title: 'P&S Individual',
-    description: 'Optimize your posting strategy for maximum reach and engagement.',
-    icon: 'calendar',
-    roles: ['founder', 'writer'],
+    track: "Business Systems",
+    title: "Content-to-Cash Conversion",
+    description: "Convert your content audience into leads and customers through strategic monetization",
+    icon: "dollar-sign",
+    forFounder: true,
+    mustWatch: true,
+    color: "#10B981", // Emerald
+    imageUrl: "./assets/modules/conversion.jpg",
     submodules: [
-      'Optimal posting times',
-      'Platform-specific scheduling',
-      'Content calendar development',
-      'Consistency strategies',
-      'Performance tracking systems'
-    ],
-    resources: {
-      duration: '18 min',
-      templates: 5,
-      pdfs: 2
-    }
+      "Call-to-action optimization",
+      "Traffic-to-lead funnels",
+      "Offer presentation strategies"
+    ]
   },
   {
-    id: 'posting-02',
-    track: 'posting',
-    category: 'Posting & Scheduling',
-    title: 'P&S Founder',
-    description: 'Founder-specific posting strategies for authority building.',
-    icon: 'calendar',
-    roles: ['founder'],
+    track: "Business Systems",
+    title: "Content ROI Analysis",
+    description: "Measure and optimize the business impact of your content efforts",
+    icon: "pie-chart",
+    forFounder: true,
+    mustWatch: false,
+    color: "#10B981", // Emerald
+    imageUrl: "./assets/modules/roi.jpg",
     submodules: [
-      'Strategic content sequencing',
-      'Authority building posting patterns',
-      'Cross-platform coordination',
-      'Team scheduling delegation',
-      'Long-term scheduling strategy'
-    ],
-    resources: {
-      duration: '22 min',
-      templates: 4,
-      pdfs: 3
-    }
-  },
-  
-  // Repurposing modules
-  {
-    id: 'repurposing-01',
-    track: 'repurposing',
-    category: 'Repurposing',
-    title: 'Repurposing Normal',
-    description: 'Efficiently repurpose content across platforms for maximum reach.',
-    icon: 'repeat',
-    roles: ['founder', 'writer', 'editor'],
-    submodules: [
-      'Content transformation frameworks',
-      'Platform adaptation techniques',
-      'Efficient repurposing workflows',
-      'Asset management systems',
-      'Repurposing ROI optimization'
-    ],
-    resources: {
-      duration: '25 min',
-      templates: 6,
-      pdfs: 3
-    }
+      "Content performance metrics",
+      "Attribution modeling",
+      "Investment optimization strategies"
+    ]
   },
   {
-    id: 'repurposing-02',
-    track: 'repurposing',
-    category: 'Repurposing',
-    title: 'Repurposing from LinkedIn',
-    description: 'Transform LinkedIn content into material for other platforms efficiently.',
-    icon: 'linkedin',
-    roles: ['writer', 'editor'],
-    featured: true,
+    track: "Business Systems",
+    title: "Content Production Systems",
+    description: "Build efficient systems that make content creation consistent and scalable",
+    icon: "settings",
+    forFounder: true,
+    mustWatch: false,
+    color: "#10B981", // Emerald
+    imageUrl: "./assets/modules/systems.jpg",
     submodules: [
-      'LinkedIn to TikTok adaptation',
-      'LinkedIn to Instagram optimization',
-      'Content chunking strategies',
-      'Format-specific modifications',
-      'Asset management for repurposing'
-    ],
-    resources: {
-      duration: '24 min',
-      templates: 5,
-      pdfs: 3
-    }
+      "Production pipeline development",
+      "Quality control frameworks",
+      "Streamlined approval processes"
+    ]
   },
   {
-    id: 'repurposing-03',
-    track: 'repurposing',
-    category: 'Repurposing',
-    title: 'Serialisation',
-    description: 'Create content series that keep viewers coming back.',
-    icon: 'layers',
-    roles: ['founder', 'writer'],
+    track: "Business Systems",
+    title: "Long-term Authority Building",
+    description: "Use vertical content as part of a broader strategy to build enduring industry authority",
+    icon: "award",
+    forFounder: true,
+    mustWatch: false,
+    color: "#10B981", // Emerald
+    imageUrl: "./assets/modules/authority.jpg",
     submodules: [
-      'Series concept development',
-      'Episodic content planning',
-      'Audience retention strategies',
-      'Cross-episode promotion techniques',
-      'Series performance optimization'
-    ],
-    resources: {
-      duration: '21 min',
-      templates: 4,
-      pdfs: 2
-    }
-  },
-  
-  // Research modules
-  {
-    id: 'research-01',
-    track: 'research',
-    category: 'Research',
-    title: 'Research Basics',
-    description: 'Master fundamental research techniques for content creation.',
-    icon: 'search',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Audience research methods',
-      'Topic research frameworks',
-      'Competitor analysis techniques',
-      'Trend identification systems',
-      'Research-based content planning'
-    ],
-    resources: {
-      duration: '19 min',
-      templates: 4,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'research-02',
-    track: 'research',
-    category: 'Research',
-    title: 'Research Advanced Tasks',
-    description: 'Advanced research techniques for strategic content development.',
-    icon: 'search',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Advanced audience segmentation',
-      'Data-driven content opportunity analysis',
-      'Competitive positioning research',
-      'Trend prediction frameworks',
-      'Research-based strategy development'
-    ],
-    resources: {
-      duration: '26 min',
-      templates: 5,
-      pdfs: 4
-    }
-  },
-  
-  // Conversions modules
-  {
-    id: 'conversions-01',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'Taking People off Platform',
-    description: 'Strategic approaches to move viewers from social platforms to your owned channels.',
-    icon: 'external-link',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Off-platform funnel design',
-      'Call-to-action optimization',
-      'Value proposition frameworks',
-      'Platform-specific strategies',
-      'Traffic quality optimization'
-    ],
-    resources: {
-      duration: '24 min',
-      templates: 6,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'conversions-02',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'Lead Magnets',
-    description: 'Create compelling lead magnets that convert viewers into subscribers.',
-    icon: 'gift',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Lead magnet selection framework',
-      'Value optimization strategies',
-      'Delivery system setup',
-      'Lead magnet promotion techniques',
-      'Conversion tracking and optimization'
-    ],
-    resources: {
-      duration: '22 min',
-      templates: 5,
-      pdfs: 4
-    }
-  },
-  {
-    id: 'conversions-03',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'Podcasting',
-    description: 'Leverage podcasting to deepen audience relationships and drive conversions.',
-    icon: 'mic',
-    roles: ['founder', 'podcast'],
-    submodules: [
-      'Podcast strategy development',
-      'Content planning for conversion',
-      'Podcast promotion techniques',
-      'Listener to customer journeys',
-      'Podcast monetization strategies'
-    ],
-    resources: {
-      duration: '28 min',
-      templates: 5,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'conversions-04',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'YouTube',
-    description: 'Master YouTube strategies for audience building and business growth.',
-    icon: 'youtube',
-    roles: ['founder', 'writer', 'editor'],
-    submodules: [
-      'YouTube platform strategy',
-      'Long-form content optimization',
-      'YouTube SEO techniques',
-      'Channel growth frameworks',
-      'YouTube-specific conversion strategies'
-    ],
-    resources: {
-      duration: '30 min',
-      templates: 6,
-      pdfs: 4
-    }
-  },
-  {
-    id: 'conversions-05',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'Speaking Engagements',
-    description: 'Leverage speaking opportunities to build authority and drive business growth.',
-    icon: 'mic',
-    roles: ['founder'],
-    submodules: [
-      'Speaking opportunity identification',
-      'Pitch development strategies',
-      'Presentation content optimization',
-      'Audience conversion techniques',
-      'Follow-up systems for maximum ROI'
-    ],
-    resources: {
-      duration: '23 min',
-      templates: 5,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'conversions-06',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'Outreach and Finding work/clients',
-    description: 'Proactive strategies to generate leads and find high-quality clients.',
-    icon: 'users',
-    roles: ['founder'],
-    submodules: [
-      'Outreach strategy development',
-      'Ideal client identification',
-      'Personalized outreach frameworks',
-      'Follow-up systems',
-      'Relationship nurturing techniques'
-    ],
-    resources: {
-      duration: '26 min',
-      templates: 7,
-      pdfs: 4
-    }
-  },
-  {
-    id: 'conversions-07',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'Newsletter',
-    description: 'Build and monetize an email newsletter as a core business asset.',
-    icon: 'mail',
-    roles: ['founder', 'writer'],
-    submodules: [
-      'Newsletter strategy development',
-      'Subscriber acquisition techniques',
-      'Content optimization for engagement',
-      'Monetization frameworks',
-      'Growth and scaling systems'
-    ],
-    resources: {
-      duration: '25 min',
-      templates: 6,
-      pdfs: 4
-    }
-  },
-  {
-    id: 'conversions-08',
-    track: 'conversions',
-    category: 'Conversions',
-    title: 'How it builds your business',
-    description: 'Integrate content strategy with your overall business growth objectives.',
-    icon: 'trending-up',
-    roles: ['founder'],
-    submodules: [
-      'Business integration frameworks',
-      'ROI measurement systems',
-      'Strategic alignment techniques',
-      'Content-driven business models',
-      'Long-term growth planning'
-    ],
-    resources: {
-      duration: '29 min',
-      templates: 5,
-      pdfs: 4
-    }
-  },
-  
-  // LinkedIn focused track (highlighted)
-  {
-    id: 'linkedin-01',
-    track: 'linkedin',
-    category: 'LinkedIn Strategy',
-    title: 'LinkedIn Content Mastery',
-    description: 'Specialized strategies for LinkedIn to build B2B authority and connections.',
-    icon: 'linkedin',
-    roles: ['founder', 'writer'],
-    featured: true,
-    submodules: [
-      'LinkedIn algorithm specifics',
-      'B2B content optimization',
-      'Professional audience engagement',
-      'Authority building on LinkedIn',
-      'Connection growth strategies',
-      'Content formats for maximum reach'
-    ],
-    resources: {
-      duration: '35 min',
-      templates: 8,
-      pdfs: 6
-    }
-  },
-  {
-    id: 'linkedin-02',
-    track: 'linkedin',
-    category: 'LinkedIn Strategy',
-    title: 'LinkedIn Profile Optimization',
-    description: 'Transform your LinkedIn profile into a powerful business development tool.',
-    icon: 'user',
-    roles: ['founder'],
-    featured: true,
-    submodules: [
-      'Profile optimization strategies',
-      'Professional branding techniques',
-      'Keyword optimization for visibility',
-      'Content showcase methods',
-      'Authority signals integration'
-    ],
-    resources: {
-      duration: '22 min',
-      templates: 5,
-      pdfs: 3
-    }
-  },
-  {
-    id: 'linkedin-03',
-    track: 'linkedin',
-    category: 'LinkedIn Strategy',
-    title: 'LinkedIn Engagement Tactics',
-    description: 'Master strategic engagement to build relationships and visibility.',
-    icon: 'message-circle',
-    roles: ['founder', 'writer'],
-    featured: true,
-    submodules: [
-      'Strategic comment frameworks',
-      'Relationship building techniques',
-      'Visibility enhancement tactics',
-      'Network expansion strategies',
-      'Engagement automation tools'
-    ],
-    resources: {
-      duration: '26 min',
-      templates: 6,
-      pdfs: 4
-    }
+      "Content authority ladders",
+      "Trust-building content patterns",
+      "Thought leadership positioning"
+    ]
   }
 ];
 
-// Main functions for module rendering
-function initModulesSection() {
-  // Render all modules initially
-  renderModules('all', 'all');
+/**
+ * Renders the modules list by track
+ */
+export function renderModulesList() {
+  console.log('Rendering modules list by track...');
   
-  // Set up filter button event listeners
-  document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      // Remove active class from all filter buttons
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      // Add active class to clicked button
-      this.classList.add('active');
-      
-      // Get current active track
-      const activeTrack = document.querySelector('.tab-btn.active').dataset.track;
-      
-      // Get filter value from button
-      const filter = this.dataset.filter;
-      
-      // Render modules with selected filter and track
-      renderModules(filter, activeTrack);
-    });
-  });
+  const modulesContainer = document.querySelector('.modules-container');
   
-  // Set up track tab event listeners
-  document.querySelectorAll('.tab-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      // Remove active class from all tab buttons
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      // Add active class to clicked button
-      this.classList.add('active');
-      
-      // Get current active filter
-      const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
-      
-      // Get track value from button
-      const track = this.dataset.track;
-      
-      // Render modules with selected filter and track
-      renderModules(activeFilter, track);
-    });
-  });
-}
-
-function renderModules(roleFilter, trackFilter) {
-  const modulesGrid = document.getElementById('modules-grid');
-  
-  // Clear current modules
-  modulesGrid.innerHTML = '';
-  
-  // Filter modules based on selected filter and track
-  let filteredModules = moduleData;
-  
-  // Filter by role if not 'all'
-  if (roleFilter !== 'all') {
-    filteredModules = filteredModules.filter(module => 
-      module.roles && module.roles.includes(roleFilter)
-    );
-  }
-  
-  // Filter by track if not 'all'
-  if (trackFilter !== 'all') {
-    filteredModules = filteredModules.filter(module => 
-      module.track === trackFilter
-    );
-  }
-  
-  // Update count of visible modules
-  document.getElementById('visible-modules-count').textContent = filteredModules.length;
-  
-  // If no modules match the filters, show empty state
-  if (filteredModules.length === 0) {
-    modulesGrid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🔍</div>
-        <div class="empty-state-text">No modules match your current filters</div>
-        <button class="empty-state-action" onclick="resetFilters()">Reset Filters</button>
-      </div>
-    `;
+  if (!modulesContainer) {
+    console.error('Modules container not found - make sure .modules-container exists in your HTML');
     return;
   }
+
+  // Clear any existing content
+  modulesContainer.innerHTML = '';
   
-  // Create and append module cards with staggered animation
-  filteredModules.forEach((module, index) => {
-    const moduleCard = createModuleCard(module);
-    modulesGrid.appendChild(moduleCard);
-    
-    // Add staggered animation
-    setTimeout(() => {
-      moduleCard.classList.add('fadeIn');
-    }, 50 * index);
+  // Group modules by track
+  const modulesByTrack = {};
+  courseModules.forEach(module => {
+    if (!modulesByTrack[module.track]) {
+      modulesByTrack[module.track] = [];
+    }
+    modulesByTrack[module.track].push(module);
   });
   
-  // Initialize module interaction
-  initModuleInteraction();
+  // Create a track section for each track
+  Object.keys(modulesByTrack).forEach(trackName => {
+    const trackModules = modulesByTrack[trackName];
+    
+    // Create track header
+    const trackHeader = document.createElement('div');
+    trackHeader.className = 'track-header';
+    trackHeader.innerHTML = `
+      <h3 class="track-title">${trackName}</h3>
+      <p class="track-description">${getTrackDescription(trackName)}</p>
+    `;
+    
+    // Create track container
+    const trackContainer = document.createElement('div');
+    trackContainer.className = 'track-modules';
+    
+    // Add modules to track container
+    trackModules.forEach(module => {
+      const moduleCard = createModuleCard(module);
+      trackContainer.appendChild(moduleCard);
+    });
+    
+    // Add track header and container to modules container
+    modulesContainer.appendChild(trackHeader);
+    modulesContainer.appendChild(trackContainer);
+  });
   
-  // Initialize feather icons in the newly created elements
-  if (typeof feather !== 'undefined') {
+  // Initialize hover/click interactions for module cards
+  initModuleInteractions();
+  
+  // Initialize Feather icons if available
+  if (typeof feather !== 'undefined' && feather.replace) {
     feather.replace();
+  } else {
+    console.warn('Feather icons not found - make sure to include the feather-icons library');
   }
+  
+  console.log('Modules list rendered with', courseModules.length, 'modules across', Object.keys(modulesByTrack).length, 'tracks');
 }
 
+/**
+ * Creates a DOM element for a single module card
+ */
 function createModuleCard(module) {
-  // Create module card element
-  const card = document.createElement('div');
-  card.className = 'module-card';
-  card.dataset.id = module.id;
+  // Create the module card element
+  const moduleCard = document.createElement('div');
+  moduleCard.className = 'module-card';
   
-  // Add featured class if module is featured
-  if (module.featured) {
-    card.classList.add('featured');
+  if (module.forFounder) {
+    moduleCard.classList.add('for-founder');
   }
   
-  // Create track tag display
-  const trackTag = `<div class="module-track-tag" style="background: ${getTrackColor(module.track)}">${module.category}</div>`;
+  if (module.mustWatch) {
+    moduleCard.classList.add('must-watch');
+  }
   
-  // Create roles badges HTML
-  const rolesBadges = module.roles.map(role => 
-    `<span class="role-tag ${role}">
-       <i data-feather="${getRoleIcon(role)}" class="role-icon" width="10" height="10"></i> 
-       ${getRoleName(role)}
-     </span>`
-  ).join('');
+  if (module.color) {
+    moduleCard.style.setProperty('--module-color', module.color);
+  }
   
-  // Create submodules list HTML
-  const submodulesList = module.submodules.map(submodule => 
-    `<li>${submodule}</li>`
-  ).join('');
-  
-  // Set the card HTML content
-  card.innerHTML = `
-    ${trackTag}
-    <div class="module-header">
-      <div class="module-icon">
-        <i data-feather="${module.icon}"></i>
-      </div>
+  // Create the module content
+  moduleCard.innerHTML = `
+    <div class="module-icon">
+      <i data-feather="${module.icon}"></i>
+    </div>
+    <div class="module-content">
+      ${module.forFounder ? '<div class="founder-indicator"></div>' : ''}
+      ${module.mustWatch ? '<div class="must-watch-badge">Must Watch</div>' : ''}
       <h3 class="module-title">${module.title}</h3>
-    </div>
-    <p class="module-description">${module.description}</p>
-    <div class="module-meta">
-      <div class="module-roles">
-        ${rolesBadges}
+      <p class="module-description">${module.description}</p>
+      <div class="module-image ${module.imageUrl ? '' : 'placeholder'}" ${module.imageUrl ? `style="background-image: url('${module.imageUrl}')"` : ''}>
+        ${!module.imageUrl ? '<span>Module image coming soon</span>' : ''}
       </div>
-      <div class="module-stats">
-        <span>${module.resources.duration}</span>
-        <span class="stat-divider">•</span>
-        <span>${module.submodules.length} Submodules</span>
-        <span class="stat-divider">•</span>
-        <span>${module.resources.templates + module.resources.pdfs} Resources</span>
+      <div class="module-details">
+        <h4 class="submodules-title">What you'll learn:</h4>
+        <ul class="submodules-list">
+          ${module.submodules.map(submodule => `<li>${submodule}</li>`).join('')}
+        </ul>
       </div>
-    </div>
-    <div class="module-expand">
-      <button class="expand-btn">View Submodules <span>↓</span></button>
-    </div>
-    <div class="expanded-content">
-      <h4 class="submodules-title">This Module Includes:</h4>
-      <ul class="submodules-list">
-        ${submodulesList}
-      </ul>
     </div>
   `;
   
-  return card;
+  return moduleCard;
 }
 
-function initModuleInteraction() {
-  // Set up expand/collapse functionality
-  document.querySelectorAll('.expand-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const card = this.closest('.module-card');
-      card.classList.toggle('expanded');
+/**
+ * Initialize hover/click interactions for module cards
+ */
+function initModuleInteractions() {
+  const moduleCards = document.querySelectorAll('.module-card');
+  
+  moduleCards.forEach(card => {
+    // Toggle expanded state on click/tap
+    card.addEventListener('click', function() {
+      // If already expanded, collapse it
+      if (this.classList.contains('expanded')) {
+        this.classList.remove('expanded');
+        return;
+      }
       
-      // Change button text based on state
-      this.innerHTML = card.classList.contains('expanded') 
-        ? 'Close <span>↑</span>'
-        : 'View Submodules <span>↓</span>';
+      // Collapse any currently expanded card
+      const expandedCard = document.querySelector('.module-card.expanded');
+      if (expandedCard) {
+        expandedCard.classList.remove('expanded');
+      }
+      
+      // Expand this card
+      this.classList.add('expanded');
     });
   });
 }
 
-function resetFilters() {
-  // Reset role filter buttons
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-  
-  // Reset track tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  document.querySelector('.tab-btn[data-track="all"]').classList.add('active');
-  
-  // Re-render all modules
-  renderModules('all', 'all');
-}
-
-// Helper functions for visual elements
-
-function getTrackColor(track) {
-  const trackColors = {
-    'basic': 'var(--blue)',
-    'advanced': 'var(--pink)',
-    'delegation': '#8b5cf6',
-    'editing': '#fbbf24',
-    'monetisation': '#10b981',
-    'conversions': '#f472b6',
-    'repurposing': '#22c55e',
-    'linkedin': 'var(--orange)',
-    'research': '#6366f1',
-    'posting': '#0ea5e9'
+/**
+ * Get description for each track
+ */
+function getTrackDescription(trackName) {
+  const trackDescriptions = {
+    "Foundational Track": "Essential modules for founders to establish the strategic foundation for vertical content success.",
+    "Content Creation": "Content writing and ideation skills for creating engaging short-form videos that stop the scroll.",
+    "Team Training": "Technical training for videographers, editors, and content producers to create professional content.",
+    "Growth Strategy": "Strategic modules focused on maximizing reach and audience growth across platforms.",
+    "Team Building": "Build and manage a high-performing content team that can operate with minimal founder involvement.",
+    "Business Systems": "Convert content views into business results with proven systems for monetization and scaling."
   };
   
-  return trackColors[track] || 'var(--blue)';
-}
-
-function getRoleIcon(role) {
-  const roleIcons = {
-    'founder': 'briefcase',
-    'writer': 'edit',
-    'editor': 'scissors', 
-    'videographer': 'camera',
-    'podcast': 'mic'
-  };
-  
-  return roleIcons[role] || 'user';
-}
-
-function getRoleName(role) {
-  const roleNames = {
-    'founder': 'Founder',
-    'writer': 'Writer',
-    'editor': 'Editor',
-    'videographer': 'Videographer',
-    'podcast': 'Podcast Producer'
-  };
-  
-  return roleNames[role] || role;
-}
-
-// Compatibility function for renderModulesList
-export function renderModulesList() {
-  // Initialize our new module section implementation
-  initModulesSection();
-  console.log('Modules section initialized via renderModulesList compatibility function');
-}
-
-// Make resetFilters available globally for the empty state button
-window.resetFilters = resetFilters;
+  return trackDescriptions[trackName] || "Specialized modules for vertical video mastery.";
+} 
