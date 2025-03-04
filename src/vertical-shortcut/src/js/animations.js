@@ -1,5 +1,5 @@
 import { gsap, ScrollTrigger, ScrollSmoother, ScrollToPlugin } from './gsap-setup.js';
-import { renderPricingTable, renderModulesList } from './pricingTable.js';
+import { renderPricingTable } from './pricingTable.js';
 
 
 // Don't re-register ScrollTrigger - it's already registered in gsap-setup.js
@@ -35,38 +35,52 @@ export async function initAnimations() {
   console.log("🎬 Initializing animations...");
   
   try {
-    // Initialize the cursor animation immediately (doesn't depend on scroll)
-
-    
-    // Wait for DOM updates after rendering modules and pricing table
+    // Wait longer for DOM updates after rendering modules and pricing table
     console.log("⏳ Waiting for DOM updates...");
-    await new Promise(resolve => setTimeout(resolve, DOM_UPDATE_DELAY));
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Increased from 500ms
     
     // Basic animation to ensure content is visible even if scroll triggers fail
     animateAllSectionsBasic();
     
-    // Initialize section-specific animations with better error handling
-    await initHeroAnimations()
-      .then(() => initProblemSectionAnimations())
-      .then(() => initSolutionSectionAnimations()) 
-      .then(() => initBenefitsSectionAnimations())
-      .then(() => initTestimonialAnimations())
-      .then(() => initModulesAnimations())
-      .then(() => initPricingAnimations())
-      .then(() => initFaqAnimations())
-      .then(() => initCtaAnimations())
-      .catch(error => {
-        console.error("⚠️ Error in animation initialization:", error);
-      });
-      
+    // Make sure ScrollTrigger knows about the content dimensions before creating triggers
+    ScrollTrigger.refresh(true);
+    
+    // Initialize section-specific animations with proper error handling
+    await Promise.all([
+      initHeroAnimations(),
+      initProblemSectionAnimations(),
+      initSolutionSectionAnimations(),
+      initBenefitsSectionAnimations(),
+      initTestimonialAnimations(),
+      initModulesAnimations(),
+      initPricingAnimations(),
+      initFaqAnimations(),
+      initCtaAnimations()
+    ]).catch(error => {
+      console.error("⚠️ Error in animation initialization:", error);
+    });
+    
     console.log("✅ All animations initialized");
-
     
+    // Initialize pricing card hover effects
+    initPricingCardHoverEffects();
     
-    // Final refresh of ScrollTrigger
-
-
-   
+    // FIXED: Force a complete ScrollTrigger refresh with true parameter
+    console.log("🔄 Forcing final ScrollTrigger refresh");
+    ScrollTrigger.refresh(true);
+    
+    // Add a delayed final refresh to catch any late DOM changes
+    setTimeout(() => {
+      console.log("🔄 Delayed final ScrollTrigger refresh");
+      ScrollTrigger.refresh(true);
+    }, 1000);
+    
+    return true;
+  } catch (error) {
+    console.error("⚠️ Animation initialization error:", error);
+    return false;
+  }
+}
 
 // Basic animation to ensure all sections are visible even without scroll triggers
 function animateAllSectionsBasic() {
@@ -100,6 +114,7 @@ function animateAllSectionsBasic() {
     }
   });
 }
+
 
 // Hero section animations
 function initHeroAnimations() {
@@ -153,6 +168,33 @@ function initHeroAnimations() {
           console.warn("⚠️ Hero parallax animation failed:", error);
         }
       }
+
+            // Headline rotation
+      const headlineRotator = () => {
+        const headlines = document.querySelectorAll('.hero-headline');
+        if (!headlines.length) return;
+        
+        let activeIndex = 0;
+        
+        setInterval(() => {
+          // Hide current headline
+          headlines[activeIndex].classList.remove('active');
+          
+          // Move to next headline (loop back to first if needed)
+          activeIndex = (activeIndex + 1) % headlines.length;
+          
+          // Show new headline
+          headlines[activeIndex].classList.add('active');
+        }, 3000);
+      };
+
+      // Initialize when DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        headlineRotator();
+      });
+      
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
       
       resolve();
     } catch (error) {
@@ -199,6 +241,9 @@ function initProblemSectionAnimations() {
         stagger: 0.2,
         duration: 0.6
       }, "-=0.3");
+      
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
       
       resolve();
     } catch (error) {
@@ -249,6 +294,9 @@ function initSolutionSectionAnimations() {
         y: 20,
         duration: 0.6
       }, "-=0.4");
+      
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
       
       resolve();
     } catch (error) {
@@ -312,6 +360,9 @@ function initBenefitsSectionAnimations() {
         if (description) gsap.from(description, { opacity: 0, y: 20, duration: 0.5, delay: 0.1 * index + 0.2 });
       });
       
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
+      
       resolve();
     } catch (error) {
       console.error("⚠️ Benefits section animation error:", error);
@@ -357,6 +408,9 @@ function initTestimonialAnimations() {
         stagger: 0.2,
         duration: 0.6
       }, "-=0.3");
+      
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
       
       resolve();
     } catch (error) {
@@ -456,6 +510,9 @@ function initModulesAnimations() {
           }
         });
       }
+      
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
       
       resolve();
     } catch (error) {
@@ -584,6 +641,9 @@ function initPricingAnimations() {
         });
       }
       
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
+      
       resolve();
     } catch (error) {
       console.error("⚠️ Pricing animation error:", error);
@@ -630,6 +690,9 @@ function initFaqAnimations() {
         duration: 0.5
       }, "-=0.2");
       
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
+      
       resolve();
     } catch (error) {
       console.error("⚠️ FAQ animation error:", error);
@@ -670,6 +733,9 @@ function initCtaAnimations() {
         duration: 0.6,
         ease: "back.out(1.7)"
       }, "-=0.4");
+      
+      // IMPROVED: Force refresh ScrollTrigger after animation setup
+      ScrollTrigger.refresh(true);
       
       resolve();
     } catch (error) {
@@ -743,13 +809,8 @@ function initPricingCardHoverEffects() {
         backgroundColor: 'transparent',
         duration: 0.3
       });
-    })
+    });
   });
-}
-} catch (error) {
-  console.error("⚠️ Animation initialization error:", error)  ;
-  return null;
-}
 }
 
 export function initSmoother() {
@@ -793,6 +854,6 @@ export function initSmoother() {
       clearTimeout(timeout);
       resolve(null);
     }
-  })
-};
+  });
+}
 
